@@ -1,0 +1,33 @@
+{
+  "name": "usersrole-nx-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/usersrole-nx-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/usersrole-nx-e2e/cypress.config.ts",
+        "devServerTarget": "usersrole-nx:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "usersrole-nx:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "usersrole-nx:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/usersrole-nx-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["usersrole-nx"]
+}
