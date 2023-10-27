@@ -9,7 +9,8 @@
       "options": {
         "cypressConfig": "apps/usersrole-nx-e2e/cypress.config.ts",
         "devServerTarget": "usersrole-nx:serve:development",
-        "testingType": "e2e"
+        "testingType": "e2e",
+        "port": 4204
       },
       "configurations": {
         "production": {
