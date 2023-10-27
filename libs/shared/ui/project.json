@@ -29,6 +29,15 @@
           "libs/shared/ui//**/*.html"
         ]
       }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/shared/ui/cypress.config.ts",
+        "testingType": "component",
+        "skipServe": true,
+        "devServerTarget": "usersrole-nx:build"
+      }
     }
   }
 }
