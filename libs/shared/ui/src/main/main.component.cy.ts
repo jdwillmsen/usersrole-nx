@@ -2,18 +2,16 @@ import { TestBed } from '@angular/core/testing';
 import { MainComponent } from './main.component';
 
 describe(MainComponent.name, () => {
-
   beforeEach(() => {
     TestBed.overrideComponent(MainComponent, {
       add: {
         imports: [],
-        providers: []
-      }
-    })
-  })
+        providers: [],
+      },
+    });
+  });
 
   it('renders', () => {
-     cy.mount(MainComponent,);
-  })
-
-})
+    cy.mount(MainComponent);
+  });
+});
