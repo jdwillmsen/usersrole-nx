@@ -10,5 +10,5 @@ import { HeaderComponent, MainComponent } from '@usersrole-nx/shared-ui';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'usersrole-nx';
+  title = 'Users Role Nx';
 }
