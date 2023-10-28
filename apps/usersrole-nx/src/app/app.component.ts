@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {HeaderComponent, MainComponent} from "@usersrole-nx/shared-ui";
+import { HeaderComponent, MainComponent } from '@usersrole-nx/shared-ui';
 
 @Component({
   standalone: true,
