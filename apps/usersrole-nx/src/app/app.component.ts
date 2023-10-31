@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent, MainComponent } from '@usersrole-nx/shared-ui';
+import { MainComponent } from '@usersrole-nx/main';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, HeaderComponent, MainComponent],
+  imports: [RouterModule, MainComponent],
   selector: 'usersrole-nx-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'Users Role Nx';
-}
+export class AppComponent {}

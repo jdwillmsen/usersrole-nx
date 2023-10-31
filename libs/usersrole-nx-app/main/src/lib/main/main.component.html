@@ -1,0 +1,27 @@
+<usersrole-nx-header
+  (toggleSideNav)="handleToggle()"
+  [appRouterLink]="appRouterLink"
+  [appTitle]="appTitle"
+  [appTooltip]="appToolTip"
+  [color]="headerColor"
+  [isXSmallScreen]="isXSmallScreen"
+>
+  <button color="primary" mat-mini-fab>
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button color="primary" mat-mini-fab>
+    <mat-icon>palette</mat-icon>
+  </button>
+  <button color="primary" mat-mini-fab>
+    <mat-icon>person</mat-icon>
+  </button>
+</usersrole-nx-header>
+<usersrole-nx-navigation-layout
+  [isSideNavEnabled]="isSideNavEnabled"
+  [sideNavMode]="sideNavMode"
+  [isSideNavOpened]="isSideNavOpened"
+  [navigationItems]="navigationItems"
+  (sideNavChange)="sideNavChange($event)"
+>
+  <router-outlet></router-outlet>
+</usersrole-nx-navigation-layout>

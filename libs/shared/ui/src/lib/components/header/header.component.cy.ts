@@ -57,4 +57,14 @@ describe(HeaderComponent.name, () => {
     });
     cy.getByCy('navbar-header').should('be.visible');
   });
+
+  it('should setup properly with XSmall screen size properties', () => {
+    cy.mount(HeaderComponent, {
+      componentProperties: {
+        isXSmallScreen: true,
+      },
+    });
+    cy.getByCy('navbar-header').should('be.visible');
+    cy.getByCy('navbar-button').should('be.visible').and('be.enabled');
+  });
 });
