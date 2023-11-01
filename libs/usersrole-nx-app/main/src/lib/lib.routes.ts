@@ -21,10 +21,6 @@ export const libRoutes: Route[] = [
     component: NavigationItemComponent,
   },
   {
-    path: '',
-    component: NavigationItemComponent,
-  },
-  {
     path: 'testing',
     component: NavigationItemComponent,
   },

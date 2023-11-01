@@ -49,9 +49,9 @@ describe(NavigationTileComponent.name, () => {
   it('should setup properly with default properties', () => {
     cy.mount(NavigationTileComponent);
     cy.getByCy('tile').should('be.visible');
-    cy.getByCy('title').should('be.visible').and('not.contain.text');
-    cy.getByCy('message').should('be.visible').and('not.contain.text');
-    cy.getByCy('extra').should('be.visible').and('not.contain.text');
+    cy.getByCy('title').should('be.visible').and('be.empty');
+    cy.getByCy('message').should('be.visible').and('be.empty');
+    cy.getByCy('extra').should('be.visible').and('be.empty');
   });
 
   it('should setup properly with no extra content', () => {

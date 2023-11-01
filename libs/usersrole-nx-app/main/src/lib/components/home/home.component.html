@@ -1,1 +1,41 @@
-<p>home works!</p>
+<div class="home-container" data-cy="home-container">
+  <h1 data-cy="title">Users Role NX</h1>
+  <p data-cy="p1">
+    This is a frontend application that provides a template for users
+    authentication and authorization since these are common features used in
+    most applications. It also has additional features such as theme selection,
+    snackbar service, alerts service, and a general site layout with header,
+    collapsable sidebar/navigation, and main content area. This application is
+    also a Progressive Web App (PWA) and can be downloaded as an app on mobile
+    and desktop devices.
+  </p>
+  <p data-cy="p2">
+    The authentication is provided by Firebase with Google Identity Platform and
+    the authorization is built off of a node server that makes use of Firebase
+    functions. The production server and all deployments are hosted with
+    Firebase hosting.
+  </p>
+  <p data-cy="p3">
+    The main CI/CD tools used within this project include GitHub Actions and NX
+    Cloud with NX Caching.
+  </p>
+  <p data-cy="p4">
+    The following are the primary routes once authenticated:
+    <span class="read-message" data-cy="read-message">
+      **Read access will be able to see all pages but will get 403 error
+      whentrying to action
+    </span>
+  </p>
+  <div class="tiles" data-cy="tiles">
+    <usersrole-nx-home-tile
+      *ngFor="let tile of tiles"
+      [attr.data-cy]="tile.title.toLowerCase() + '-tile'"
+      [title]="tile.title"
+      [description]="tile.description"
+      [access]="tile.access.join(', ')"
+      [link]="tile.link"
+      class="tile"
+    >
+    </usersrole-nx-home-tile>
+  </div>
+</div>

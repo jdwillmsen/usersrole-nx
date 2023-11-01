@@ -1,4 +1,4 @@
-export type NavigationTile = {
+export type HomeTile = {
   title: string;
   link: string;
   description: string;
