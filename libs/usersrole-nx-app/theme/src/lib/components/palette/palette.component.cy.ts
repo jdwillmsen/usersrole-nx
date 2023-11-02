@@ -15,7 +15,18 @@ describe(PaletteComponent.name, () => {
     cy.mount(PaletteComponent);
   });
 
-  it('should be setup properly with default properties', () => {
+  describe('Screen Sizes', () => {
+    testScreenSize('XSmall', 400, 400);
+    testScreenSize('Small', 800, 800);
+    testScreenSize('Medium', 1200, 900);
+    testScreenSize('Large', 1600, 1080);
+    testScreenSize('XLarge', 2560, 1440);
+  });
+});
+
+function testScreenSize(size: string, width: number, height: number) {
+  it(`should be setup properly on ${size} screen size`, () => {
+    cy.viewport(width, height);
     cy.mount(PaletteComponent);
     cy.getByCy('extra-light')
       .should('be.visible')
@@ -41,4 +52,4 @@ describe(PaletteComponent.name, () => {
     cy.getByCy('A400').should('be.visible').and('contain.text', 'A400');
     cy.getByCy('A700').should('be.visible').and('contain.text', 'A700');
   });
-});
+}
