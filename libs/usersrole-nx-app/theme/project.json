@@ -1,0 +1,43 @@
+{
+  "name": "theme",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/usersrole-nx-app/theme/src",
+  "prefix": "usersrole-nx",
+  "tags": ["type:feature", "scope:usersrole-nx-app"],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/usersrole-nx-app/theme/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/usersrole-nx-app/theme/**/*.ts",
+          "libs/usersrole-nx-app/theme/**/*.html"
+        ]
+      }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/usersrole-nx-app/theme/cypress.config.ts",
+        "testingType": "component",
+        "skipServe": true,
+        "devServerTarget": "usersrole-nx:build"
+      }
+    }
+  }
+}

@@ -1,10 +1,13 @@
 @use '@angular/material' as mat;
 @use '../../../../libs/shared/ui/src/lib/components/navigation-item/navigation-item-theme.component'
   as navigation-item;
+@use '../../../../libs/usersrole-nx-app/theme/src/lib/components/palette/palette-theme.component'
+  as palette;
 @use '../styles/components/button/variants' as button-variants;
 
 @mixin all-component-themes($theme) {
   @include button-variants.theme($theme);
   @include navigation-item.theme($theme);
+  @include palette.theme($theme);
   @include mat.all-component-themes($theme);
 }

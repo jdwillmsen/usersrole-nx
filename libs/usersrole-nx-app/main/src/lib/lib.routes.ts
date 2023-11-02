@@ -2,7 +2,7 @@ import { Route } from '@angular/router';
 import { NavigationItemComponent } from '@usersrole-nx/shared-ui';
 import { HomeComponent } from './components/home/home.component';
 
-export const libRoutes: Route[] = [
+export const mainRoutes: Route[] = [
   {
     path: '',
     redirectTo: 'home',
@@ -26,7 +26,8 @@ export const libRoutes: Route[] = [
   },
   {
     path: 'theme',
-    component: NavigationItemComponent,
+    loadChildren: () =>
+      import('@usersrole-nx/theme').then((m) => m.themeRoutes),
   },
   {
     path: '**',

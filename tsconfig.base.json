@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@usersrole-nx/main": ["libs/usersrole-nx-app/main/src/index.ts"],
-      "@usersrole-nx/shared-ui": ["libs/shared/ui/src/index.ts"]
+      "@usersrole-nx/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@usersrole-nx/theme": ["libs/usersrole-nx-app/theme/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
