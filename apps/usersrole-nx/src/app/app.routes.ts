@@ -1,9 +1,9 @@
 import { Route } from '@angular/router';
-
+import { libRoutes } from '@usersrole-nx/main';
 export const appRoutes: Route[] = [
   {
     path: '',
-    loadChildren: () => import('@usersrole-nx/main').then((m) => m.libRoutes),
+    children: libRoutes,
   },
   {
     path: '**',
