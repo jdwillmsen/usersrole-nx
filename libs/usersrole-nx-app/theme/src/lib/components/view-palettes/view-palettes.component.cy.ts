@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { ViewPalettesComponent } from './view-palettes.component';
-import { PaletteComponent } from '../palette/palette.component';
 
 describe(ViewPalettesComponent.name, () => {
   beforeEach(() => {
