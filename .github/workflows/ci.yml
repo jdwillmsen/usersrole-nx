@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 # Needed for nx-set-shas within nx-cloud-main.yml, when run on the master branch

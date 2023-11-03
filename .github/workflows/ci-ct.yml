@@ -23,7 +23,7 @@ jobs:
       parallel-commands: |
         npx nx-cloud record -- npx nx format:check
       parallel-commands-on-agents: |
-        npx nx run-many --target=component-test --parallel=2
+        npx nx run-many --target=component-test --parallel=2 --skipNxCache
 
   agents:
     name: Nx Cloud - Agents
