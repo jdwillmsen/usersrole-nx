@@ -3,17 +3,12 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/usersrole-nx-app/shared/src",
   "prefix": "usersrole-nx",
-  "tags": [
-    "type:shared",
-    "scope:usersrole-nx-app"
-  ],
+  "tags": ["type:shared", "scope:usersrole-nx-app"],
   "projectType": "library",
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "libs/usersrole-nx-app/shared/jest.config.ts",
         "passWithNoTests": true
@@ -27,9 +22,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "libs/usersrole-nx-app/shared/**/*.ts",

@@ -16,12 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@usersrole-nx/main": ["libs/usersrole-nx-app/main/src/index.ts"],
-      "@usersrole-nx/preview": [
-        "libs/usersrole-nx-app/preview/src/index.ts"
-      ],
-      "@usersrole-nx/shared": [
-        "libs/usersrole-nx-app/shared/src/index.ts"
-      ],
+      "@usersrole-nx/preview": ["libs/usersrole-nx-app/preview/src/index.ts"],
+      "@usersrole-nx/shared": ["libs/usersrole-nx-app/shared/src/index.ts"],
       "@usersrole-nx/shared-ui": ["libs/shared/ui/src/index.ts"],
       "@usersrole-nx/theme": ["libs/usersrole-nx-app/theme/src/index.ts"]
     }
