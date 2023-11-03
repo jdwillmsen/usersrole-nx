@@ -1,0 +1,32 @@
+name: CI - CT
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+# Needed for nx-set-shas within nx-cloud-main.yml, when run on the master branch
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  main:
+    name: Nx Cloud - Main Job
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.1
+    with:
+      main-branch-name: main
+      number-of-agents: 1
+      init-commands: |
+        npx nx-cloud start-ci-run --stop-agents-after="component-test" --agent-count=1
+      parallel-commands: |
+        npx nx-cloud record -- npx nx format:check
+      parallel-commands-on-agents: |
+        npx nx run-many --target=component-test --parallel=2
+
+  agents:
+    name: Nx Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.1
+    with:
+      number-of-agents: 1
