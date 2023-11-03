@@ -21,8 +21,9 @@ export const mainRoutes: Route[] = [
     component: NavigationItemComponent,
   },
   {
-    path: 'testing',
-    component: NavigationItemComponent,
+    path: 'preview',
+    loadChildren: () =>
+      import('@usersrole-nx/preview').then((m) => m.previewRoutes),
   },
   {
     path: 'theme',

@@ -49,17 +49,17 @@ export class MainComponent {
       title: 'Profile',
     },
     {
-      path: '/testing/alerts',
+      path: '/preview/alerts',
       icon: 'notification_important',
       title: 'Alerts',
     },
     {
-      path: '/testing/snackbars',
+      path: '/preview/snackbars',
       icon: 'announcement',
       title: 'Snackbars',
     },
     {
-      path: '/testing/buttons',
+      path: '/preview/buttons',
       icon: 'ballot',
       title: 'Buttons',
     },
