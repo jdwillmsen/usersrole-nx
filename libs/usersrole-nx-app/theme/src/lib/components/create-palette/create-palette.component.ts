@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaletteColors } from '../../models/palette-colors.model';
 import { debounceTime, Subject } from 'rxjs';
 import {
   AbstractControl,
@@ -14,6 +13,7 @@ import tinycolor from 'tinycolor2';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { PaletteColors } from '@usersrole-nx/shared';
 
 @Component({
   selector: 'usersrole-nx-create-palette',

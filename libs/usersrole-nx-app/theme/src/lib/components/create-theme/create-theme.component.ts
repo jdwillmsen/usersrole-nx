@@ -5,7 +5,7 @@ import { CreatePaletteComponent } from '../create-palette/create-palette.compone
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { PaletteFormGroup } from '../../models/palette-form-group';
-import { PaletteColors } from '../../models/palette-colors.model';
+import { PaletteColors } from '@usersrole-nx/shared';
 
 @Component({
   selector: 'usersrole-nx-create-theme',
