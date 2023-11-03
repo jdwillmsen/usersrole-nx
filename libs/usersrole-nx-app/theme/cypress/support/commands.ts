@@ -15,9 +15,25 @@ declare namespace Cypress {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Chainable<Subject> {
     getByCy(selector: string, ...args: never[]): Cypress.Chainable<never>;
+
+    changeColor(
+      colorSelector: string,
+      colorValue: string
+    ): Cypress.Chainable<never>;
   }
 }
 
 Cypress.Commands.add('getByCy', (selector, ...args) => {
   return cy.get(`[data-cy=${selector}]`, ...args);
 });
+
+Cypress.Commands.add(
+  'changeColor',
+  (colorSelector: string, colorValue: string) => {
+    cy.getByCy(colorSelector)
+      .click()
+      .invoke('val', colorValue.toLowerCase())
+      .trigger('input')
+      .blur();
+  }
+);

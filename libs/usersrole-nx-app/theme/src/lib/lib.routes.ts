@@ -1,8 +1,8 @@
 import { Route } from '@angular/router';
 import { ViewPalettesComponent } from './components/view-palettes/view-palettes.component';
-import { CreatePaletteComponent } from './components/create-palette/create-palette.component';
+import { CreateThemeComponent } from './components/create-theme/create-theme.component';
 
 export const themeRoutes: Route[] = [
   { path: 'view', component: ViewPalettesComponent },
-  { path: 'create', component: CreatePaletteComponent },
+  { path: 'create', component: CreateThemeComponent },
 ];

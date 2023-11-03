@@ -1,0 +1,38 @@
+<div class="create-theme-container">
+  <div class="header">
+    <h1 data-cy="title">Create Custom Theme</h1>
+    <div>
+      <button
+        (click)="saveLightTheme()"
+        color="primary"
+        data-cy="save-light-theme-button"
+        mat-raised-button
+      >
+        <mat-icon>wb_sunny</mat-icon>
+        Save Light Theme
+      </button>
+      <button
+        (click)="saveDarkTheme()"
+        color="primary"
+        data-cy="save-dark-theme-button"
+        mat-raised-button
+      >
+        <mat-icon>nightlight_round</mat-icon>
+        Save Dark Theme
+      </button>
+    </div>
+  </div>
+  <form
+    [formGroup]="themeForm"
+    class="palettes-container"
+    data-cy="palettes-container"
+  >
+    <usersrole-nx-create-palette
+      *ngFor="let palette of palettes"
+      [attr.data-cy]="palette.type + '-palette'"
+      [formGroupName]="palette.name"
+      [paletteType]="palette.type"
+    >
+    </usersrole-nx-create-palette>
+  </form>
+</div>
