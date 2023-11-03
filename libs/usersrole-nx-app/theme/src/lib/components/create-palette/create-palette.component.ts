@@ -30,7 +30,6 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./create-palette.component.scss'],
 })
 export class CreatePaletteComponent implements OnInit {
-  // TODO: investigate why tinycolors is not working
   @Input() paletteType: PaletteColors = 'primary';
   @Input() formGroupName = '';
   darkTextColor: string;
