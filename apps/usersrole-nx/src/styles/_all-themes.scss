@@ -7,6 +7,8 @@
   as create-palette;
 @use '../../../../libs/usersrole-nx-app/preview/src/lib/components/alert/alert-theme.component'
   as alert;
+@use '../../../../libs/usersrole-nx-app/shared/src/lib/components/snackbar/snackbar-theme.component'
+  as snackbar;
 @use '../styles/components/button/variants' as button-variants;
 
 @mixin all-component-themes($theme) {
@@ -15,5 +17,6 @@
   @include palette.theme($theme);
   @include create-palette.theme($theme);
   @include alert.theme($theme);
+  @include snackbar.theme($theme);
   @include mat.all-component-themes($theme);
 }

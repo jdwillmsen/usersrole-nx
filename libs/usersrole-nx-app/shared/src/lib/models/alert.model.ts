@@ -1,4 +1,4 @@
-import { PaletteColors } from '@usersrole-nx/shared';
+import { PaletteColors } from '../models/palette-colors.model';
 
 export type AlertVariants = 'default' | 'filled' | 'outlined';
 

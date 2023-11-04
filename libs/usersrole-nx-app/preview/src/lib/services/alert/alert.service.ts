@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Alert, AlertOptions } from '../../models/alert.model';
+import { Alert, AlertOptions } from '@usersrole-nx/shared';
 import { filter, Observable, Subject } from 'rxjs';
 import { PaletteColors } from '@usersrole-nx/shared';
 

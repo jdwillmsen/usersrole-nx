@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlertService } from '../../services/alert/alert.service';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AlertOptions, Icon, Variant } from '../../models/alert.model';
+import { AlertOptions, Icon, Variant } from '@usersrole-nx/shared';
 import { AlertComponent } from '../alert/alert.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';

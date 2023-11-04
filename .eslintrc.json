@@ -15,6 +15,42 @@
               {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": ["type:feature", "type:ui", "type:shared"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:ui"]
+              },
+              {
+                "sourceTag": "type:main",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:feature",
+                  "type:shared",
+                  "type:core"
+                ]
+              },
+              {
+                "sourceTag": "type:core",
+                "onlyDependOnLibsWithTags": ["type:core", "type:shared"]
+              },
+              {
+                "sourceTag": "type:shared",
+                "onlyDependOnLibsWithTags": ["type:shared"]
+              },
+              {
+                "sourceTag": "scope:usersrole-nx-app",
+                "onlyDependOnLibsWithTags": [
+                  "scope:usersrole-nx-app",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
               }
             ]
           }

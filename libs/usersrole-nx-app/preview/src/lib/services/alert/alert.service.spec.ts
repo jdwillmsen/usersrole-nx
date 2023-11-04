@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { AlertService } from './alert.service';
 import { PaletteColors } from '@usersrole-nx/shared';
-import { Alert, AlertOptions } from '../../models/alert.model';
+import { Alert, AlertOptions } from '@usersrole-nx/shared';
 
 describe('AlertService', () => {
   let service: AlertService;

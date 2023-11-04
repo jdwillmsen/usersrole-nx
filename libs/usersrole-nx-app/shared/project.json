@@ -29,6 +29,15 @@
           "libs/usersrole-nx-app/shared/**/*.html"
         ]
       }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/usersrole-nx-app/shared/cypress.config.ts",
+        "testingType": "component",
+        "skipServe": true,
+        "devServerTarget": "usersrole-nx:build"
+      }
     }
   }
 }

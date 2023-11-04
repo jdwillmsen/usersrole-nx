@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Alert, AlertVariants } from '../../models/alert.model';
+import { Alert, AlertVariants } from '@usersrole-nx/shared';
 import { Subscription } from 'rxjs';
 import { NavigationStart, Router } from '@angular/router';
 import { AlertService } from '../../services/alert/alert.service';
