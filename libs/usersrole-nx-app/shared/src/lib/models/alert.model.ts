@@ -1,4 +1,4 @@
-import { PaletteColors } from '../models/palette-colors.model';
+import { PaletteColors } from './palette-colors.model';
 
 export type AlertVariants = 'default' | 'filled' | 'outlined';
 

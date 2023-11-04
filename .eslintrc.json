@@ -18,7 +18,11 @@
               },
               {
                 "sourceTag": "type:feature",
-                "onlyDependOnLibsWithTags": ["type:feature", "type:ui", "type:shared"]
+                "onlyDependOnLibsWithTags": [
+                  "type:feature",
+                  "type:ui",
+                  "type:shared"
+                ]
               },
               {
                 "sourceTag": "type:ui",
