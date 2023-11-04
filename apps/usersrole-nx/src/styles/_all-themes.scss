@@ -5,6 +5,8 @@
   as palette;
 @use '../../../../libs/usersrole-nx-app/theme/src/lib/components/create-palette/create-palette-theme.component'
   as create-palette;
+@use '../../../../libs/usersrole-nx-app/preview/src/lib/components/alert/alert-theme.component'
+  as alert;
 @use '../styles/components/button/variants' as button-variants;
 
 @mixin all-component-themes($theme) {
@@ -12,5 +14,6 @@
   @include navigation-item.theme($theme);
   @include palette.theme($theme);
   @include create-palette.theme($theme);
+  @include alert.theme($theme);
   @include mat.all-component-themes($theme);
 }
