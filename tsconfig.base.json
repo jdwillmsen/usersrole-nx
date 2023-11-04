@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@usersrole-nx/core": ["libs/usersrole-nx-app/core/src/index.ts"],
       "@usersrole-nx/main": ["libs/usersrole-nx-app/main/src/index.ts"],
       "@usersrole-nx/preview": ["libs/usersrole-nx-app/preview/src/index.ts"],
       "@usersrole-nx/shared": ["libs/usersrole-nx-app/shared/src/index.ts"],
