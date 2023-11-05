@@ -21,6 +21,7 @@
                 "onlyDependOnLibsWithTags": [
                   "type:feature",
                   "type:ui",
+                  "type:core",
                   "type:shared"
                 ]
               },
@@ -31,6 +32,7 @@
               {
                 "sourceTag": "type:main",
                 "onlyDependOnLibsWithTags": [
+                  "type:main",
                   "type:ui",
                   "type:feature",
                   "type:shared",
