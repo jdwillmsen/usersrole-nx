@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
-import { AuthenticationComponent } from './authentication/authentication.component';
+import { ForbiddenComponent } from './components/forbidden/forbidden.component';
 
 export const authenticationRoutes: Route[] = [
-  { path: '', component: AuthenticationComponent },
+  { path: 'forbidden', component: ForbiddenComponent },
 ];

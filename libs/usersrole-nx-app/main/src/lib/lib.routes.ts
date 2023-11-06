@@ -17,6 +17,13 @@ export const mainRoutes: Route[] = [
     component: NavigationItemComponent,
   },
   {
+    path: '',
+    loadChildren: () =>
+      import('@usersrole-nx/authentication').then(
+        (m) => m.authenticationRoutes
+      ),
+  },
+  {
     path: 'admin',
     component: NavigationItemComponent,
   },
