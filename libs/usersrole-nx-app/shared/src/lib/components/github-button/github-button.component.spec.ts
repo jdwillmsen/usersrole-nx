@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GithubButtonComponent } from './github-button.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('GithubButtonComponent', () => {
   let component: GithubButtonComponent;
@@ -7,7 +8,7 @@ describe('GithubButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GithubButtonComponent],
+      imports: [GithubButtonComponent, HttpClientModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(GithubButtonComponent);

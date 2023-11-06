@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { MainComponent } from './main.component';
 import { ActivatedRoute } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 describe(MainComponent.name, () => {
   beforeEach(() => {
@@ -9,7 +10,7 @@ describe(MainComponent.name, () => {
       imports: [BrowserAnimationsModule],
     }).overrideComponent(MainComponent, {
       add: {
-        imports: [],
+        imports: [HttpClientModule],
         providers: [
           {
             provide: ActivatedRoute,

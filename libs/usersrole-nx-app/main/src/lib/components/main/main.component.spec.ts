@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MainComponent } from './main.component';
 import { ActivatedRoute } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -9,7 +10,7 @@ describe('MainComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainComponent, NoopAnimationsModule],
+      imports: [MainComponent, NoopAnimationsModule, HttpClientModule],
       providers: [
         {
           provide: ActivatedRoute,
