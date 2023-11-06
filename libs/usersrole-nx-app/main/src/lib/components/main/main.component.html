@@ -6,22 +6,23 @@
   [color]="headerColor"
   [isXSmallScreen]="isXSmallScreen"
 >
-  <button color="primary" mat-mini-fab>
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button color="primary" mat-mini-fab>
-    <mat-icon>palette</mat-icon>
-  </button>
-  <button color="primary" mat-mini-fab>
-    <mat-icon>person</mat-icon>
-  </button>
+  <span class="header-actions">
+    <usersrole-nx-github-button [githubLink]="githubLink">
+    </usersrole-nx-github-button>
+    <button color="primary" mat-mini-fab>
+      <mat-icon>palette</mat-icon>
+    </button>
+    <button color="primary" mat-mini-fab>
+      <mat-icon>person</mat-icon>
+    </button>
+  </span>
 </usersrole-nx-header>
 <usersrole-nx-navigation-layout
+  (sideNavChange)="sideNavChange($event)"
   [isSideNavEnabled]="isSideNavEnabled"
-  [sideNavMode]="sideNavMode"
   [isSideNavOpened]="isSideNavOpened"
   [navigationItems]="navigationItems"
-  (sideNavChange)="sideNavChange($event)"
+  [sideNavMode]="sideNavMode"
 >
   <router-outlet></router-outlet>
 </usersrole-nx-navigation-layout>

@@ -11,6 +11,7 @@ import { MatDrawerMode } from '@angular/material/sidenav';
 import { NavigationItem } from '@usersrole-nx/shared-ui';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { GithubButtonComponent } from '@usersrole-nx/shared';
 
 @Component({
   selector: 'usersrole-nx-main',
@@ -22,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
     RouterOutlet,
     MatIconModule,
     MatButtonModule,
+    GithubButtonComponent,
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
@@ -35,6 +37,7 @@ export class MainComponent {
   isSideNavOpened = false;
   isSideNavEnabled = true;
   sideNavMode: MatDrawerMode = 'side';
+  githubLink = 'https://github.com/jdwillmsen/usersrole-nx';
   // TODO: Extract this out to a service or routes possibly
   // TODO: Investigate how roles can fit in here
   navigationItems: NavigationItem[] = [
