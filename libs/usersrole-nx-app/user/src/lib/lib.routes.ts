@@ -3,5 +3,5 @@ import { UserComponent } from './user/user.component';
 
 export const userRoutes: Route[] = [
   { path: '', component: UserComponent },
-  { path: '/profile', component: UserComponent },
+  { path: 'profile', component: UserComponent },
 ];

@@ -21,28 +21,28 @@ export class HomeComponent {
     },
     {
       title: 'Profile',
-      link: '/profile',
+      link: '/user/profile',
       description:
         'This is a profile page for viewing information about the logged in user.',
       access: ['User'],
     },
     {
       title: 'Alerts',
-      link: '/testing/alerts',
+      link: '/preview/alerts',
       description:
         'This is a page for viewing the alert service/alerts provided in this application.',
       access: ['Everyone'],
     },
     {
       title: 'Snackbars',
-      link: '/testing/snackbars',
+      link: '/preview/snackbars',
       description:
         'This is a page for viewing the snackbar service/snackbars provided in this application.',
       access: ['Everyone'],
     },
     {
       title: 'Buttons',
-      link: '/testing/buttons',
+      link: '/preview/buttons',
       description:
         'This is a page for viewing the additional palettes applied on buttons provided in this application.',
       access: ['Everyone'],
