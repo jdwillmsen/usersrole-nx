@@ -1,1 +1,14 @@
-{}
+{
+  "targets": {
+    "users-role-nx": {
+      "hosting": {
+        "usersrole-nx": [
+          "users-role-nx"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "users-role-nx"
+  }
+}

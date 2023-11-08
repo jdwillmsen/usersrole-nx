@@ -47,7 +47,7 @@ export class MainComponent {
       title: 'Home',
     },
     {
-      path: '/profile',
+      path: '/user/profile',
       icon: 'person',
       title: 'Profile',
     },

@@ -1,4 +1,7 @@
 import { Route } from '@angular/router';
 import { UserComponent } from './user/user.component';
 
-export const userRoutes: Route[] = [{ path: '', component: UserComponent }];
+export const userRoutes: Route[] = [
+  { path: '', component: UserComponent },
+  { path: '/profile', component: UserComponent },
+];

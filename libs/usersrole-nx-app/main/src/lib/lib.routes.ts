@@ -1,5 +1,4 @@
 import { Route } from '@angular/router';
-import { NavigationItemComponent } from '@usersrole-nx/shared-ui';
 import { HomeComponent } from './components/home/home.component';
 
 export const mainRoutes: Route[] = [
@@ -13,8 +12,8 @@ export const mainRoutes: Route[] = [
     component: HomeComponent,
   },
   {
-    path: 'profile',
-    component: NavigationItemComponent,
+    path: 'user',
+    loadChildren: () => import('@usersrole-nx/user').then((m) => m.userRoutes),
   },
   {
     path: '',
@@ -25,7 +24,8 @@ export const mainRoutes: Route[] = [
   },
   {
     path: 'admin',
-    component: NavigationItemComponent,
+    loadChildren: () =>
+      import('@usersrole-nx/admin').then((m) => m.adminRoutes),
   },
   {
     path: 'preview',
