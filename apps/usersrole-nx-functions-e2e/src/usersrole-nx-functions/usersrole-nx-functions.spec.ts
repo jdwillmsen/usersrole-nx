@@ -6,6 +6,7 @@ describe('usersrole-nx-functions', () => {
       const res = await axios.get(`/`);
 
       expect(res.status).toBe(200);
+      expect(res.data).toBe('Server is up and running!');
     });
   });
 

@@ -1,9 +1,10 @@
 {
   "functions": [
     {
-      "source": "functions",
+      "source": ".",
       "codebase": "default",
       "ignore": [
+        "firebase.json",
         "node_modules",
         ".git",
         "firebase-debug.log",
