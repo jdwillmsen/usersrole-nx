@@ -7,32 +7,20 @@
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
       "options": {
-        "platform": "node",
         "outputPath": "dist/apps/usersrole-nx-functions",
-        "format": ["cjs"],
-        "bundle": false,
         "main": "apps/usersrole-nx-functions/src/main.ts",
         "tsConfig": "apps/usersrole-nx-functions/tsconfig.app.json",
         "assets": ["apps/usersrole-nx-functions/src/assets"],
         "generatePackageJson": true,
+        "platform": "node",
+        "bundle": true,
+        "thirdParty": false,
+        "dependenciesFieldType": "dependencies",
+        "target": "node16",
+        "format": ["esm"],
         "esbuildOptions": {
-          "sourcemap": true,
-          "outExtension": {
-            ".js": ".js"
-          }
-        }
-      },
-      "configurations": {
-        "development": {},
-        "production": {
-          "esbuildOptions": {
-            "sourcemap": false,
-            "outExtension": {
-              ".js": ".js"
-            }
-          }
+          "logLevel": "info"
         }
       }
     },
@@ -71,7 +59,11 @@
           "codeCoverage": true
         }
       }
+    },
+    "deploy": {
+      "command": "firebase deploy --only functions:usersrole-nx-functions",
+      "dependsOn": ["build"]
     }
   },
-  "tags": []
+  "tags": ["firebase:function"]
 }

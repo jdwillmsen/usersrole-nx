@@ -155,5 +155,6 @@
         "browserTarget": "usersrole-nx:build:production"
       }
     }
-  }
+  },
+  "implicitDependencies": ["usersrole-nx-functions"]
 }

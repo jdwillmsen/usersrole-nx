@@ -1,19 +1,10 @@
 {
   "functions": [
     {
-      "source": ".",
-      "codebase": "default",
-      "ignore": [
-        "firebase.json",
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log"
-      ],
-      "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint",
-        "npm --prefix \"$RESOURCE_DIR\" run build"
-      ]
+      "codebase": "usersrole-nx-functions",
+      "source": "dist/apps/usersrole-nx-functions",
+      "runtime": "nodejs16",
+      "ignore": ["*.local"]
     }
   ],
   "hosting": [

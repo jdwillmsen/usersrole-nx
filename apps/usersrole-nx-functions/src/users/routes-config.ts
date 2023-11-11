@@ -10,17 +10,17 @@ import {
 } from './controller';
 import { isAuthenticated } from '../auth/authenticated';
 import { isAuthorized } from '../auth/authorized';
-import * as expressRateLimit from 'express-rate-limit';
+import rateLimit from 'express-rate-limit';
 
 export function routesConfig(app: Application) {
-  const limiter = expressRateLimit.rateLimit({
+  const limiter = rateLimit({
     windowMs: 10 * 1000, // 10 seconds
-    max: 100,
+    limit: 100,
     message: 'You cannot make any more request at the moment. Try again later',
   });
-  const createLimiter = expressRateLimit.rateLimit({
+  const createLimiter = rateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour
-    max: 15,
+    limit: 15,
     message:
       'You have exceeded the account creation limit requests at this time. Try again later',
   });

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as admin from 'firebase-admin';
+import admin from 'firebase-admin';
 
 export async function create(req: Request, res: Response) {
   try {
