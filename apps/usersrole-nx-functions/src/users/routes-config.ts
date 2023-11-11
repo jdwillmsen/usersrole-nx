@@ -24,6 +24,12 @@ export function routesConfig(app: Application) {
     message:
       'You have exceeded the account creation limit requests at this time. Try again later',
   });
+
+  // health check
+  app.get('/', limiter, (req, res) => {
+    res.status(200).send('Server is up and running!');
+  });
+
   // creates standard user
   app.post('/users', createLimiter, create);
   // lists all users

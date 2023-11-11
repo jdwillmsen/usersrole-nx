@@ -24,9 +24,6 @@ export const beforecreated = beforeUserCreated(() => {
     },
   };
 });
-app.get('/', (req, res) => {
-  res.status(200).send('Server is up and running!');
-});
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
