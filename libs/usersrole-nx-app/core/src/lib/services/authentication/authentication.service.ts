@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, EMPTY, from, Observable, of, switchMap } from 'rxjs';
+import { BehaviorSubject, from, Observable, of, switchMap } from 'rxjs';
 import { Router } from '@angular/router';
 import { SnackbarService } from '../snackbar/snackbar.service';
 import {
@@ -23,8 +23,6 @@ import {
 } from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat';
-import User = firebase.User;
-import AuthCredential = firebase.auth.AuthCredential;
 
 @Injectable({
   providedIn: 'root',

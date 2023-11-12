@@ -1,4 +1,4 @@
-import { ErrorHandler, inject, Injectable, NgZone } from '@angular/core';
+import { ErrorHandler, Injectable, NgZone } from '@angular/core';
 import { SnackbarService } from '../snackbar/snackbar.service';
 import { DEFAULT_ERROR_MESSAGE } from '@usersrole-nx/shared';
 import { FirebaseError } from 'firebase-admin';
