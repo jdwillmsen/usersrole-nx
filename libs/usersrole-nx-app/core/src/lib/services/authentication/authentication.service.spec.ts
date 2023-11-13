@@ -102,6 +102,24 @@ describe('AuthenticationService', () => {
     });
   });
 
+  it('should call emailAuth and show error message with incorrect email + password combo', (done) => {
+    angularFireAuthMock.signInWithEmailAndPassword.mockRejectedValueOnce({
+      code: 'auth/invalid-login-credentials',
+    });
+
+    authService.emailAuth(defaultEmail, defaultPassword).subscribe(() => {
+      expect(
+        angularFireAuthMock.signInWithEmailAndPassword
+      ).toHaveBeenCalledWith(defaultEmail, defaultPassword);
+      expect(snackbarServiceMock.error).toHaveBeenCalledWith(
+        invalidSignInMessage,
+        { variant: 'filled' },
+        true
+      );
+      done();
+    });
+  });
+
   it('should call emailAuth and show error message with incorrect password', (done) => {
     angularFireAuthMock.signInWithEmailAndPassword.mockRejectedValueOnce({
       code: 'auth/wrong-password',

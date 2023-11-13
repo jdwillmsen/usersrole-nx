@@ -14,6 +14,7 @@ import {
   SupportedPopupSignInMethods,
   USER_NOT_FOUND,
   WRONG_PASSWORD,
+  WRONG_USERNAME,
 } from '@usersrole-nx/shared';
 import { handleError } from '../error-handler/error-handler.service';
 import {
@@ -53,7 +54,11 @@ export class AuthenticationService {
         })
         .catch((error) => {
           let errorMessage = DEFAULT_ERROR_MESSAGE;
-          if (error.code === USER_NOT_FOUND || error.code === WRONG_PASSWORD) {
+          if (
+            error.code === USER_NOT_FOUND ||
+            error.code === WRONG_PASSWORD ||
+            error.code === WRONG_USERNAME
+          ) {
             errorMessage = INVALID_SIGN_IN_MESSAGE;
           }
           this.snackbarService.error(errorMessage, { variant: 'filled' }, true);

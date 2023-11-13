@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { Request, Response } from 'express';
-
-export type Roles = 'admin' | 'manager' | 'user' | 'read';
+import { Role } from '@usersrole-nx/shared';
 
 export function isAuthorized(opts: {
-  hasRole: Array<Roles>;
+  hasRole: Array<Role>;
   allowSameUser?: boolean;
 }) {
   return (req: Request, res: Response, next: Function) => {

@@ -1,17 +1,14 @@
 import { PaletteColors } from './palette-colors.model';
 
 export type AlertVariants = 'default' | 'filled' | 'outlined';
-
 export type Variant = {
   display: string;
   value: AlertVariants;
 };
-
 export type Icon = {
   display: string;
   value: string;
 };
-
 export type Alert = {
   id?: string;
   type?: PaletteColors;
@@ -26,7 +23,6 @@ export type Alert = {
   closeButton?: boolean;
   maxSize?: number;
 };
-
 export type AlertOptions = {
   id?: string;
   autoClose?: boolean;

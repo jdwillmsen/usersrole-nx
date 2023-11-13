@@ -10,7 +10,6 @@ export type SnackbarData = {
   icon?: string;
   buttonText?: string;
 };
-
 export type SnackbarOptions = {
   variant?: AlertVariants;
   autoClose?: boolean;
