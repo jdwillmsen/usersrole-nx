@@ -9,7 +9,8 @@
   as alert;
 @use '../../../../libs/usersrole-nx-app/shared/src/lib/components/snackbar/snackbar-theme.component'
   as snackbar;
-@use '../../../../libs/usersrole-nx-app/admin/src/lib/components/users/users-theme.component' as users;
+@use '../../../../libs/usersrole-nx-app/admin/src/lib/components/users/users-theme.component'
+  as users;
 @use '../styles/components/button/variants' as button-variants;
 
 @mixin all-component-themes($theme) {
