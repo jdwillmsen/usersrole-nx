@@ -1,5 +1,6 @@
 import { Route } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { authenticationRoutes } from '@usersrole-nx/authentication';
 
 export const mainRoutes: Route[] = [
   {
@@ -17,10 +18,7 @@ export const mainRoutes: Route[] = [
   },
   {
     path: '',
-    loadChildren: () =>
-      import('@usersrole-nx/authentication').then(
-        (m) => m.authenticationRoutes
-      ),
+    children: authenticationRoutes,
   },
   {
     path: 'admin',

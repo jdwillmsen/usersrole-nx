@@ -11,6 +11,8 @@
   as snackbar;
 @use '../../../../libs/usersrole-nx-app/admin/src/lib/components/users/users-theme.component'
   as users;
+@use '../../../../libs/usersrole-nx-app/authentication/src/lib/components/sign-out-card/sign-out-card-theme.component'
+  as sign-out-card;
 @use '../styles/components/button/variants' as button-variants;
 
 @mixin all-component-themes($theme) {
@@ -21,5 +23,6 @@
   @include alert.theme($theme);
   @include snackbar.theme($theme);
   @include users.theme($theme);
+  @include sign-out-card.theme($theme);
   @include mat.all-component-themes($theme);
 }
