@@ -1,16 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SignOutCardComponent } from './sign-out-card.component';
+import { ThemeSelectorComponent } from './theme-selector.component';
+import { FirestoreService } from '@usersrole-nx/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-describe('SignOutCardComponent', () => {
-  let component: SignOutCardComponent;
-  let fixture: ComponentFixture<SignOutCardComponent>;
+describe('ThemeSelectorComponent', () => {
+  let component: ThemeSelectorComponent;
+  let fixture: ComponentFixture<ThemeSelectorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignOutCardComponent, MatSnackBarModule],
+      imports: [ThemeSelectorComponent, MatSnackBarModule],
       providers: [
+        {
+          provide: FirestoreService,
+          useValue: {},
+        },
         {
           provide: AngularFireAuth,
           useValue: {},
@@ -18,7 +23,7 @@ describe('SignOutCardComponent', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SignOutCardComponent);
+    fixture = TestBed.createComponent(ThemeSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

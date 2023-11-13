@@ -5,6 +5,7 @@ export * from './lib/models/authentication.model';
 export * from './lib/models/site-theme.model';
 export * from './lib/models/users.model';
 export * from './lib/models/roles.model';
+export * from './lib/models/theme.model';
 export * from './lib/components/snackbar/snackbar.component';
 export * from './lib/components/github-button/github-button.component';
 export * from './lib/constants/message.constant';

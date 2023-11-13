@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { GithubButtonComponent } from '@usersrole-nx/shared';
 import { SignOutCardComponent } from '@usersrole-nx/authentication';
+import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 
 @Component({
   selector: 'usersrole-nx-main',
@@ -26,6 +27,7 @@ import { SignOutCardComponent } from '@usersrole-nx/authentication';
     MatButtonModule,
     GithubButtonComponent,
     SignOutCardComponent,
+    ThemeSelectorComponent,
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],

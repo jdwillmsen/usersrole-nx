@@ -3,17 +3,30 @@ import { MainComponent } from './main.component';
 import { ActivatedRoute } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FirestoreService } from '@usersrole-nx/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 describe(MainComponent.name, () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule],
+      providers: [
+        {
+          provide: AngularFireAuth,
+          useValue: {},
+        },
+      ],
     }).overrideComponent(MainComponent, {
       add: {
-        imports: [HttpClientModule],
+        imports: [HttpClientModule, MatSnackBarModule],
         providers: [
           {
             provide: ActivatedRoute,
+            useValue: {},
+          },
+          {
+            provide: FirestoreService,
             useValue: {},
           },
         ],
