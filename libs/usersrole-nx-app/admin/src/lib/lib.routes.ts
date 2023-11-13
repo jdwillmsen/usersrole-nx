@@ -1,9 +1,8 @@
 import { Route } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
 import { RolesComponent } from './components/roles/roles.component';
+import { UsersComponent } from './components/users/users.component';
 
 export const adminRoutes: Route[] = [
-  { path: '', component: AdminComponent },
-  { path: 'users', component: AdminComponent },
+  { path: 'users', component: UsersComponent },
   { path: 'roles', component: RolesComponent },
 ];
