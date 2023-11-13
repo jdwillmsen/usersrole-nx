@@ -9,6 +9,13 @@ import { of } from 'rxjs';
 
 describe(ProfileComponent.name, () => {
   beforeEach(() => {
+    cy.intercept(
+      {
+        method: 'GET',
+        url: '/users/*',
+      },
+      ''
+    ).as('getUsers');
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule],
       providers: [
@@ -27,7 +34,9 @@ describe(ProfileComponent.name, () => {
         providers: [
           {
             provide: AngularFireAuth,
-            useValue: {},
+            useValue: {
+              user: of(() => true),
+            },
           },
         ],
       },
@@ -68,22 +77,9 @@ function testScreenSize(size: string, width: number, height: number) {
     });
 
     it('should be setup appropriately with values', () => {
-      cy.intercept(
-        {
-          method: 'GET',
-          url: '/users/*',
-        },
-        ''
-      ).as('getUsers');
       TestBed.overrideComponent(ProfileComponent, {
-        set: {
+        add: {
           providers: [
-            {
-              provide: AngularFireAuth,
-              useValue: {
-                user: of(() => true),
-              },
-            },
             {
               provide: UsersService,
               useValue: {

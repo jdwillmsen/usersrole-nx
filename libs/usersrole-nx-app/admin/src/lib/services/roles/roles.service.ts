@@ -13,7 +13,7 @@ import { UpdateUserRolesRequest } from '@usersrole-nx/shared';
   providedIn: 'root',
 })
 export class RolesService {
-  private baseUrl = `${this.environment.functionsBaseUrl}/api/users`;
+  private baseUrl = `${this.environment.functionsBaseUrl}/users`;
 
   constructor(
     @Inject(ENVIRONMENT) private environment: Environment,
