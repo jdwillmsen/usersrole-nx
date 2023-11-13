@@ -1,0 +1,37 @@
+<ng-container *ngIf="user$ | async"></ng-container>
+<div class="profile-container">
+  <h1 data-cy="title">Profile</h1>
+  <form [formGroup]="profileForm" class="profile-form">
+    <mat-form-field appearance="outline" data-cy="email-address-field">
+      <mat-label>Email Address</mat-label>
+      <input
+        formControlName="email"
+        matInput
+        placeholder="Email Address"
+        readonly
+        type="email"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" data-cy="display-name-field">
+      <mat-label>Display Name</mat-label>
+      <input
+        formControlName="displayName"
+        matInput
+        placeholder="Display Name"
+        readonly
+        type="text"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" data-cy="roles-field">
+      <mat-label>Roles</mat-label>
+      <input
+        [(ngModel)]="displayRoles"
+        [ngModelOptions]="{ standalone: true }"
+        matInput
+        placeholder="Roles"
+        readonly
+        type="text"
+      />
+    </mat-form-field>
+  </form>
+</div>

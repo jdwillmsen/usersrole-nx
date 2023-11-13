@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { UsersComponent } from './users.component';
-import { ENVIRONMENT } from '../../../../../core/src';
+import { ENVIRONMENT } from '@usersrole-nx/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -41,7 +41,7 @@ describe(UsersComponent.name, () => {
     cy.mount(UsersComponent);
   });
 
-  describe.only('Screen Sizes', () => {
+  describe('Screen Sizes', () => {
     testScreenSize('XSmall', 500, 500);
     testScreenSize('Small', 800, 800);
     testScreenSize('Medium', 1200, 900);

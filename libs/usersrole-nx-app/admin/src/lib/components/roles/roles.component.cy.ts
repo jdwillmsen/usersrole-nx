@@ -106,7 +106,7 @@ function testScreenSize(size: string, width: number, height: number) {
       cy.intercept(
         {
           method: 'PATCH',
-          url: '/api/users/roles/**',
+          url: '/users/roles/**',
         },
         ''
       ).as('assignRoles');
