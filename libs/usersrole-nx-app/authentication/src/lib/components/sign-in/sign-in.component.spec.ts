@@ -1,5 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SignInComponent } from './sign-in.component';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('SignInComponent', () => {
   let component: SignInComponent;
@@ -7,7 +12,22 @@ describe('SignInComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignInComponent],
+      imports: [
+        SignInComponent,
+        MatSnackBarModule,
+        HttpClientModule,
+        NoopAnimationsModule,
+      ],
+      providers: [
+        {
+          provide: AngularFireAuth,
+          useValue: {},
+        },
+        {
+          provide: ActivatedRoute,
+          useValue: {},
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SignInComponent);

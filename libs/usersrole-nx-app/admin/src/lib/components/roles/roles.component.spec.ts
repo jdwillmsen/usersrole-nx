@@ -1,22 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SignUpComponent } from './sign-up.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
-import { ENVIRONMENT } from '@usersrole-nx/core';
+import { RolesComponent } from './roles.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ENVIRONMENT } from '@usersrole-nx/core';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-describe('SignUpComponent', () => {
-  let component: SignUpComponent;
-  let fixture: ComponentFixture<SignUpComponent>;
+describe('RolesComponent', () => {
+  let component: RolesComponent;
+  let fixture: ComponentFixture<RolesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        SignUpComponent,
-        MatSnackBarModule,
-        HttpClientModule,
+        RolesComponent,
         NoopAnimationsModule,
+        HttpClientModule,
+        MatSnackBarModule,
       ],
       providers: [
         {
@@ -27,14 +26,10 @@ describe('SignUpComponent', () => {
             functionsBaseUrl: '',
           },
         },
-        {
-          provide: ActivatedRoute,
-          useValue: {},
-        },
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SignUpComponent);
+    fixture = TestBed.createComponent(RolesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
