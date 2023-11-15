@@ -37,14 +37,14 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
 .angular
-
 .nx/cache
+
 # Firebase
 .firebase
 *-debug.log
 .runtimeconfig.json
+
 # Nx-Firebase
 **/.emulators/*
 **/.firebase/*
@@ -55,3 +55,6 @@ pubsub-debug.log
 ui-debug.log
 firebase-export*
 .secret.local
+
+# Cypress
+/apps/usersrole-nx-e2e/src/fixtures/accounts.json
