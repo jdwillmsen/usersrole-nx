@@ -3,10 +3,11 @@ import { AppComponent } from './app.component';
 import { mount } from 'cypress/angular';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FirestoreService } from '@usersrole-nx/core';
+import { ENVIRONMENT, FirestoreService } from '@usersrole-nx/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { of } from 'rxjs';
 
 describe(AppComponent.name, () => {
   beforeEach(() => {
@@ -15,7 +16,17 @@ describe(AppComponent.name, () => {
       providers: [
         {
           provide: AngularFireAuth,
-          useValue: {},
+          useValue: {
+            user: of(),
+          },
+        },
+        {
+          provide: ENVIRONMENT,
+          useValue: {
+            production: false,
+            firebase: {},
+            functionsBaseUrl: '',
+          },
         },
       ],
     }).overrideComponent(AppComponent, {

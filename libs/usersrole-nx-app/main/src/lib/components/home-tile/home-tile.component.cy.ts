@@ -30,7 +30,7 @@ describe(HomeTileComponent.name, () => {
         link: '/home',
       },
     });
-    cy.getByCy('home-tile')
+    cy.getByCy('home-home-tile')
       .should('be.visible')
       .and('contain.text', 'Home')
       .and('contain.text', 'This is the home page')
@@ -40,6 +40,6 @@ describe(HomeTileComponent.name, () => {
 
   it('should be setup properly with default properties', () => {
     cy.mount(HomeTileComponent);
-    cy.getByCy('home-tile').should('be.visible').and('contain.text', 'Access:');
+    cy.getByCy('tile').should('be.visible').and('contain.text', 'Access:');
   });
 });

@@ -1,14 +1,4 @@
-import {
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  TwitterAuthProvider,
-} from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
-export type SupportedPopupSignInMethods =
-  | 'google.com'
-  | 'github.com'
-  | 'twitter.com';
-export type SupportedAuthProviders =
-  | GoogleAuthProvider
-  | GithubAuthProvider
-  | TwitterAuthProvider;
+export type SupportedPopupSignInMethods = 'google.com' | 'github.com';
+export type SupportedAuthProviders = GoogleAuthProvider | GithubAuthProvider;

@@ -1,0 +1,6 @@
+{
+  "email": "cicd-theme-account@usersrole.com",
+  "displayName": "CICD Theme User",
+  "password": "testPassword",
+  "roles": ["user"]
+}

@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { SignOutComponent } from '../sign-out/sign-out.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'usersrole-nx-sign-out-card',
@@ -17,6 +18,7 @@ import { SignOutComponent } from '../sign-out/sign-out.component';
     MatIconModule,
     MatListModule,
     SignOutComponent,
+    MatTooltipModule,
   ],
   templateUrl: './sign-out-card.component.html',
   styleUrls: ['./sign-out-card.component.scss'],

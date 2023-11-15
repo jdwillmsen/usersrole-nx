@@ -1,13 +1,14 @@
 <button
   [matMenuTriggerFor]="beforeMenu"
-  [ngClass]="{ 'avatar-button': !checkForPhoto(user?.photoURL) }"
   color="primary"
-  data-cy="profile-card-button"
+  data-cy="sign-out-card-button"
+  matTooltip="Sign Out"
   mat-mini-fab
 >
   <mat-icon *ngIf="checkForPhoto(user?.photoURL)" data-cy="user-button-icon">
     person
   </mat-icon>
+  <mat-icon *ngIf="!checkForPhoto(user?.photoURL)" class="extra" />
   <img
     *ngIf="!checkForPhoto(user?.photoURL)"
     [alt]="user?.displayName"
@@ -17,7 +18,7 @@
     referrerPolicy="no-referrer"
   />
 </button>
-<mat-menu #beforeMenu="matMenu" data-cy="profile-card" xPosition="before">
+<mat-menu #beforeMenu="matMenu" data-cy="sign-out-card" xPosition="before">
   <div class="profile-card">
     <mat-icon
       *ngIf="checkForPhoto(user?.photoURL)"
@@ -37,6 +38,6 @@
     <h4 data-cy="display-name">{{ user?.displayName }}</h4>
     <p data-cy="email">{{ user?.email }}</p>
     <mat-divider />
-    <usersrole-nx-sign-out data-cy="sign-out"></usersrole-nx-sign-out>
+    <usersrole-nx-sign-out data-cy="sign-out" />
   </div>
 </mat-menu>

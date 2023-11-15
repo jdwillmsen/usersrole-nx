@@ -10,3 +10,4 @@ export * from './lib/components/snackbar/snackbar.component';
 export * from './lib/components/github-button/github-button.component';
 export * from './lib/constants/message.constant';
 export * from './lib/constants/google.constant';
+export * from './lib/constants/http.constant';

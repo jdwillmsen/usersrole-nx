@@ -14,7 +14,7 @@
           [attr.data-cy]="item.title.toLowerCase() + '-navigation-item'"
           [navigationItem]="item"
           [isExpanded]="sideNavMode === 'side' ? isExpanded : true"
-        ></usersrole-nx-navigation-item>
+        />
       </mat-nav-list>
       <button
         (click)="toggleSideNav()"

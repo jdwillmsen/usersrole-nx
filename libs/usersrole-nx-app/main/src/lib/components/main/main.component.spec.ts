@@ -3,9 +3,10 @@ import { MainComponent } from './main.component';
 import { ActivatedRoute } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { FirestoreService } from '@usersrole-nx/core';
+import { ENVIRONMENT, FirestoreService } from '@usersrole-nx/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { of } from 'rxjs';
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -30,7 +31,15 @@ describe('MainComponent', () => {
         },
         {
           provide: AngularFireAuth,
-          useValue: {},
+          useValue: { user: of() },
+        },
+        {
+          provide: ENVIRONMENT,
+          useValue: {
+            production: false,
+            firebase: {},
+            functionsBaseUrl: '',
+          },
         },
       ],
     }).compileComponents();

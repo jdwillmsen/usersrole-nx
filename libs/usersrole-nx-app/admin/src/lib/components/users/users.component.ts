@@ -12,6 +12,7 @@ import { UserFormService } from '../../services/user-form/user-form.service';
 import { UserFormComponent } from '../user-form/user-form.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'usersrole-nx-users',
@@ -22,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
     AgGridModule,
     MatButtonModule,
     MatDialogModule,
+    MatTooltipModule,
   ],
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],

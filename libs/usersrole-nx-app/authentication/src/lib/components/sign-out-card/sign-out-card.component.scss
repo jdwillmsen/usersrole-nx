@@ -1,5 +1,5 @@
-.avatar-button {
-  margin-top: 5px;
+.extra {
+  width: 0;
 }
 
 .avatar {
@@ -17,15 +17,15 @@
   border-radius: 50%;
 }
 
-.big-avatar {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-}
-
 .profile-card {
   text-align: center;
   min-width: 240px;
+
+  .big-avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+  }
 
   h4 {
     margin: 0;

@@ -1,6 +1,8 @@
 import { Route } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { authenticationRoutes } from '@usersrole-nx/authentication';
+import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
+import { redirectUnauthorizedToLogin } from '@usersrole-nx/core';
 
 export const mainRoutes: Route[] = [
   {
@@ -11,6 +13,10 @@ export const mainRoutes: Route[] = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: {
+      authGuardPipe: redirectUnauthorizedToLogin,
+    },
   },
   {
     path: 'user',

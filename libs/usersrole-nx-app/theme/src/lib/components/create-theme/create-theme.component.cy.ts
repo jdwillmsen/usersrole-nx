@@ -1,12 +1,40 @@
 import { TestBed } from '@angular/core/testing';
 import { CreateThemeComponent } from './create-theme.component';
+import { FirestoreService } from '@usersrole-nx/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe(CreateThemeComponent.name, () => {
   beforeEach(() => {
-    TestBed.overrideComponent(CreateThemeComponent, {
+    TestBed.configureTestingModule({
+      imports: [BrowserAnimationsModule],
+      providers: [
+        {
+          provide: AngularFireAuth,
+          useValue: {},
+        },
+      ],
+    }).overrideComponent(CreateThemeComponent, {
       add: {
-        imports: [],
-        providers: [],
+        imports: [MatSnackBarModule],
+        providers: [
+          {
+            provide: FirestoreService,
+            useValue: {
+              setCustomLightTheme: () => {
+                return new Promise((resolve) => {
+                  resolve(true);
+                });
+              },
+              setCustomDarkTheme: () => {
+                return new Promise((resolve) => {
+                  resolve(true);
+                });
+              },
+            },
+          },
+        ],
       },
     });
   });
@@ -44,14 +72,13 @@ describe(CreateThemeComponent.name, () => {
       changeColor('main', '#2196f3');
     });
     cy.getByCy('save-light-theme-button').click();
-    // TODO: update test when button functionality is implemented
-    // cy.getByCy('snackbar-container')
-    //   .should('be.visible')
-    //   .and('contain.text', 'Saved light theme successfully');
+    cy.getByCy('snackbar-container')
+      .should('be.visible')
+      .and('contain.text', 'Saved light theme successfully');
     cy.getByCy('save-dark-theme-button').click();
-    // cy.getByCy('snackbar-container')
-    //   .should('be.visible')
-    //   .and('contain.text', 'Saved dark theme successfully');
+    cy.getByCy('snackbar-container')
+      .should('be.visible')
+      .and('contain.text', 'Saved dark theme successfully');
   });
 });
 

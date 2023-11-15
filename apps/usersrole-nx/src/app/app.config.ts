@@ -1,4 +1,8 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import {
+  ApplicationConfig,
+  ErrorHandler,
+  importProvidersFrom,
+} from '@angular/core';
 import {
   provideRouter,
   withEnabledBlockingInitialNavigation,
@@ -6,31 +10,44 @@ import {
 import { appRoutes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { provideHttpClient } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire/compat';
-import { ENVIRONMENT } from '@usersrole-nx/core';
+import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
+import {
+  AuthTokenHttpInterceptorProvider,
+  ENVIRONMENT,
+  ErrorHandlerService,
+  GlobalHttpErrorHandlerInterceptorProvider,
+} from '@usersrole-nx/core';
 import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    AuthTokenHttpInterceptorProvider,
+    GlobalHttpErrorHandlerInterceptorProvider,
     provideHttpClient(),
     provideAnimations(),
     importProvidersFrom(
+      HttpClientModule,
       MatSnackBarModule,
-      AngularFireModule.initializeApp(environment.firebase),
-      provideFirebaseApp(() => initializeApp(environment.firebase)),
       provideAuth(() => getAuth()),
       provideFunctions(() => getFunctions()),
-      provideFirestore(() => getFirestore())
+      provideFirestore(() => getFirestore()),
+      AngularFireModule.initializeApp(environment.firebase),
+      provideFirebaseApp(() => initializeApp(environment.firebase))
     ),
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
     {
       provide: ENVIRONMENT,
       useValue: environment,
     },
+    {
+      provide: ErrorHandler,
+      useClass: ErrorHandlerService,
+    },
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
   ],
 };

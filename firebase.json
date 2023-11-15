@@ -3,8 +3,8 @@
     {
       "codebase": "usersrole-nx-functions",
       "source": "dist/apps/usersrole-nx-functions",
-      "runtime": "nodejs16",
-      "ignore": ["*.local"]
+      "runtime": "nodejs20",
+      "ignore": ["*.local", "**/node_modules/**"]
     }
   ],
   "hosting": [

@@ -11,11 +11,18 @@ import {
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'usersrole-nx-theme-selector',
   standalone: true,
-  imports: [CommonModule, MatMenuModule, MatIconModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTooltipModule,
+  ],
   templateUrl: './theme-selector.component.html',
   styleUrls: ['./theme-selector.component.scss'],
 })

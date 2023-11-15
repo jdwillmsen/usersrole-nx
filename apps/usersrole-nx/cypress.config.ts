@@ -3,5 +3,5 @@ import { defineConfig } from 'cypress';
 
 export default defineConfig({
   component: nxComponentTestingPreset(__filename),
-  port: 4300,
+  port: 3002,
 });

@@ -6,6 +6,8 @@
   $is-dark-theme: map.get($color-config, 'is-dark');
   $dark-text: #666666;
   $light-text: #999999;
+  $dark-color: #000000ff;
+  $light-color: #ffffff;
 
   .profile-card {
     p {
@@ -13,6 +15,14 @@
         color: $light-text;
       } @else {
         color: $dark-text;
+      }
+    }
+    mat-icon,
+    h4 {
+      @if $is-dark-theme {
+        color: $light-color;
+      } @else {
+        color: $dark-color;
       }
     }
   }

@@ -1,10 +1,6 @@
 import { AuthenticationService } from './authentication.service';
 import { of } from 'rxjs';
-import {
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  TwitterAuthProvider,
-} from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import * as errorHandlerModule from '../error-handler/error-handler.service';
 
 describe('AuthenticationService', () => {
@@ -200,37 +196,6 @@ describe('AuthenticationService', () => {
     });
   });
 
-  it('should call twitterAuth and navigate to home on success', (done) => {
-    angularFireAuthMock.signInWithPopup.mockResolvedValueOnce({});
-
-    authService.twitterAuth().subscribe(() => {
-      expect(angularFireAuthMock.signInWithPopup).toHaveBeenCalledWith(
-        expect.any(TwitterAuthProvider)
-      );
-      expect(routerMock.navigate).toHaveBeenCalledWith(['home']);
-      expect(snackbarServiceMock.success).toHaveBeenCalled();
-      done();
-    });
-  });
-
-  it('should call twitterAuth and show error snackbar on failure', (done) => {
-    angularFireAuthMock.signInWithPopup.mockRejectedValueOnce({
-      message: defaultErrorMessage,
-    });
-
-    authService.twitterAuth().subscribe(() => {
-      expect(angularFireAuthMock.signInWithPopup).toHaveBeenCalledWith(
-        expect.any(TwitterAuthProvider)
-      );
-      expect(snackbarServiceMock.error).toHaveBeenCalledWith(
-        defaultErrorMessage,
-        { variant: 'filled' },
-        true
-      );
-      done();
-    });
-  });
-
   it('should call authLogin and navigate to home on success', (done) => {
     angularFireAuthMock.signInWithPopup.mockResolvedValueOnce({});
 
@@ -303,12 +268,6 @@ describe('AuthenticationService', () => {
     const providerId = GithubAuthProvider.PROVIDER_ID;
     const result = authService.getProvider(providerId);
     expect(result).toBeInstanceOf(GithubAuthProvider);
-  });
-
-  it('should return a TwitterAuthProvider instance when passed TwitterAuthProvider.PROVIDER_ID', () => {
-    const providerId = TwitterAuthProvider.PROVIDER_ID;
-    const result = authService.getProvider(providerId);
-    expect(result).toBeInstanceOf(TwitterAuthProvider);
   });
 
   it('should throw an error when passed an unknown providerId', () => {
@@ -387,7 +346,7 @@ describe('AuthenticationService', () => {
     jest.spyOn(errorHandlerModule, 'handleError');
     angularFireAuthMock.fetchSignInMethodsForEmail.mockResolvedValue([
       GoogleAuthProvider.PROVIDER_ID,
-      TwitterAuthProvider.PROVIDER_ID,
+      GithubAuthProvider.PROVIDER_ID,
     ]);
     angularFireAuthMock.signInWithPopup.mockRejectedValue(() => {
       throw new Error('Sign in with popup failed');

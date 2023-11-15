@@ -3,9 +3,14 @@ import { MainComponent } from './main.component';
 import { ActivatedRoute } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { FirestoreService } from '@usersrole-nx/core';
+import {
+  AuthenticationService,
+  ENVIRONMENT,
+  FirestoreService,
+} from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { of } from 'rxjs';
 
 describe(MainComponent.name, () => {
   beforeEach(() => {
@@ -14,7 +19,23 @@ describe(MainComponent.name, () => {
       providers: [
         {
           provide: AngularFireAuth,
-          useValue: {},
+          useValue: {
+            user: of(),
+          },
+        },
+        {
+          provide: ENVIRONMENT,
+          useValue: {
+            production: false,
+            firebase: {},
+            functionsBaseUrl: '',
+          },
+        },
+        {
+          provide: AuthenticationService,
+          useValue: {
+            user$: of(() => true),
+          },
         },
       ],
     }).overrideComponent(MainComponent, {
@@ -27,7 +48,9 @@ describe(MainComponent.name, () => {
           },
           {
             provide: FirestoreService,
-            useValue: {},
+            useValue: {
+              getUsersDoc: () => new Promise((resolve) => resolve),
+            },
           },
         ],
       },

@@ -3,4 +3,3 @@ export type NavigationItem = {
   icon: string;
   title: string;
 };
-// TODO: Investigate roles place within here

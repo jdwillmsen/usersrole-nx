@@ -2,7 +2,7 @@
   [title]="title"
   [description]="description"
   [link]="link"
-  data-cy="home-tile"
+  [attr.data-cy]="title.toLowerCase() + '-home-tile'"
 >
   <b>Access:&nbsp;</b>
   {{ access }}

@@ -1,8 +1,4 @@
-import {
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  TwitterAuthProvider,
-} from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { SupportedPopupSignInMethods } from '../models/authentication.model';
 
 export const ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL =
@@ -13,5 +9,4 @@ export const WRONG_USERNAME = 'auth/invalid-login-credentials';
 export const SUPPORTED_POPUP_SIGN_IN_METHODS: SupportedPopupSignInMethods[] = [
   GoogleAuthProvider.PROVIDER_ID,
   GithubAuthProvider.PROVIDER_ID,
-  TwitterAuthProvider.PROVIDER_ID,
 ];

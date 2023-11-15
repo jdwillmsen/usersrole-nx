@@ -41,7 +41,7 @@ describe(SignOutCardComponent.name, () => {
 
   it('should be setup properly', () => {
     cy.mount(SignOutCardComponent);
-    cy.getByCy('profile-card-button').should('be.visible').click();
+    cy.getByCy('sign-out-card-button').should('be.visible').click();
     cy.getByCy('user-button-icon').should('be.visible');
     cy.getByCy('user-icon').should('be.visible');
     cy.getByCy('display-name').should('not.have.value');
@@ -52,7 +52,7 @@ describe(SignOutCardComponent.name, () => {
 
   it('should be able to sign out', () => {
     cy.mount(SignOutCardComponent);
-    cy.getByCy('profile-card-button').click();
+    cy.getByCy('sign-out-card-button').click();
     cy.getByCy('sign-out').click();
     cy.getByCy('snackbar-container')
       .should('be.visible')
@@ -72,7 +72,7 @@ describe(SignOutCardComponent.name, () => {
         },
       },
     });
-    cy.getByCy('profile-card-button').should('be.visible').click();
+    cy.getByCy('sign-out-card-button').should('be.visible').click();
     cy.getByCy('user-button-icon').should('be.visible');
     cy.getByCy('user-icon').should('be.visible');
     cy.getByCy('display-name').should('contain.text', 'Tester');

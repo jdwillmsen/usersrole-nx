@@ -103,7 +103,9 @@ describe(NavigationLayoutComponent.name, () => {
       cy.getByCy('code-navigation-item').should('be.visible');
       cy.getByCy('compare-navigation-item').should('be.visible');
       cy.getByCy('dashboard-navigation-item').should('be.visible');
-      cy.getByCy('delete-navigation-item').should('be.visible');
+      cy.getByCy('delete-navigation-item')
+        .scrollIntoView()
+        .should('be.visible');
       cy.getByCy('navigation-title').should('not.exist');
       cy.getByCy('expand-toggle-button').should('be.visible').click();
       cy.getByCy('navigation-title')

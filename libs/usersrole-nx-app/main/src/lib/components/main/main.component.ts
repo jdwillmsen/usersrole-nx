@@ -8,12 +8,14 @@ import { ThemePalette } from '@angular/material/core';
 import { RouterOutlet } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatDrawerMode } from '@angular/material/sidenav';
-import { NavigationItem } from '@usersrole-nx/shared-ui';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { GithubButtonComponent } from '@usersrole-nx/shared';
 import { SignOutCardComponent } from '@usersrole-nx/authentication';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
+import { AuthenticationService, SnackbarService } from '@usersrole-nx/core';
+import firebase from 'firebase/compat/app';
+import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
   selector: 'usersrole-nx-main',
@@ -34,68 +36,29 @@ import { ThemeSelectorComponent } from '../theme-selector/theme-selector.compone
 })
 export class MainComponent {
   appTitle = 'Users Role NX';
-  appRouterLink = '';
+  appRouterLink = '/home';
   appToolTip = 'Home';
   headerColor: ThemePalette = 'primary';
   isXSmallScreen = false;
   isSideNavOpened = false;
-  isSideNavEnabled = true;
   sideNavMode: MatDrawerMode = 'side';
   githubLink = 'https://github.com/jdwillmsen/usersrole-nx';
-  // TODO: Extract this out to a service or routes possibly
-  // TODO: Investigate how roles can fit in here
-  navigationItems: NavigationItem[] = [
-    {
-      path: '/home',
-      icon: 'home',
-      title: 'Home',
-    },
-    {
-      path: '/user/profile',
-      icon: 'person',
-      title: 'Profile',
-    },
-    {
-      path: '/preview/alerts',
-      icon: 'notification_important',
-      title: 'Alerts',
-    },
-    {
-      path: '/preview/snackbars',
-      icon: 'announcement',
-      title: 'Snackbars',
-    },
-    {
-      path: '/preview/buttons',
-      icon: 'ballot',
-      title: 'Buttons',
-    },
-    {
-      path: '/theme/view',
-      icon: 'format_color_fill',
-      title: 'Palettes',
-    },
-    {
-      path: '/theme/create',
-      icon: 'color_lens',
-      title: 'Theme',
-    },
-    {
-      path: '/admin/users',
-      icon: 'supervised_user_circle',
-      title: 'Users',
-    },
-    {
-      path: '/admin/roles',
-      icon: 'lock',
-      title: 'Roles',
-    },
-  ];
+  user: firebase.User | null = null;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private authenticationService: AuthenticationService,
+    private snackbarService: SnackbarService,
+    private navigationService: NavigationService
+  ) {
     this.breakpointObserver.observe(Breakpoints.XSmall).subscribe((result) => {
       this.isXSmallScreen = result.matches;
       this.updateNavigationBasedOnScreenSize();
+    });
+    this.authenticationService.user$.subscribe({
+      next: (user) => (this.user = user),
+      error: (error) =>
+        this.snackbarService.error(error.error, { variant: 'filled' }, true),
     });
   }
 
@@ -115,5 +78,9 @@ export class MainComponent {
       this.sideNavMode = 'side';
       this.isSideNavOpened = true;
     }
+  }
+
+  navigationItems() {
+    return this.navigationService.getNavigationItems();
   }
 }

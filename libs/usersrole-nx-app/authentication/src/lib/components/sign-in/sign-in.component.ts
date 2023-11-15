@@ -47,12 +47,6 @@ export class SignInComponent {
         'assets/icons/github-icon.svg'
       )
     );
-    this.matIconRegistry.addSvgIcon(
-      'twitter-logo',
-      this.domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/twitter-icon.svg'
-      )
-    );
     this.styleManagerService.removeStyle('theme');
   }
 
@@ -69,16 +63,6 @@ export class SignInComponent {
   githubLogin() {
     this.authenticationService
       .githubAuth()
-      .pipe(
-        take(1),
-        catchError((error) => this.handleError(error))
-      )
-      .subscribe((response) => response);
-  }
-
-  twitterLogin() {
-    this.authenticationService
-      .twitterAuth()
       .pipe(
         take(1),
         catchError((error) => this.handleError(error))

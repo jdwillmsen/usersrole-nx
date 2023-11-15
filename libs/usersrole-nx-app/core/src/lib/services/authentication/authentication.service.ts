@@ -17,11 +17,7 @@ import {
   WRONG_USERNAME,
 } from '@usersrole-nx/shared';
 import { handleError } from '../error-handler/error-handler.service';
-import {
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  TwitterAuthProvider,
-} from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat';
 
@@ -73,11 +69,6 @@ export class AuthenticationService {
   githubAuth(): Observable<void> {
     return from(this.authLogin(new GithubAuthProvider()));
   }
-
-  twitterAuth(): Observable<void> {
-    return from(this.authLogin(new TwitterAuthProvider()));
-  }
-
   authLogin(provider: SupportedAuthProviders): Observable<void> {
     return from(
       this.angularFireAuth
@@ -124,8 +115,6 @@ export class AuthenticationService {
         return new GoogleAuthProvider();
       case GithubAuthProvider.PROVIDER_ID:
         return new GithubAuthProvider();
-      case TwitterAuthProvider.PROVIDER_ID:
-        return new TwitterAuthProvider();
       default:
         throw new Error(`No provider implemented for ${providerId}`);
     }
@@ -140,6 +129,7 @@ export class AuthenticationService {
       this.angularFireAuth
         .fetchSignInMethodsForEmail(error.email)
         .then((providers) => {
+          console.error(providers);
           const firstPopupProviderMethod = providers.find((p) =>
             SUPPORTED_POPUP_SIGN_IN_METHODS.includes(
               <SupportedPopupSignInMethods>p
@@ -153,7 +143,10 @@ export class AuthenticationService {
           this.angularFireAuth
             .signInWithPopup(linkedProvider)
             .then((result) => {
-              if (result.user) result.user.linkWithCredential(error.credential);
+              if (result.user) {
+                result.user.linkWithCredential(error.credential);
+                // this.router.navigate(['home']);
+              }
             })
             .catch((error) => handleError(error, this.snackbarService));
         })
