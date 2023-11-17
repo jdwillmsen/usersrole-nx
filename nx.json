@@ -29,6 +29,9 @@
     "component-test": {
       "cache": true,
       "inputs": ["default", "^production"]
+    },
+    "deploy": {
+      "dependsOn": ["build"]
     }
   },
   "namedInputs": {
@@ -63,5 +66,5 @@
       "style": "scss"
     }
   },
-  "nxCloudAccessToken": "MjVjNjQzNGQtOWY1YS00NTMzLTkyOTAtZWNhYTkyN2YzMDZmfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "MTUxMDVjNWQtNDFhYy00NzNhLTk3MWEtNWU2NWQ4MDM4NWE4fHJlYWQtd3JpdGU="
 }
