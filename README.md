@@ -1,5 +1,7 @@
 # Users Role Nx
 
+[![CI](https://github.com/jdwillmsen/usersrole-nx/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jdwillmsen/usersrole-nx/actions/workflows/ci.yml)
+
 This is a frontend application that provides a template for users
 authentication and authorization since these are common features used in
 most applications. It also has additional features such as theme selection,
