@@ -84,7 +84,8 @@
     --mat-mdc-button-ripple-color: #{rgba($color, 0.1)};
   }
 
-  .mat-mdc-unelevated-button:not(:disabled, :hover).mat-#{$type},
+  .mat-mdc-unelevated-button:not(:disabled).mat-#{$type},
+  .mat-mdc-unelevated-button:not(:hover).mat-#{$type},
   .mat-mdc-raised-button:not(:disabled).mat-#{$type},
   .mat-mdc-fab:not(:disabled).mat-#{$type},
   .mat-mdc-mini-fab:not(:disabled).mat-#{$type} {
