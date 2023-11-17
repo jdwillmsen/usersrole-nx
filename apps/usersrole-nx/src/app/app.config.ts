@@ -2,6 +2,7 @@ import {
   ApplicationConfig,
   ErrorHandler,
   importProvidersFrom,
+  isDevMode,
 } from '@angular/core';
 import {
   provideRouter,
@@ -23,6 +24,7 @@ import {
   GlobalHttpErrorHandlerInterceptorProvider,
 } from '@usersrole-nx/core';
 import { environment } from '../environments/environment';
+import { provideServiceWorker } from '@angular/service-worker';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -49,5 +51,9 @@ export const appConfig: ApplicationConfig = {
       useClass: ErrorHandlerService,
     },
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
 };

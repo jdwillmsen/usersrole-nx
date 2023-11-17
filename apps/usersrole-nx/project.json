@@ -17,7 +17,9 @@
         "tsConfig": "apps/usersrole-nx/tsconfig.app.json",
         "assets": [
           "apps/usersrole-nx/src/favicon.ico",
-          "apps/usersrole-nx/src/assets"
+          "apps/usersrole-nx/src/assets",
+          "apps/usersrole-nx/src/manifest.webmanifest",
+          "apps/usersrole-nx/src/manifest.webmanifest"
         ],
         "styles": [
           "apps/usersrole-nx/src/styles.scss",
@@ -62,7 +64,9 @@
             "bundleName": "custom-light"
           }
         ],
-        "scripts": []
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/usersrole-nx/ngsw-config.json"
       },
       "configurations": {
         "production": {
