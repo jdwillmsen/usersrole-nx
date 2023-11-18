@@ -59,13 +59,17 @@ describe('roleGuard', () => {
       component: TestSignInComponent,
     },
   ];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const angularFireAuthMock: jest.Mocked<any> = {
     user: of(null),
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const usersServiceMock: jest.Mocked<any> = {
     users$: jest.fn(),
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const snackBarServiceMock: jest.Mocked<any> = {};
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const permissionServiceMock: jest.Mocked<any> = {
     canActivateRole: jest.fn(),
   };

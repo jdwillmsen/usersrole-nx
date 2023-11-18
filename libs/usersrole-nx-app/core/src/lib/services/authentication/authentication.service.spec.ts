@@ -2,9 +2,12 @@ import { AuthenticationService } from './authentication.service';
 import { of } from 'rxjs';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import * as errorHandlerModule from '../error-handler/error-handler.service';
+import firebase from 'firebase/compat';
+import AuthCredential = firebase.auth.AuthCredential;
 
 describe('AuthenticationService', () => {
   let authService: AuthenticationService;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const angularFireAuthMock: jest.Mocked<any> = {
     authState: of(null),
     signInWithEmailAndPassword: jest.fn(),
@@ -12,9 +15,11 @@ describe('AuthenticationService', () => {
     signOut: jest.fn(),
     fetchSignInMethodsForEmail: jest.fn(),
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const routerMock: jest.Mocked<any> = {
     navigate: jest.fn(() => Promise.resolve(true)),
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const snackbarServiceMock: jest.Mocked<any> = {
     success: jest.fn(),
     error: jest.fn(),
@@ -280,7 +285,7 @@ describe('AuthenticationService', () => {
   it('should handle login failure when error code account exists with different credentials', () => {
     const error = {
       email: 'test-user@usersrole.com',
-      credential: true,
+      credential: {} as AuthCredential,
       code: 'auth/account-exists-with-different-credential',
     };
     const handleErrorSpy = jest.spyOn(errorHandlerModule, 'handleError');
@@ -300,7 +305,8 @@ describe('AuthenticationService', () => {
   });
 
   it('should handle error when unknown conditions', () => {
-    const error = {};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const error = {} as any;
     const handleErrorSpy = jest.spyOn(errorHandlerModule, 'handleError');
 
     authService.handleAuthLoginFailure(error);
@@ -314,7 +320,7 @@ describe('AuthenticationService', () => {
   it('should handle error when linking credentials fails', () => {
     const error = {
       email: 'test-user@usersrole.com',
-      credential: true,
+      credential: {} as AuthCredential,
       code: 'auth/account-exists-with-different-credential',
     };
     jest.spyOn(errorHandlerModule, 'handleError');
@@ -340,7 +346,7 @@ describe('AuthenticationService', () => {
   it('should handle error when sign in with popup fails', () => {
     const error = {
       email: 'test-user@usersrole.com',
-      credential: true,
+      credential: {} as AuthCredential,
       code: 'auth/account-exists-with-different-credential',
     };
     jest.spyOn(errorHandlerModule, 'handleError');
@@ -362,7 +368,7 @@ describe('AuthenticationService', () => {
   it('should handle error when fetch sign in methods for email fails', () => {
     const error = {
       email: 'test-user@usersrole.com',
-      credential: true,
+      credential: {} as AuthCredential,
       code: 'auth/account-exists-with-different-credential',
     };
     jest.spyOn(errorHandlerModule, 'handleError');
@@ -380,7 +386,7 @@ describe('AuthenticationService', () => {
   it('should handle error when first popup provider method is not supported', () => {
     const error = {
       email: 'test-user@usersrole.com',
-      credential: true,
+      credential: {} as AuthCredential,
       code: 'auth/account-exists-with-different-credential',
     };
     jest.spyOn(errorHandlerModule, 'handleError');

@@ -30,10 +30,12 @@ interface AngularFireError extends Error {
   rejection: FirebaseError;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function errorIsAngularFireError(err: any): err is AngularFireError {
   return err.rejection && err.rejection.name === 'FirebaseError';
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const handleError = (error: any, snackbarService: SnackbarService) => {
   let errorMessage = DEFAULT_ERROR_MESSAGE;
   if (typeof error.error === 'object' && error.error.message) {

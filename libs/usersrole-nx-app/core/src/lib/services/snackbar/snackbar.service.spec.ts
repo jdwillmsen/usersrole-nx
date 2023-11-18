@@ -11,6 +11,7 @@ import {
 
 describe('SnackbarService', () => {
   let service: SnackbarService;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const snackbarMock: jest.Mocked<any> = {
     openFromComponent: jest.fn(),
     dismiss: jest.fn(),

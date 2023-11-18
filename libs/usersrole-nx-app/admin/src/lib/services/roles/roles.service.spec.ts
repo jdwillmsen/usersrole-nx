@@ -5,9 +5,11 @@ import { Environment } from '@usersrole-nx/core';
 
 describe('RolesService', () => {
   let rolesService: RolesService;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const httpClientMock: jest.Mocked<any> = {
     patch: jest.fn(),
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const snackbarServiceMock: jest.Mocked<any> = {
     error: jest.fn(),
   };

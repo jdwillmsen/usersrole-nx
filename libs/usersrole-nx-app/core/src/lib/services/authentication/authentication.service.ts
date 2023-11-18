@@ -42,10 +42,14 @@ export class AuthenticationService {
         .signInWithEmailAndPassword(email, password)
         .then(() => {
           this.router.navigate(['home']).then(() => {
-            this.snackbarService.success(SUCCESS_SIGN_IN_MESSAGE, {
-              variant: 'filled',
-              autoClose: true,
-            });
+            this.snackbarService.success(
+              SUCCESS_SIGN_IN_MESSAGE,
+              {
+                variant: 'filled',
+                autoClose: true,
+              },
+              true,
+            );
           });
         })
         .catch((error) => {
@@ -120,7 +124,11 @@ export class AuthenticationService {
     }
   }
 
-  handleAuthLoginFailure(error: any): void {
+  handleAuthLoginFailure(error: {
+    email: string;
+    credential: firebase.auth.AuthCredential;
+    code: string;
+  }): void {
     if (
       error.email &&
       error.credential &&

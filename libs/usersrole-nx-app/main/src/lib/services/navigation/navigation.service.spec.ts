@@ -3,6 +3,7 @@ import { Role } from '@usersrole-nx/shared';
 
 describe('NavigationService', () => {
   let navigationService: NavigationService;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const permissionServiceMock: jest.Mocked<any> = {
     hasRole: jest.fn(),
   };

@@ -10,6 +10,7 @@ import { HttpRequest } from '@angular/common/http';
 
 describe('AuthTokenInterceptor', () => {
   let interceptor: AuthTokenInterceptor;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let angularFireAuthMock: jest.Mocked<any> = {
     idToken: new BehaviorSubject<string | null>('mocked-id-token'),
   };

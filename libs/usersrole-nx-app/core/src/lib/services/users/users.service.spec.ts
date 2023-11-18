@@ -11,12 +11,14 @@ import { Environment } from '../../environment.token';
 
 describe('UsersService', () => {
   let usersService: UsersService;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const httpClientMock: jest.Mocked<any> = {
     get: jest.fn(),
     post: jest.fn(),
     patch: jest.fn(),
     delete: jest.fn(),
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const snackbarServiceMock: jest.Mocked<any> = {
     error: jest.fn(),
   };

@@ -69,7 +69,7 @@ export class ThemeSelectorComponent {
           });
         }
       },
-      error: (error: { error: any }) =>
+      error: (error) =>
         this.snackbarService.error(error.error, { variant: 'filled' }, true),
     });
     this.styleManagerService.currentThemeName.subscribe((themeName: string) => {
