@@ -47,10 +47,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --force
 
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
-        with:
-          main-branch-name: ${{ inputs.main-branch-name }}
+      - name: Check out the default branch
+        run: git branch --track main origin/main
 
       - name: Initialize the Nx Cloud distributed CI run and stop agents when the build tasks are done
         run: npx nx-cloud start-ci-run --stop-agents-after=build
@@ -62,7 +60,7 @@ jobs:
           NX_CLOUD_DISTRIBUTED_EXECUTION=false npx nx-cloud record -- npx nx format:check & pids+=($!)
 
           # list of commands to be run on agents
-          npx nx affected -t lint,test,component-test,build --parallel=4 --base=main --head=HEAD & 
+          npx nx affected -t lint,test,component-test,build --parallel=4 & 
           pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
