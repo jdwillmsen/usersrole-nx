@@ -5,13 +5,17 @@ import { PermissionService } from './permission.service';
 
 describe('PermissionService', () => {
   let permissionsService: PermissionService;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let angularFireAuthMock: jest.Mocked<any>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const routerMock: jest.Mocked<any> = {
     navigate: jest.fn(),
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const usersServiceMock: jest.Mocked<any> = {
     user$: jest.fn(),
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const snackbarServiceMock: jest.Mocked<any> = {
     error: jest.fn(),
   };
@@ -36,11 +40,10 @@ describe('PermissionService', () => {
     const roles: Role[] = ['read', 'user'];
     const next: ActivatedRouteSnapshot = {
       data: { roles },
-    } as any;
+    } as any; // eslint-disable-line @typescript-eslint/no-explicit-any
     const userDetails = { roles };
     usersServiceMock.user$.mockReturnValue(of(userDetails));
-
-    permissionsService.canActivateRole(next).subscribe((result: any) => {
+    permissionsService.canActivateRole(next).subscribe((result) => {
       expect(result).toBeFalsy();
       expect(routerMock.navigate).not.toHaveBeenCalled();
       done();
@@ -51,11 +54,12 @@ describe('PermissionService', () => {
     const roles: Role[] = ['admin', 'user'];
     const next: ActivatedRouteSnapshot = {
       data: { roles },
-    } as any;
+    } as any; // eslint-disable-line @typescript-eslint/no-explicit-any
     const userDetails = { roles: ['admin', 'user'] };
     angularFireAuthMock.user = of({ uid: 'testUser' });
     usersServiceMock.user$.mockReturnValue(of(userDetails));
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     permissionsService.canActivateRole(next).subscribe((result: any) => {
       expect(result).toBeTruthy();
       expect(routerMock.navigate).not.toHaveBeenCalled();
@@ -67,11 +71,12 @@ describe('PermissionService', () => {
     const roles: Role[] = ['admin', 'manager'];
     const next: ActivatedRouteSnapshot = {
       data: { roles },
-    } as any;
+    } as any; // eslint-disable-line @typescript-eslint/no-explicit-any
     const userDetails = { roles: ['users'] };
     angularFireAuthMock.user = of({ uid: 'testUser' });
     usersServiceMock.user$.mockReturnValue(of(userDetails));
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     permissionsService.canActivateRole(next).subscribe((result: any) => {
       expect(result).toBeFalsy();
       expect(routerMock.navigate).toHaveBeenCalledWith(['/forbidden']);

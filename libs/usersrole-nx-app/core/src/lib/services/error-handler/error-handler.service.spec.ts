@@ -7,9 +7,11 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ErrorHandlerService', () => {
   let service: ErrorHandlerService;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const snackbarServiceMock: jest.Mocked<any> = {
     error: jest.fn(),
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ngZoneMock: jest.Mocked<any> = {
     run: jest.fn(),
   };

@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "targetDefaults": {
     "build": {
@@ -66,5 +66,6 @@
       "style": "scss"
     }
   },
+  "parallel": 6,
   "nxCloudAccessToken": "MTUxMDVjNWQtNDFhYy00NzNhLTk3MWEtNWU2NWQ4MDM4NWE4fHJlYWQtd3JpdGU="
 }

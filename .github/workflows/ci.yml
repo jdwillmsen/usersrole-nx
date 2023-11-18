@@ -5,9 +5,13 @@ on:
       - main
   pull_request:
 
+permissions:
+  actions: read
+  contents: read
+
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true # this enables DTE
-  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3 # expected number of agents
+  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 4 # expected number of agents
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # this is needed if our pipeline publishes to npm
@@ -60,7 +64,9 @@ jobs:
           NX_CLOUD_DISTRIBUTED_EXECUTION=false npx nx-cloud record -- npx nx format:check & pids+=($!)
 
           # list of commands to be run on agents
-          npx nx affected -t lint,test,component-test,build --parallel=3 & 
+          npx nx affected -t lint,test --parallel=4 &
+          npx nx affected -t component-test --parallel=1 &
+          npx nx affected -t build --parallel=4 & 
           pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
@@ -78,7 +84,7 @@ jobs:
     strategy:
       matrix:
         # Add more agents here as your repository expands
-        agent: [1, 2, 3]
+        agent: [1, 2, 3, 4]
     steps:
       - name: Checkout
         uses: actions/checkout@v4

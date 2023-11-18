@@ -59,6 +59,7 @@ export class UsersService {
       .pipe(catchError((error) => this.handleError(error)));
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any) {
     return handleError(error, this.snackbarService);
   }

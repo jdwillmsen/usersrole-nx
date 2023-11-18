@@ -2,6 +2,7 @@ import { FirestoreService } from './firestore.service';
 
 describe('FirestoreService', () => {
   let firestoreService: FirestoreService;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const firestoreMock: jest.Mocked<any> = {};
 
   beforeEach(() => {

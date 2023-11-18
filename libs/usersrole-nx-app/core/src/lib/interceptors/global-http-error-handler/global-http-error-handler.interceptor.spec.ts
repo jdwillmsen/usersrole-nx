@@ -35,6 +35,7 @@ describe('GlobalHttpErrorHandlerInterceptor', () => {
 
   it('should still send failure after retries', (done) => {
     const request = new HttpRequest('GET', 'http://mock');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const httpHandlerMock: jest.Mocked<any> = {
       handle: () => throwError(() => new HttpErrorResponse({ status: 500 })),
     };
@@ -49,6 +50,7 @@ describe('GlobalHttpErrorHandlerInterceptor', () => {
 
   it('should catch the error if 403 and handle', (done) => {
     const request = new HttpRequest('GET', 'http://mock');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const httpHandlerMock: jest.Mocked<any> = {
       handle: () => throwError(() => new HttpErrorResponse({ status: 403 })),
     };

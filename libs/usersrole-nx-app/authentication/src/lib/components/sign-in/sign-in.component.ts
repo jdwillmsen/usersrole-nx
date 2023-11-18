@@ -70,7 +70,7 @@ export class SignInComponent {
       .subscribe((response) => response);
   }
 
-  private handleError(error: any) {
+  private handleError(error: { message: string }) {
     this.snackbarService.error(error.message, { variant: 'filled' }, true);
     return EMPTY;
   }
