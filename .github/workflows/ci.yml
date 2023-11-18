@@ -62,7 +62,7 @@ jobs:
           NX_CLOUD_DISTRIBUTED_EXECUTION=false npx nx-cloud record -- npx nx format:check & pids+=($!)
 
           # list of commands to be run on agents
-          npx nx affected --base=[SHA1] -t lint,test,component-test,build --parallel=4 & 
+          npx nx affected -t lint,test,component-test,build --parallel=4 --base=main --head=HEAD & 
           pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
