@@ -23,7 +23,7 @@ describe('NavigationService', () => {
   it('should return all navigation items if all roles are provided', () => {
     const permissionServiceMockHasRole = jest.spyOn(
       permissionServiceMock,
-      'hasRole'
+      'hasRole',
     );
     permissionServiceMockHasRole.mockReturnValue(true);
 
@@ -34,12 +34,12 @@ describe('NavigationService', () => {
   it('should return all navigation items but profile if admin role is provided', () => {
     const mockPermissionServiceHasRole = jest.spyOn(
       permissionServiceMock,
-      'hasRole'
+      'hasRole',
     );
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     mockPermissionServiceHasRole.mockImplementation((roles: Role[]) =>
-      roles.includes('admin')
+      roles.includes('admin'),
     );
 
     const itemsWithNoRolesMatch = navigationService.getNavigationItems();
@@ -49,12 +49,12 @@ describe('NavigationService', () => {
   it('should return all navigation items but profile if manager role is provided', () => {
     const mockPermissionServiceHasRole = jest.spyOn(
       permissionServiceMock,
-      'hasRole'
+      'hasRole',
     );
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     mockPermissionServiceHasRole.mockImplementation((roles: Role[]) =>
-      roles.includes('manager')
+      roles.includes('manager'),
     );
 
     const itemsWithNoRolesMatch = navigationService.getNavigationItems();
@@ -64,12 +64,12 @@ describe('NavigationService', () => {
   it('should return all navigation items but profile if read role is provided', () => {
     const mockPermissionServiceHasRole = jest.spyOn(
       permissionServiceMock,
-      'hasRole'
+      'hasRole',
     );
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     mockPermissionServiceHasRole.mockImplementation((roles: Role[]) =>
-      roles.includes('admin')
+      roles.includes('admin'),
     );
 
     const itemsWithNoRolesMatch = navigationService.getNavigationItems();
@@ -79,12 +79,12 @@ describe('NavigationService', () => {
   it('should return all non admin navigation items if user role is provided', () => {
     const mockPermissionServiceHasRole = jest.spyOn(
       permissionServiceMock,
-      'hasRole'
+      'hasRole',
     );
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     mockPermissionServiceHasRole.mockImplementation((roles: Role[]) =>
-      roles.includes('user')
+      roles.includes('user'),
     );
 
     const itemsWithNoRolesMatch = navigationService.getNavigationItems();

@@ -52,7 +52,7 @@ export class CreateThemeComponent {
   constructor(
     private firestoreService: FirestoreService,
     private authenticationService: AuthenticationService,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
   ) {
     this.authenticationService.user$.subscribe({
       next: (user) => {
@@ -73,7 +73,7 @@ export class CreateThemeComponent {
         this.snackbarService.success(
           LIGHT_THEME_SAVED_SUCCESS_MESSAGE,
           { variant: 'filled' },
-          true
+          true,
         );
       })
       .catch((error) => {
@@ -88,7 +88,7 @@ export class CreateThemeComponent {
         this.snackbarService.success(
           DARK_THEME_SAVED_SUCCESS_MESSAGE,
           { variant: 'filled' },
-          true
+          true,
         );
       })
       .catch((error) => {

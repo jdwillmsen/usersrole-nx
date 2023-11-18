@@ -40,7 +40,7 @@ describe('ErrorHandlerService', () => {
 
     expect(consoleWarnSpy).toHaveBeenCalledWith(
       'Caught by Error Handler Service: ',
-      errorMock
+      errorMock,
     );
     consoleWarnSpy.mockRestore();
   });
@@ -69,7 +69,7 @@ describe('ErrorHandlerService', () => {
         expect(snackbarServiceSpy).toHaveBeenCalledWith(
           'An error has occurred',
           { variant: 'filled' },
-          true
+          true,
         );
         resolve();
       });

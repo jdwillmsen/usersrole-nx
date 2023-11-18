@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private angularFireAuth: AngularFireAuth,
-    private usersService: UsersService
+    private usersService: UsersService,
   ) {}
 
   ngOnInit() {
@@ -46,9 +46,9 @@ export class ProfileComponent implements OnInit {
                 .map((role) => capitalizeFirstLetter(role))
                 .join(', ');
             }
-          })
-        )
-      )
+          }),
+        ),
+      ),
     );
   }
 }

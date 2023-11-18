@@ -18,6 +18,6 @@ import { SnackbarData } from '../../models/snackbar.model';
 export class SnackbarComponent {
   constructor(
     @Inject(MAT_SNACK_BAR_DATA) public data: SnackbarData,
-    public snackbarRef: MatSnackBarRef<SnackbarComponent>
+    public snackbarRef: MatSnackBarRef<SnackbarComponent>,
   ) {}
 }

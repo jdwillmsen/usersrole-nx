@@ -14,7 +14,7 @@ describe(ProfileComponent.name, () => {
         method: 'GET',
         url: '/users/*',
       },
-      ''
+      '',
     ).as('getUsers');
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule],

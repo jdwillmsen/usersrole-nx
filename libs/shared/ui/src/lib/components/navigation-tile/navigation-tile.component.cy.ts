@@ -33,7 +33,7 @@ describe(NavigationTileComponent.name, () => {
                  </usersrole-nx-navigation-tile>`,
       {
         imports: [NavigationTileComponent],
-      }
+      },
     );
     cy.getByCy('tile').should('be.visible');
     cy.getByCy('title').should('be.visible').and('contain.text', 'Home');

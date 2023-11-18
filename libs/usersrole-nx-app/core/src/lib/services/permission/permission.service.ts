@@ -16,7 +16,7 @@ export class PermissionService {
     private router: Router,
     private usersService: UsersService,
     private angularFireAuth: AngularFireAuth,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
   ) {
     this.getRole();
   }
@@ -30,15 +30,15 @@ export class PermissionService {
         return this.usersService.user$(user.uid).pipe(
           map((userDetails) => {
             const hasRequiredRole = next.data['roles'].some((role: Role) =>
-              userDetails.roles.includes(role)
+              userDetails.roles.includes(role),
             );
             if (!hasRequiredRole) {
               this.router.navigate(['/forbidden']);
             }
             return hasRequiredRole;
-          })
+          }),
         );
-      })
+      }),
     );
   }
 

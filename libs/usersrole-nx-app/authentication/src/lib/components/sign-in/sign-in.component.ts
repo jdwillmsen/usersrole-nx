@@ -33,19 +33,19 @@ export class SignInComponent {
     private readonly matIconRegistry: MatIconRegistry,
     private readonly domSanitizer: DomSanitizer,
     private snackbarService: SnackbarService,
-    private readonly styleManagerService: StyleManagerService
+    private readonly styleManagerService: StyleManagerService,
   ) {
     this.matIconRegistry.addSvgIcon(
       'google-logo',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/google-icon.svg'
-      )
+        'assets/icons/google-icon.svg',
+      ),
     );
     this.matIconRegistry.addSvgIcon(
       'github-logo',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/github-icon.svg'
-      )
+        'assets/icons/github-icon.svg',
+      ),
     );
     this.styleManagerService.removeStyle('theme');
   }
@@ -55,7 +55,7 @@ export class SignInComponent {
       .googleAuth()
       .pipe(
         take(1),
-        catchError((error) => this.handleError(error))
+        catchError((error) => this.handleError(error)),
       )
       .subscribe((response) => response);
   }
@@ -65,7 +65,7 @@ export class SignInComponent {
       .githubAuth()
       .pipe(
         take(1),
-        catchError((error) => this.handleError(error))
+        catchError((error) => this.handleError(error)),
       )
       .subscribe((response) => response);
   }

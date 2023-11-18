@@ -93,7 +93,7 @@ export class UsersComponent implements OnInit {
     private userService: UsersService,
     private dialog: MatDialog,
     private userFormService: UserFormService,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
   ) {}
 
   ngOnInit() {
@@ -117,7 +117,7 @@ export class UsersComponent implements OnInit {
                 variant: 'filled',
                 autoClose: true,
               },
-              true
+              true,
             );
           });
         }
@@ -128,7 +128,7 @@ export class UsersComponent implements OnInit {
 
 function dateFilterComparator(
   filterLocalDateAtMidnight: Date,
-  cellValue: string
+  cellValue: string,
 ) {
   if (cellValue === null) return -1;
   const cellDate = new Date(cellValue);

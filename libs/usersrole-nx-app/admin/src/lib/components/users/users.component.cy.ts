@@ -15,7 +15,7 @@ describe(UsersComponent.name, () => {
       },
       {
         fixture: 'users.json',
-      }
+      },
     ).as('getUsers');
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule],
@@ -97,12 +97,12 @@ function testScreenSize(size: string, width: number, height: number) {
           method: 'POST',
           url: '/users/admin',
         },
-        '{"uid":"test-uid"}'
+        '{"uid":"test-uid"}',
       ).as('getUsers');
       cy.mount(UsersComponent);
       cy.getByCy('create-user-button').click();
       cy.getByCy('email-address-field').type(
-        'admin-create-user-test@usersrole.com'
+        'admin-create-user-test@usersrole.com',
       );
       cy.getByCy('display-name-field').type('Admin Create User Test');
       cy.getByCy('roles-field').click();
@@ -122,11 +122,11 @@ function testScreenSize(size: string, width: number, height: number) {
           method: 'GET',
           url: '/users/*',
         },
-        '{"uid":"test-uid"}'
+        '{"uid":"test-uid"}',
       ).as('getUsers');
       cy.mount(UsersComponent);
       cy.get(
-        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-menu-button > .ag-icon'
+        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-menu-button > .ag-icon',
       )
         .click()
         .type('test-user-1@usersrole.com');
@@ -158,11 +158,11 @@ function testScreenSize(size: string, width: number, height: number) {
           method: 'PATCH',
           url: '/users/*',
         },
-        ''
+        '',
       ).as('getUsers');
       cy.mount(UsersComponent);
       cy.get(
-        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-menu-button > .ag-icon'
+        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-menu-button > .ag-icon',
       )
         .click()
         .type('test-user-1@usersrole.com');
@@ -200,11 +200,11 @@ function testScreenSize(size: string, width: number, height: number) {
           method: 'DELETE',
           url: '/users/*',
         },
-        ''
+        '',
       ).as('getUsers');
       cy.mount(UsersComponent);
       cy.get(
-        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-menu-button > .ag-icon'
+        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-menu-button > .ag-icon',
       )
         .click()
         .type('test-user-1@usersrole.com');

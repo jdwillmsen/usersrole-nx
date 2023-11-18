@@ -243,7 +243,7 @@ describe(UserFormComponent.name, () => {
       cy.getByCy('display-name-field').find('input').clear().blur();
       cy.getByCy('display-name-field').should(
         'contain.text',
-        'Display name is required'
+        'Display name is required',
       );
       cy.getByCy('roles-field').click();
       cy.getByCy('user-role-option').click();
@@ -252,12 +252,12 @@ describe(UserFormComponent.name, () => {
       cy.getByCy('password-field').type('test').find('input').blur();
       cy.getByCy('password-field').should(
         'contain.text',
-        'Password must be at least 6 characters long'
+        'Password must be at least 6 characters long',
       );
       cy.getByCy('confirm-password-field').type('tes').find('input').blur();
       cy.getByCy('confirm-password-field').should(
         'contain.text',
-        'Password must be at least 6 characters long'
+        'Password must be at least 6 characters long',
       );
       cy.getByCy('matching-password-error')
         .should('contain.text', 'Passwords must match')
@@ -473,7 +473,7 @@ describe(UserFormComponent.name, () => {
         .blur();
       cy.getByCy('display-name-field').should(
         'contain.text',
-        'Display name is required'
+        'Display name is required',
       );
       cy.getByCy('roles-field').click();
       cy.get('.cdk-overlay-backdrop').click({ force: true });
@@ -481,12 +481,12 @@ describe(UserFormComponent.name, () => {
       cy.getByCy('password-field').type('test').find('input').blur();
       cy.getByCy('password-field').should(
         'contain.text',
-        'Password must be at least 6 characters long'
+        'Password must be at least 6 characters long',
       );
       cy.getByCy('confirm-password-field').type('tes').find('input').blur();
       cy.getByCy('confirm-password-field').should(
         'contain.text',
-        'Password must be at least 6 characters long'
+        'Password must be at least 6 characters long',
       );
       cy.getByCy('matching-password-error')
         .should('contain.text', 'Passwords must match')

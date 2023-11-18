@@ -31,7 +31,7 @@ export class AuthenticationService {
   constructor(
     private angularFireAuth: AngularFireAuth,
     private router: Router,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
   ) {
     this.user.next(angularFireAuth.authState);
   }
@@ -58,7 +58,7 @@ export class AuthenticationService {
             errorMessage = INVALID_SIGN_IN_MESSAGE;
           }
           this.snackbarService.error(errorMessage, { variant: 'filled' }, true);
-        })
+        }),
     );
   }
 
@@ -83,7 +83,7 @@ export class AuthenticationService {
         })
         .catch((error) => {
           this.handleAuthLoginFailure(error);
-        })
+        }),
     );
   }
 
@@ -99,13 +99,13 @@ export class AuthenticationService {
                 variant: 'filled',
                 autoClose: true,
               },
-              true
+              true,
             );
           });
         })
         .catch((error) => {
           handleError(error, this.snackbarService);
-        })
+        }),
     );
   }
 
@@ -132,8 +132,8 @@ export class AuthenticationService {
           console.error(providers);
           const firstPopupProviderMethod = providers.find((p) =>
             SUPPORTED_POPUP_SIGN_IN_METHODS.includes(
-              <SupportedPopupSignInMethods>p
-            )
+              <SupportedPopupSignInMethods>p,
+            ),
           );
           if (!firstPopupProviderMethod) {
             throw new Error(ACCOUNT_PROVIDER_ERROR_MESSAGE);

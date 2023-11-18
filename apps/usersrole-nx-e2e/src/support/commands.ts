@@ -12,7 +12,7 @@ declare global {
         email: string,
         displayName: string,
         password: string,
-        roles: any[]
+        roles: any[],
       ): Cypress.Chainable<any>;
       createNewUser(id?: string): Cypress.Chainable<any>;
       createThemeUser(): Cypress.Chainable<any>;
@@ -20,7 +20,7 @@ declare global {
       login(userType?: any): Cypress.Chainable<any>;
       changeColor(
         colorSelector: string,
-        colorValue: string
+        colorValue: string,
       ): Cypress.Chainable<any>;
       setupAppCheck(): Cypress.Chainable<any>;
       clearFirebaseLocal(): Cypress.Chainable<any>;
@@ -107,7 +107,7 @@ Cypress.Commands.add(
         });
       });
     });
-  }
+  },
 );
 
 Cypress.Commands.add('createNewUser', (id = '') => {
@@ -117,7 +117,7 @@ Cypress.Commands.add('createNewUser', (id = '') => {
         id + user.email,
         user.displayName,
         user.password,
-        user.roles
+        user.roles,
       );
     });
   });
@@ -130,7 +130,7 @@ Cypress.Commands.add('createThemeUser', () => {
         user.email,
         user.displayName,
         user.password,
-        user.roles
+        user.roles,
       );
     });
   });
@@ -166,7 +166,7 @@ Cypress.Commands.add(
       .invoke('val', colorValue.toLowerCase())
       .trigger('input')
       .blur();
-  }
+  },
 );
 
 Cypress.Commands.add('clearFirebaseLocal', () => {

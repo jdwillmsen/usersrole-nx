@@ -18,7 +18,7 @@ declare namespace Cypress {
 
     changeColor(
       colorSelector: string,
-      colorValue: string
+      colorValue: string,
     ): Cypress.Chainable<never>;
   }
 }
@@ -35,5 +35,5 @@ Cypress.Commands.add(
       .invoke('val', colorValue.toLowerCase())
       .trigger('input')
       .blur();
-  }
+  },
 );

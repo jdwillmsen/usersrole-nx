@@ -28,7 +28,7 @@ describe('ThemeStorageService', () => {
   it('should store a theme', () => {
     const localStorageSetItemSpy = jest.spyOn(
       Object.getPrototypeOf(window.localStorage),
-      'setItem'
+      'setItem',
     );
     Object.setPrototypeOf(window.localStorage.setItem, jest.fn());
     const emitSpy = jest.spyOn(themeStorageService.onThemeUpdate, 'emit');
@@ -37,7 +37,7 @@ describe('ThemeStorageService', () => {
 
     expect(localStorageSetItemSpy).toHaveBeenCalledWith(
       storageKey,
-      defaultTheme.name
+      defaultTheme.name,
     );
     expect(emitSpy).toHaveBeenCalledWith(defaultTheme);
   });
@@ -46,7 +46,7 @@ describe('ThemeStorageService', () => {
     const storedThemeName = 'dark';
     const localStorageGetItemSpy = jest.spyOn(
       Object.getPrototypeOf(window.localStorage),
-      'getItem'
+      'getItem',
     );
     Object.setPrototypeOf(window.localStorage.getItem, jest.fn());
     localStorageGetItemSpy.mockReturnValueOnce(storedThemeName);
@@ -60,7 +60,7 @@ describe('ThemeStorageService', () => {
   it('should clear storage', () => {
     const localStorageRemoveItemSpy = jest.spyOn(
       Object.getPrototypeOf(window.localStorage),
-      'removeItem'
+      'removeItem',
     );
     Object.setPrototypeOf(window.localStorage.removeItem, jest.fn());
 

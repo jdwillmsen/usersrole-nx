@@ -18,7 +18,7 @@ export class RolesService {
   constructor(
     @Inject(ENVIRONMENT) private environment: Environment,
     private http: HttpClient,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
   ) {}
 
   update(user: UpdateUserRolesRequest) {

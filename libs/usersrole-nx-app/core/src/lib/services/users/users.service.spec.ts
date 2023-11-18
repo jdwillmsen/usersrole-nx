@@ -71,7 +71,7 @@ describe('UsersService', () => {
     usersService = new UsersService(
       environmentMock,
       httpClientMock,
-      snackbarServiceMock
+      snackbarServiceMock,
     );
   });
 
@@ -86,7 +86,7 @@ describe('UsersService', () => {
     usersService.users$.subscribe((result) => {
       expect(result).toEqual(users);
       expect(httpClientMock.get).toHaveBeenCalledWith(
-        `${usersService['baseUrl']}`
+        `${usersService['baseUrl']}`,
       );
       done();
     });
@@ -103,7 +103,7 @@ describe('UsersService', () => {
     expect(snackbarServiceMock.error).toHaveBeenCalledWith(
       defaultErrorMessage,
       { variant: 'filled' },
-      true
+      true,
     );
   });
 
@@ -130,7 +130,7 @@ describe('UsersService', () => {
     expect(snackbarServiceMock.error).toHaveBeenCalledWith(
       defaultErrorMessage,
       { variant: 'filled' },
-      true
+      true,
     );
   });
 
@@ -158,7 +158,7 @@ describe('UsersService', () => {
     expect(snackbarServiceMock.error).toHaveBeenCalledWith(
       defaultErrorMessage,
       { variant: 'filled' },
-      true
+      true,
     );
   });
 
@@ -186,7 +186,7 @@ describe('UsersService', () => {
     expect(snackbarServiceMock.error).toHaveBeenCalledWith(
       defaultErrorMessage,
       { variant: 'filled' },
-      true
+      true,
     );
   });
 
@@ -203,7 +203,7 @@ describe('UsersService', () => {
 
   it('should handle edit user HTTP failure', () => {
     httpClientMock.patch.mockReturnValue(
-      throwError(() => defaultErrorResponse)
+      throwError(() => defaultErrorResponse),
     );
 
     usersService.edit(defaultEditUser).subscribe({
@@ -215,7 +215,7 @@ describe('UsersService', () => {
     expect(snackbarServiceMock.error).toHaveBeenCalledWith(
       defaultErrorMessage,
       { variant: 'filled' },
-      true
+      true,
     );
   });
 
@@ -232,7 +232,7 @@ describe('UsersService', () => {
 
   it('should handle delete user HTTP failure', () => {
     httpClientMock.delete.mockReturnValue(
-      throwError(() => defaultErrorResponse)
+      throwError(() => defaultErrorResponse),
     );
 
     usersService.delete(defaultDeleteUser).subscribe({
@@ -244,7 +244,7 @@ describe('UsersService', () => {
     expect(snackbarServiceMock.error).toHaveBeenCalledWith(
       defaultErrorMessage,
       { variant: 'filled' },
-      true
+      true,
     );
   });
 
@@ -266,7 +266,7 @@ describe('UsersService', () => {
     expect(snackbarServiceMock.error).toHaveBeenCalledWith(
       message,
       { variant: 'filled' },
-      true
+      true,
     );
   });
 });

@@ -30,7 +30,7 @@ describe('AuthenticationService', () => {
     authService = new AuthenticationService(
       angularFireAuthMock,
       routerMock,
-      snackbarServiceMock
+      snackbarServiceMock,
     );
   });
 
@@ -54,7 +54,7 @@ describe('AuthenticationService', () => {
 
     authService.emailAuth(defaultEmail, defaultPassword).subscribe(() => {
       expect(
-        angularFireAuthMock.signInWithEmailAndPassword
+        angularFireAuthMock.signInWithEmailAndPassword,
       ).toHaveBeenCalledWith(defaultEmail, defaultPassword);
       expect(routerMock.navigate).toHaveBeenCalledWith(['home']);
       expect(snackbarServiceMock.success).toHaveBeenCalled();
@@ -69,12 +69,12 @@ describe('AuthenticationService', () => {
 
     authService.emailAuth(defaultEmail, defaultPassword).subscribe(() => {
       expect(
-        angularFireAuthMock.signInWithEmailAndPassword
+        angularFireAuthMock.signInWithEmailAndPassword,
       ).toHaveBeenCalledWith(defaultEmail, defaultPassword);
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         defaultErrorMessage,
         { variant: 'filled' },
-        true
+        true,
       );
       done();
     });
@@ -87,12 +87,12 @@ describe('AuthenticationService', () => {
 
     authService.emailAuth(defaultEmail, defaultPassword).subscribe(() => {
       expect(
-        angularFireAuthMock.signInWithEmailAndPassword
+        angularFireAuthMock.signInWithEmailAndPassword,
       ).toHaveBeenCalledWith(defaultEmail, defaultPassword);
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         invalidSignInMessage,
         { variant: 'filled' },
-        true
+        true,
       );
       done();
     });
@@ -105,12 +105,12 @@ describe('AuthenticationService', () => {
 
     authService.emailAuth(defaultEmail, defaultPassword).subscribe(() => {
       expect(
-        angularFireAuthMock.signInWithEmailAndPassword
+        angularFireAuthMock.signInWithEmailAndPassword,
       ).toHaveBeenCalledWith(defaultEmail, defaultPassword);
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         invalidSignInMessage,
         { variant: 'filled' },
-        true
+        true,
       );
       done();
     });
@@ -123,12 +123,12 @@ describe('AuthenticationService', () => {
 
     authService.emailAuth(defaultEmail, defaultPassword).subscribe(() => {
       expect(
-        angularFireAuthMock.signInWithEmailAndPassword
+        angularFireAuthMock.signInWithEmailAndPassword,
       ).toHaveBeenCalledWith(defaultEmail, defaultPassword);
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         invalidSignInMessage,
         { variant: 'filled' },
-        true
+        true,
       );
       done();
     });
@@ -139,7 +139,7 @@ describe('AuthenticationService', () => {
 
     authService.googleAuth().subscribe(() => {
       expect(angularFireAuthMock.signInWithPopup).toHaveBeenCalledWith(
-        expect.any(GoogleAuthProvider)
+        expect.any(GoogleAuthProvider),
       );
       expect(routerMock.navigate).toHaveBeenCalledWith(['home']);
       expect(snackbarServiceMock.success).toHaveBeenCalled();
@@ -154,12 +154,12 @@ describe('AuthenticationService', () => {
 
     authService.googleAuth().subscribe(() => {
       expect(angularFireAuthMock.signInWithPopup).toHaveBeenCalledWith(
-        expect.any(GoogleAuthProvider)
+        expect.any(GoogleAuthProvider),
       );
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         defaultErrorMessage,
         { variant: 'filled' },
-        true
+        true,
       );
       done();
     });
@@ -170,7 +170,7 @@ describe('AuthenticationService', () => {
 
     authService.githubAuth().subscribe(() => {
       expect(angularFireAuthMock.signInWithPopup).toHaveBeenCalledWith(
-        expect.any(GithubAuthProvider)
+        expect.any(GithubAuthProvider),
       );
       expect(routerMock.navigate).toHaveBeenCalledWith(['home']);
       expect(snackbarServiceMock.success).toHaveBeenCalled();
@@ -185,12 +185,12 @@ describe('AuthenticationService', () => {
 
     authService.githubAuth().subscribe(() => {
       expect(angularFireAuthMock.signInWithPopup).toHaveBeenCalledWith(
-        expect.any(GithubAuthProvider)
+        expect.any(GithubAuthProvider),
       );
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         defaultErrorMessage,
         { variant: 'filled' },
-        true
+        true,
       );
       done();
     });
@@ -201,7 +201,7 @@ describe('AuthenticationService', () => {
 
     authService.authLogin(authProviderMock).subscribe(() => {
       expect(angularFireAuthMock.signInWithPopup).toHaveBeenCalledWith(
-        authProviderMock
+        authProviderMock,
       );
       expect(routerMock.navigate).toHaveBeenCalledWith(['home']);
       expect(snackbarServiceMock.success).toHaveBeenCalled();
@@ -216,12 +216,12 @@ describe('AuthenticationService', () => {
 
     authService.authLogin(authProviderMock).subscribe(() => {
       expect(angularFireAuthMock.signInWithPopup).toHaveBeenCalledWith(
-        authProviderMock
+        authProviderMock,
       );
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         defaultErrorMessage,
         { variant: 'filled' },
-        true
+        true,
       );
       done();
     });
@@ -235,7 +235,7 @@ describe('AuthenticationService', () => {
       expect(snackbarServiceMock.success).toHaveBeenCalledWith(
         defaultLogoutSuccessMessage,
         { variant: 'filled', autoClose: true },
-        true
+        true,
       );
       expect(routerMock.navigate).toHaveBeenCalledWith(['sign-in']);
       done();
@@ -252,7 +252,7 @@ describe('AuthenticationService', () => {
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         defaultErrorMessage,
         { variant: 'filled' },
-        true
+        true,
       );
       done();
     });
@@ -294,7 +294,7 @@ describe('AuthenticationService', () => {
     authService.handleAuthLoginFailure(error);
 
     expect(angularFireAuthMock.fetchSignInMethodsForEmail).toHaveBeenCalledWith(
-      error.email
+      error.email,
     );
     expect(handleErrorSpy).not.toHaveBeenCalled();
   });
@@ -306,7 +306,7 @@ describe('AuthenticationService', () => {
     authService.handleAuthLoginFailure(error);
 
     expect(
-      angularFireAuthMock.fetchSignInMethodsForEmail
+      angularFireAuthMock.fetchSignInMethodsForEmail,
     ).not.toHaveBeenCalled();
     expect(handleErrorSpy).toHaveBeenCalled();
   });
@@ -333,7 +333,7 @@ describe('AuthenticationService', () => {
     authService.handleAuthLoginFailure(error);
 
     expect(angularFireAuthMock.fetchSignInMethodsForEmail).toHaveBeenCalledWith(
-      error.email
+      error.email,
     );
   });
 
@@ -355,7 +355,7 @@ describe('AuthenticationService', () => {
     authService.handleAuthLoginFailure(error);
 
     expect(angularFireAuthMock.fetchSignInMethodsForEmail).toHaveBeenCalledWith(
-      error.email
+      error.email,
     );
   });
 
@@ -373,7 +373,7 @@ describe('AuthenticationService', () => {
     authService.handleAuthLoginFailure(error);
 
     expect(angularFireAuthMock.fetchSignInMethodsForEmail).toHaveBeenCalledWith(
-      error.email
+      error.email,
     );
   });
 
@@ -391,7 +391,7 @@ describe('AuthenticationService', () => {
     authService.handleAuthLoginFailure(error);
 
     expect(angularFireAuthMock.fetchSignInMethodsForEmail).toHaveBeenCalledWith(
-      error.email
+      error.email,
     );
   });
 });

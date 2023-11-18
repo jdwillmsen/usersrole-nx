@@ -16,7 +16,7 @@ describe('CreatePaletteComponent', () => {
           useValue: {
             control: new FormGroup({
               primaryPalette: new FormGroup(
-                new PaletteFormGroup().paletteFormGroup
+                new PaletteFormGroup().paletteFormGroup,
               ),
             }),
           },

@@ -24,7 +24,7 @@ describe('PermissionService', () => {
       routerMock,
       usersServiceMock,
       angularFireAuthMock,
-      snackbarServiceMock
+      snackbarServiceMock,
     );
   });
 
@@ -143,7 +143,7 @@ describe('PermissionService', () => {
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         errorMessage,
         { variant: 'filled' },
-        true
+        true,
       );
       done();
     }, 0);

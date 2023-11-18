@@ -65,7 +65,7 @@ describe('AlertService', () => {
       expect(alert.autoClose).toBe(alertOptions.autoClose);
       expect(alert.autoCloseTimeout).toBe(alertOptions.autoCloseTimeout);
       expect(alert.keepAfterRouteChange).toBe(
-        alertOptions.keepAfterRouteChange
+        alertOptions.keepAfterRouteChange,
       );
       expect(alert.icon).toBe(alertOptions.icon);
       expect(alert.closeButton).toBe(alertOptions.closeButton);

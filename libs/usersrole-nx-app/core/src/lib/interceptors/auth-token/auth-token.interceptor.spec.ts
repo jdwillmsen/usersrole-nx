@@ -41,7 +41,7 @@ describe('AuthTokenInterceptor', () => {
       .intercept(request, {
         handle: (req: HttpRequest<unknown>) => {
           expect(req.headers.get('Authorization')).toEqual(
-            'Bearer mocked-id-token'
+            'Bearer mocked-id-token',
           );
           done();
           return new Observable();

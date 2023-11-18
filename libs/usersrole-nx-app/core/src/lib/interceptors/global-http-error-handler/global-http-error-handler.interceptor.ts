@@ -17,7 +17,7 @@ export class GlobalHttpErrorHandlerInterceptor implements HttpInterceptor {
 
   intercept(
     request: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       retry({
@@ -29,13 +29,13 @@ export class GlobalHttpErrorHandlerInterceptor implements HttpInterceptor {
           this.snackbarService.error(
             HTTP_403_MESSAGE,
             { variant: 'filled' },
-            true
+            true,
           );
           return EMPTY;
         } else {
           return throwError(() => error);
         }
-      })
+      }),
     );
   }
 }

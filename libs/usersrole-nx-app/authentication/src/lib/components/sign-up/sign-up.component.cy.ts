@@ -15,7 +15,7 @@ describe(SignUpComponent.name, () => {
         method: 'POST',
         url: '/users',
       },
-      '{"uid":"test-uid-1"}'
+      '{"uid":"test-uid-1"}',
     ).as('getUsers');
     const routes: Route[] = [
       {
@@ -110,7 +110,7 @@ function testScreenSize(size: string, width: number, height: number) {
         .should('contain.text', 'Enter a valid email');
       cy.getByCy('display-name-field').should(
         'contain.text',
-        'Display name is required'
+        'Display name is required',
       );
       cy.getByCy('password-field')
         .should('contain.text', 'Password is required')

@@ -14,7 +14,7 @@ describe(RolesComponent.name, () => {
       },
       {
         fixture: 'users.json',
-      }
+      },
     ).as('getUsers');
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule],
@@ -82,10 +82,10 @@ function testScreenSize(size: string, width: number, height: number) {
       cy.get('.cdk-overlay-backdrop').click({ force: true });
       cy.getByCy('assign-roles-button').should('be.disabled');
       cy.getByCy('select-user-field').contains(
-        'Please select a user from the list'
+        'Please select a user from the list',
       );
       cy.getByCy('select-roles-field').contains(
-        'At least one role must be selected'
+        'At least one role must be selected',
       );
     });
 
@@ -108,7 +108,7 @@ function testScreenSize(size: string, width: number, height: number) {
           method: 'PATCH',
           url: '/users/roles/**',
         },
-        ''
+        '',
       ).as('assignRoles');
       cy.mount(RolesComponent);
       cy.getByCy('select-user-field').type('Basic Test User #1{enter}');

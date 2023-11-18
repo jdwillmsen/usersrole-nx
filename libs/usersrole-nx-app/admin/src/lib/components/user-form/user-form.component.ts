@@ -81,7 +81,7 @@ export class UserFormComponent implements OnInit {
           Validators.minLength(6),
         ]),
       },
-      { validators: this.passwordMatch() }
+      { validators: this.passwordMatch() },
     ),
   });
   validationMessages = {
@@ -139,7 +139,7 @@ export class UserFormComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<UserFormComponent>,
-    private userForm: UserFormService
+    private userForm: UserFormService,
   ) {}
 
   ngOnInit(): void {
@@ -155,7 +155,7 @@ export class UserFormComponent implements OnInit {
         } else {
           this.form.reset({});
         }
-      })
+      }),
     );
   }
 
@@ -181,7 +181,7 @@ export class UserFormComponent implements OnInit {
   }
 
   getErrorMessage(
-    formControlName: 'email' | 'displayName' | 'roles' | 'matchingPassword'
+    formControlName: 'email' | 'displayName' | 'roles' | 'matchingPassword',
   ) {
     for (const validation of this.validationMessages[formControlName]) {
       if (this.form.get(formControlName)?.hasError(validation.type)) {

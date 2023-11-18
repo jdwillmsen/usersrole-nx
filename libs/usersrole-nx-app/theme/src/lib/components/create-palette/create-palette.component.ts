@@ -68,7 +68,7 @@ export class CreatePaletteComponent implements OnInit {
 
   ngOnInit(): void {
     this.paletteForm = this.rootFormGroup.control.get(
-      this.formGroupName
+      this.formGroupName,
     ) as FormGroup;
   }
 

@@ -31,7 +31,7 @@ export class ActionsButtonCellRendererComponent
     private userService: UsersService,
     private dialog: MatDialog,
     private userFormService: UserFormService,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
   ) {}
 
   agInit(params: ICellRendererParams): void {
@@ -67,7 +67,7 @@ export class ActionsButtonCellRendererComponent
                 variant: 'filled',
                 autoClose: true,
               },
-              true
+              true,
             );
           });
         }
@@ -93,7 +93,7 @@ export class ActionsButtonCellRendererComponent
                 variant: 'filled',
                 autoClose: true,
               },
-              true
+              true,
             );
           });
         }

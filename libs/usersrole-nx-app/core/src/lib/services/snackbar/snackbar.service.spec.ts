@@ -49,7 +49,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', defaultType],
-      }
+      },
     );
   });
 
@@ -80,7 +80,7 @@ describe('SnackbarService', () => {
         horizontalPosition: options.horizontalPosition,
         verticalPosition: options.verticalPosition,
         panelClass: [options.variant, defaultType],
-      }
+      },
     );
   });
 
@@ -105,7 +105,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', options.variant, defaultType],
-      }
+      },
     );
   });
 
@@ -125,7 +125,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'success'],
-      }
+      },
     );
   });
 
@@ -145,7 +145,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'success'],
-      }
+      },
     );
   });
 
@@ -169,7 +169,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', options.variant, 'success'],
-      }
+      },
     );
   });
 
@@ -192,7 +192,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'success'],
-      }
+      },
     );
   });
 
@@ -212,7 +212,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'error'],
-      }
+      },
     );
   });
 
@@ -232,7 +232,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'error'],
-      }
+      },
     );
   });
 
@@ -256,7 +256,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', options.variant, 'error'],
-      }
+      },
     );
   });
 
@@ -279,7 +279,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'error'],
-      }
+      },
     );
   });
 
@@ -299,7 +299,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'warn'],
-      }
+      },
     );
   });
 
@@ -319,7 +319,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'warn'],
-      }
+      },
     );
   });
 
@@ -343,7 +343,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', options.variant, 'warn'],
-      }
+      },
     );
   });
 
@@ -366,7 +366,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'warn'],
-      }
+      },
     );
   });
 
@@ -386,7 +386,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'info'],
-      }
+      },
     );
   });
 
@@ -406,7 +406,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'info'],
-      }
+      },
     );
   });
 
@@ -430,7 +430,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', options.variant, 'info'],
-      }
+      },
     );
   });
 
@@ -453,7 +453,7 @@ describe('SnackbarService', () => {
         horizontalPosition: defaultHorizontalPosition,
         verticalPosition: defaultVerticalPosition,
         panelClass: ['icon', 'info'],
-      }
+      },
     );
   });
 

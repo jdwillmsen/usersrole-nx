@@ -48,7 +48,7 @@ export class RolesComponent implements OnInit {
         validators: [Validators.required],
       }),
     },
-    { validators: this.rolesAreDifferent() }
+    { validators: this.rolesAreDifferent() },
   );
   options$!: Observable<User[]>;
   filteredOptions$!: Observable<User[]>;
@@ -75,7 +75,7 @@ export class RolesComponent implements OnInit {
   constructor(
     private usersService: UsersService,
     private rolesService: RolesService,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
   ) {}
 
   ngOnInit() {
@@ -83,7 +83,7 @@ export class RolesComponent implements OnInit {
     this.options$ = this.usersService.users$.pipe(
       tap((users) => {
         this.filteredOptionsSubject.next(users);
-      })
+      }),
     );
     this.rolesForm.controls.usersName.valueChanges.subscribe((user) => {
       if (user && typeof user !== 'string')
@@ -107,8 +107,8 @@ export class RolesComponent implements OnInit {
       !lowerSearchText
         ? options
         : options.filter((option) =>
-            option.displayName.toLowerCase().includes(lowerSearchText)
-          )
+            option.displayName.toLowerCase().includes(lowerSearchText),
+          ),
     );
   }
 
@@ -130,7 +130,7 @@ export class RolesComponent implements OnInit {
                 variant: 'filled',
                 autoClose: true,
               },
-              true
+              true,
             );
           },
         });
@@ -148,7 +148,7 @@ export class RolesComponent implements OnInit {
         typeof this.rolesForm?.controls.usersName?.value !== 'string'
           ? compareArrays(
               this.rolesForm?.controls.usersName?.value.roles,
-              this.rolesForm?.controls.roles?.value
+              this.rolesForm?.controls.roles?.value,
             )
           : false;
       return matches ? { noMatchRequired: true } : null;
@@ -166,7 +166,7 @@ function instanceOfUser(user: unknown): user is User {
 }
 
 const userSelectionRequiredValidator: ValidatorFn = (
-  control: AbstractControl
+  control: AbstractControl,
 ) => {
   return !instanceOfUser(control?.value) ? { matchRequired: true } : null;
 };

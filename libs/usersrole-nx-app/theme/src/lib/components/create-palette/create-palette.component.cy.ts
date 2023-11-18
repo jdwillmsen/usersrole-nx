@@ -21,7 +21,7 @@ describe(CreatePaletteComponent.name, () => {
           useValue: {
             control: new FormGroup({
               primaryPalette: new FormGroup(
-                new PaletteFormGroup().paletteFormGroup
+                new PaletteFormGroup().paletteFormGroup,
               ),
             }),
           },
@@ -43,7 +43,7 @@ describe(CreatePaletteComponent.name, () => {
             useValue: {
               control: new FormGroup({
                 primaryPalette: new FormGroup(
-                  new PaletteFormGroup().paletteFormGroup
+                  new PaletteFormGroup().paletteFormGroup,
                 ),
               }),
             },
@@ -65,7 +65,7 @@ describe(CreatePaletteComponent.name, () => {
             useValue: {
               control: new FormGroup({
                 accentPalette: new FormGroup(
-                  new PaletteFormGroup().paletteFormGroup
+                  new PaletteFormGroup().paletteFormGroup,
                 ),
               }),
             },
@@ -87,7 +87,7 @@ describe(CreatePaletteComponent.name, () => {
             useValue: {
               control: new FormGroup({
                 infoPalette: new FormGroup(
-                  new PaletteFormGroup().paletteFormGroup
+                  new PaletteFormGroup().paletteFormGroup,
                 ),
               }),
             },
@@ -109,7 +109,7 @@ describe(CreatePaletteComponent.name, () => {
             useValue: {
               control: new FormGroup({
                 errorPalette: new FormGroup(
-                  new PaletteFormGroup().paletteFormGroup
+                  new PaletteFormGroup().paletteFormGroup,
                 ),
               }),
             },
@@ -131,7 +131,7 @@ describe(CreatePaletteComponent.name, () => {
             useValue: {
               control: new FormGroup({
                 successPalette: new FormGroup(
-                  new PaletteFormGroup().paletteFormGroup
+                  new PaletteFormGroup().paletteFormGroup,
                 ),
               }),
             },
@@ -153,7 +153,7 @@ describe(CreatePaletteComponent.name, () => {
             useValue: {
               control: new FormGroup({
                 warnPalette: new FormGroup(
-                  new PaletteFormGroup().paletteFormGroup
+                  new PaletteFormGroup().paletteFormGroup,
                 ),
               }),
             },
@@ -176,7 +176,7 @@ describe(CreatePaletteComponent.name, () => {
           useValue: {
             control: new FormGroup({
               primaryPalette: new FormGroup(
-                new PaletteFormGroup().paletteFormGroup
+                new PaletteFormGroup().paletteFormGroup,
               ),
             }),
           },
@@ -244,7 +244,7 @@ describe(CreatePaletteComponent.name, () => {
           useValue: {
             control: new FormGroup({
               primaryPalette: new FormGroup(
-                new PaletteFormGroup().paletteFormGroup
+                new PaletteFormGroup().paletteFormGroup,
               ),
             }),
           },
@@ -305,7 +305,7 @@ function checkPaletteRow(colorSelectorNumber: string, colorValue: string) {
     .trigger('mouseenter');
   cy.contains('Toggle Contrast');
   cy.getByCy(`${colorSelectorNumber}-color-contrast-button`).trigger(
-    'mouseleave'
+    'mouseleave',
   );
   cy.getByCy(`${colorSelectorNumber}-color-input`)
     .should('be.enabled')
@@ -357,11 +357,11 @@ function changeColor(colorSelectorNumber: string, colorValue: string) {
 function checkColor(colorSelectorNumber: string, colorValue: string) {
   cy.getByCy(`${colorSelectorNumber}-color-value`).and(
     'contain.text',
-    `${colorValue}`
+    `${colorValue}`,
   );
   cy.getByCy(`${colorSelectorNumber}-color-input`).and(
     'contain.value',
-    `${colorValue}`
+    `${colorValue}`,
   );
 }
 
@@ -392,25 +392,25 @@ function testContrastColor(colorSelectorNumber: string, isLight = false) {
     cy.getByCy(`${colorSelectorNumber}-color`).should(
       'have.css',
       'color',
-      'rgb(255, 255, 255)'
+      'rgb(255, 255, 255)',
     );
     cy.getByCy(`${colorSelectorNumber}-color-contrast-button`).click().blur();
     cy.getByCy(`${colorSelectorNumber}-color`).should(
       'have.css',
       'color',
-      'rgb(0, 0, 0)'
+      'rgb(0, 0, 0)',
     );
   } else {
     cy.getByCy(`${colorSelectorNumber}-color`).should(
       'have.css',
       'color',
-      'rgb(0, 0, 0)'
+      'rgb(0, 0, 0)',
     );
     cy.getByCy(`${colorSelectorNumber}-color-contrast-button`).click().blur();
     cy.getByCy(`${colorSelectorNumber}-color`).should(
       'have.css',
       'color',
-      'rgb(255, 255, 255)'
+      'rgb(255, 255, 255)',
     );
   }
 }

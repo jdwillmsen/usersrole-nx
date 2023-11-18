@@ -49,7 +49,7 @@ export class MainComponent {
     private breakpointObserver: BreakpointObserver,
     private authenticationService: AuthenticationService,
     private snackbarService: SnackbarService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
   ) {
     this.breakpointObserver.observe(Breakpoints.XSmall).subscribe((result) => {
       this.isXSmallScreen = result.matches;

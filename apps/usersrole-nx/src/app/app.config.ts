@@ -39,7 +39,7 @@ export const appConfig: ApplicationConfig = {
       provideFunctions(() => getFunctions()),
       provideFirestore(() => getFirestore()),
       AngularFireModule.initializeApp(environment.firebase),
-      provideFirebaseApp(() => initializeApp(environment.firebase))
+      provideFirebaseApp(() => initializeApp(environment.firebase)),
     ),
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
     {

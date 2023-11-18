@@ -38,7 +38,7 @@ export class ThemeSelectorComponent {
     private firestoreService: FirestoreService,
     private authenticationService: AuthenticationService,
     private snackbarService: SnackbarService,
-    private _themeStorageService: ThemeStorageService
+    private _themeStorageService: ThemeStorageService,
   ) {
     this.themes = this.styleManagerService.getThemes();
     const themeName = _themeStorageService.getStoredThemeName();
@@ -54,7 +54,7 @@ export class ThemeSelectorComponent {
               this.selectTheme(
                 data['theme'],
                 data['lightTheme'],
-                data['darkTheme']
+                data['darkTheme'],
               );
               this.customLightTheme = data['lightTheme'];
               this.customDarkTheme = data['darkTheme'];
@@ -87,7 +87,7 @@ export class ThemeSelectorComponent {
 
   selectTheme(themeName: string, lightTheme?: Theme, darkTheme?: Theme) {
     const theme = this.themes.find(
-      (currentTheme) => currentTheme.name === themeName
+      (currentTheme) => currentTheme.name === themeName,
     );
 
     if (!theme) {
@@ -142,11 +142,11 @@ export class ThemeSelectorComponent {
       const paletteContrastColor = `colorContrast${color}`;
       document.documentElement.style.setProperty(
         `--${paletteName}-${color}`,
-        palette[paletteColor]
+        palette[paletteColor],
       );
       document.documentElement.style.setProperty(
         `--${paletteName}-contrast-${color}`,
-        palette[paletteContrastColor]
+        palette[paletteContrastColor],
       );
     }
   }

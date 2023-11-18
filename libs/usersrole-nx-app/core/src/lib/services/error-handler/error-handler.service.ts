@@ -7,7 +7,10 @@ import { EMPTY } from 'rxjs';
 // Not providedIn 'root': needs special handling in app.config to override default error handler.
 @Injectable()
 export class ErrorHandlerService implements ErrorHandler {
-  constructor(public snackbarService: SnackbarService, public zone: NgZone) {}
+  constructor(
+    public snackbarService: SnackbarService,
+    public zone: NgZone,
+  ) {}
 
   handleError(error: unknown): void {
     if (!errorIsAngularFireError(error)) {
@@ -15,7 +18,7 @@ export class ErrorHandlerService implements ErrorHandler {
         this.snackbarService.error(
           DEFAULT_ERROR_MESSAGE,
           { variant: 'filled' },
-          true
+          true,
         );
       });
       console.warn(`Caught by Error Handler Service: `, error);

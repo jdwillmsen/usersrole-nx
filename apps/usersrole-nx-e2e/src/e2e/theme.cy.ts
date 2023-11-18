@@ -28,21 +28,21 @@ describe('Theme', () => {
       cy.getByCy('navbar-header').should(
         'have.css',
         'background-color',
-        'rgb(0, 0, 0)'
+        'rgb(0, 0, 0)',
       );
       cy.getByCy('theme-select-button').click();
       cy.getByCy('deeppurple-amber-button').click();
       cy.getByCy('navbar-header').should(
         'have.css',
         'background-color',
-        'rgb(103, 58, 183)'
+        'rgb(103, 58, 183)',
       );
       cy.getByCy('theme-select-button').click();
       cy.getByCy('indigo-pink-button').click();
       cy.getByCy('navbar-header').should(
         'have.css',
         'background-color',
-        'rgb(63, 81, 181)'
+        'rgb(63, 81, 181)',
       );
       cy.getByCy('theme-select-button').click();
       cy.getByCy('custom-light-button').click();
@@ -51,28 +51,28 @@ describe('Theme', () => {
       cy.getByCy('navbar-header').should(
         'have.css',
         'background-color',
-        'rgb(125, 207, 42)'
+        'rgb(125, 207, 42)',
       );
       cy.getByCy('theme-select-button').click();
       cy.getByCy('pink-bluegrey-button').click();
       cy.getByCy('navbar-header').should(
         'have.css',
         'background-color',
-        'rgb(233, 30, 99)'
+        'rgb(233, 30, 99)',
       );
       cy.getByCy('theme-select-button').click();
       cy.getByCy('purple-green-button').click();
       cy.getByCy('navbar-header').should(
         'have.css',
         'background-color',
-        'rgb(156, 39, 176)'
+        'rgb(156, 39, 176)',
       );
       cy.getByCy('theme-select-button').click();
       cy.getByCy('red-teal-button').click();
       cy.getByCy('navbar-header').should(
         'have.css',
         'background-color',
-        'rgb(255, 0, 0)'
+        'rgb(255, 0, 0)',
       );
       cy.getByCy('theme-select-button').click();
       cy.getByCy('custom-dark-button').click();
@@ -81,7 +81,7 @@ describe('Theme', () => {
       cy.getByCy('navbar-header').should(
         'have.css',
         'background-color',
-        'rgb(125, 207, 42)'
+        'rgb(125, 207, 42)',
       );
     });
 
@@ -113,7 +113,7 @@ describe('Theme', () => {
         .within(() => {
           cy.getByCy('message').should(
             'contain.text',
-            'Saved light theme successfully'
+            'Saved light theme successfully',
           );
           cy.getByCy('close-button').click();
         });
@@ -143,7 +143,7 @@ describe('Theme', () => {
         .within(() => {
           cy.getByCy('message').should(
             'contain.text',
-            'Saved dark theme successfully'
+            'Saved dark theme successfully',
           );
           cy.getByCy('close-button').click();
         });

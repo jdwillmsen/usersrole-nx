@@ -22,7 +22,7 @@ describe('RolesService', () => {
     rolesService = new RolesService(
       environmentMock,
       httpClientMock,
-      snackbarServiceMock
+      snackbarServiceMock,
     );
   });
 
@@ -65,7 +65,7 @@ describe('RolesService', () => {
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         errorResponse.error,
         { variant: 'filled' },
-        true
+        true,
       );
     });
   });

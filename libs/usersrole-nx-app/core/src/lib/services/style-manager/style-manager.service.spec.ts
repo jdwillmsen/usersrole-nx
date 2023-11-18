@@ -110,7 +110,7 @@ describe('StyleManagerService', () => {
     styleManagerService.setStyle(key, href);
 
     const linkElement = document.head.querySelector(
-      `link[rel="stylesheet"].style-manager-${key}`
+      `link[rel="stylesheet"].style-manager-${key}`,
     );
     expect(linkElement).toBeTruthy();
     expect(linkElement?.getAttribute('href')).toBe(href);
@@ -126,7 +126,7 @@ describe('StyleManagerService', () => {
     styleManagerService.removeStyle(key);
 
     const removedLinkElement = document.head.querySelector(
-      `link[rel="stylesheet"].style-manager-${key}`
+      `link[rel="stylesheet"].style-manager-${key}`,
     );
     expect(removedLinkElement).toBeNull();
   });

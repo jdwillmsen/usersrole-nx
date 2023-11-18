@@ -5,7 +5,7 @@ export async function isAuthenticated(
   req: Request,
   res: Response,
   // eslint-disable-next-line @typescript-eslint/ban-types
-  next: Function
+  next: Function,
 ) {
   const { authorization } = req.headers;
 

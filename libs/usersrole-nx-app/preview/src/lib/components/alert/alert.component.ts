@@ -33,7 +33,10 @@ export class AlertComponent implements OnInit, OnDestroy {
   routeSubscription!: Subscription;
   autoCloseTimeout = 3000;
 
-  constructor(private router: Router, private alertService: AlertService) {}
+  constructor(
+    private router: Router,
+    private alertService: AlertService,
+  ) {}
 
   ngOnInit() {
     this.alertSubscription = this.alertService
@@ -41,7 +44,7 @@ export class AlertComponent implements OnInit, OnDestroy {
       .subscribe((alert) => {
         if (!alert?.message) {
           this.alerts = this.alerts.filter(
-            (alert) => alert.keepAfterRouteChange
+            (alert) => alert.keepAfterRouteChange,
           );
           this.alerts.forEach((alert) => delete alert.keepAfterRouteChange);
           return;

@@ -13,7 +13,7 @@ import { AuthenticationService, ThemeStorageService } from '@usersrole-nx/core';
 export class SignOutComponent {
   constructor(
     private authenticationService: AuthenticationService,
-    private themeStorageService: ThemeStorageService
+    private themeStorageService: ThemeStorageService,
   ) {}
 
   logout() {
@@ -46,7 +46,7 @@ function removeCustomTheme() {
     for (const color of colors) {
       document.documentElement.style.removeProperty(`--${palette}-${color}`);
       document.documentElement.style.removeProperty(
-        `--${palette}-contrast-${color}`
+        `--${palette}-contrast-${color}`,
       );
     }
   }

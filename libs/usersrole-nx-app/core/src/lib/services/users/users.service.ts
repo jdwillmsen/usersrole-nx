@@ -18,20 +18,20 @@ export class UsersService {
   constructor(
     @Inject(ENVIRONMENT) private environment: Environment,
     private http: HttpClient,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
   ) {}
 
   get users$(): Observable<User[]> {
     return this.http.get<{ users: User[] }>(`${this.baseUrl}`).pipe(
       map((result) => result.users),
-      catchError((error) => this.handleError(error))
+      catchError((error) => this.handleError(error)),
     );
   }
 
   user$(id: string): Observable<User> {
     return this.http.get<{ user: User }>(`${this.baseUrl}/${id}`).pipe(
       map((result) => result.user),
-      catchError((error) => this.handleError(error))
+      catchError((error) => this.handleError(error)),
     );
   }
 

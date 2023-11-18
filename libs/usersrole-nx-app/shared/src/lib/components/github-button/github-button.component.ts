@@ -17,13 +17,13 @@ export class GithubButtonComponent {
   @Input() githubLink = 'https://github.com';
   constructor(
     private readonly matIconRegistry: MatIconRegistry,
-    private readonly domSanitizer: DomSanitizer
+    private readonly domSanitizer: DomSanitizer,
   ) {
     this.matIconRegistry.addSvgIcon(
       'github-logo',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/github-icon.svg'
-      )
+        'assets/icons/github-icon.svg',
+      ),
     );
   }
 }

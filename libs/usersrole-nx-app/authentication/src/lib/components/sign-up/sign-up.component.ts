@@ -67,7 +67,7 @@ export class SignUpComponent {
           validators: [Validators.required, Validators.minLength(6)],
         }),
       },
-      { validators: this.passwordMatch() }
+      { validators: this.passwordMatch() },
     ),
   });
   validationMessages = {
@@ -103,7 +103,7 @@ export class SignUpComponent {
   constructor(
     private usersService: UsersService,
     private router: Router,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
   ) {}
 
   signUp() {
@@ -134,7 +134,7 @@ export class SignUpComponent {
                 variant: 'filled',
                 autoClose: true,
               },
-              true
+              true,
             );
             this.router.navigate(['sign-in']);
           },
@@ -154,7 +154,7 @@ export class SignUpComponent {
   }
 
   getErrorMessage(
-    formControlName: 'email' | 'displayName' | 'matchingPassword'
+    formControlName: 'email' | 'displayName' | 'matchingPassword',
   ) {
     for (const validation of this.validationMessages[formControlName]) {
       if (this.signUpForm.get(formControlName)?.hasError(validation.type)) {
