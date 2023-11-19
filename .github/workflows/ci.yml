@@ -52,7 +52,7 @@ jobs:
         run: npm ci --force
 
       - name: Check out the default branch
-        if: github.ref != 'refs/head/main'
+        if: github.ref != 'refs/heads/main'
         run: |
           git branch --track main origin/main
 
