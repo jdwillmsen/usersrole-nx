@@ -56,9 +56,11 @@ jobs:
         run: git branch --track main origin/main
 
       - name: Initialize the Nx Cloud distributed CI run and stop agents when the build tasks are done
+        if: github.actor != 'dependabot[bot]'
         run: npx nx-cloud start-ci-run --stop-agents-after=build
 
       - name: Run commands in parallel
+        if: github.actor != 'dependabot[bot]'
         run: |
           pids=()
           # list of commands to be run on main has env flag NX_CLOUD_DISTRIBUTED_EXECUTION set to false
@@ -67,7 +69,7 @@ jobs:
           # list of commands to be run on agents
           npx nx affected -t lint,test --parallel=4 &
           npx nx affected -t component-test --parallel=1 &
-          npx nx affected -t build --parallel=4 & 
+          npx nx affected -t build --parallel=4 &
           pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
@@ -79,8 +81,22 @@ jobs:
 
           exit 0
 
+      # Dependabot PRs don't receive the NX_CLOUD_ACCESS_TOKEN secret, so the
+      # distributed agents never start. Run the same targets locally (no Nx
+      # Cloud) so lint/test/build still gate the PR instead of hanging/failing.
+      - name: Run commands locally (Dependabot)
+        if: github.actor == 'dependabot[bot]'
+        env:
+          NX_CLOUD_DISTRIBUTED_EXECUTION: false
+        run: |
+          npx nx format:check
+          npx nx affected -t lint,test,component-test,build --parallel=4
+
   agents:
     name: Agent ${{ matrix.agent }}
+    # Distributed agents require the Nx Cloud token, which Dependabot PRs
+    # cannot access; skip them so the run does not fail.
+    if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     strategy:
       matrix:
