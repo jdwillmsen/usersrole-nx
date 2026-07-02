@@ -9,19 +9,18 @@ import { SignOutComponent } from '../sign-out/sign-out.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'usersrole-nx-sign-out-card',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    SignOutComponent,
-    MatTooltipModule,
-  ],
-  templateUrl: './sign-out-card.component.html',
-  styleUrls: ['./sign-out-card.component.scss'],
+    selector: 'usersrole-nx-sign-out-card',
+    imports: [
+        CommonModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        MatListModule,
+        SignOutComponent,
+        MatTooltipModule,
+    ],
+    templateUrl: './sign-out-card.component.html',
+    styleUrls: ['./sign-out-card.component.scss']
 })
 export class SignOutCardComponent {
   @Input() user: User | undefined;

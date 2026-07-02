@@ -19,17 +19,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'usersrole-nx-email-sign-in',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatInputModule,
-    MatIconModule,
-    ReactiveFormsModule,
-  ],
-  templateUrl: './email-sign-in.component.html',
-  styleUrls: ['./email-sign-in.component.scss'],
+    selector: 'usersrole-nx-email-sign-in',
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatInputModule,
+        MatIconModule,
+        ReactiveFormsModule,
+    ],
+    templateUrl: './email-sign-in.component.html',
+    styleUrls: ['./email-sign-in.component.scss']
 })
 export class EmailSignInComponent {
   form: FormGroup = new FormGroup({

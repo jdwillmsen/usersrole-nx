@@ -8,18 +8,17 @@ import { RouterLink } from '@angular/router';
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
-  selector: 'usersrole-nx-header',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTooltipModule,
-    RouterLink,
-  ],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+    selector: 'usersrole-nx-header',
+    imports: [
+        CommonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatTooltipModule,
+        RouterLink,
+    ],
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   @Input() isXSmallScreen = false;

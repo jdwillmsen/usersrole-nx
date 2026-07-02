@@ -18,17 +18,16 @@ import {
 } from '@usersrole-nx/core';
 
 @Component({
-  selector: 'usersrole-nx-create-theme',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    CreatePaletteComponent,
-    MatIconModule,
-    MatButtonModule,
-  ],
-  templateUrl: './create-theme.component.html',
-  styleUrls: ['./create-theme.component.scss'],
+    selector: 'usersrole-nx-create-theme',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        CreatePaletteComponent,
+        MatIconModule,
+        MatButtonModule,
+    ],
+    templateUrl: './create-theme.component.html',
+    styleUrls: ['./create-theme.component.scss']
 })
 export class CreateThemeComponent {
   themeForm = new FormGroup({

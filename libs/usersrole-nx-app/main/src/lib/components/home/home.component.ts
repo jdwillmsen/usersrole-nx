@@ -4,11 +4,10 @@ import { HomeTileComponent } from '../home-tile/home-tile.component';
 import { HomeTile } from '../../models/home-tile.model';
 
 @Component({
-  selector: 'usersrole-nx-home',
-  standalone: true,
-  imports: [CommonModule, HomeTileComponent],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+    selector: 'usersrole-nx-home',
+    imports: [CommonModule, HomeTileComponent],
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
   // TODO: Finish implementation and testing

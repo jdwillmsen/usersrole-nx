@@ -18,21 +18,20 @@ import { User } from 'firebase/auth';
 import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
-  selector: 'usersrole-nx-main',
-  standalone: true,
-  imports: [
-    CommonModule,
-    HeaderComponent,
-    NavigationLayoutComponent,
-    RouterOutlet,
-    MatIconModule,
-    MatButtonModule,
-    GithubButtonComponent,
-    SignOutCardComponent,
-    ThemeSelectorComponent,
-  ],
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+    selector: 'usersrole-nx-main',
+    imports: [
+        CommonModule,
+        HeaderComponent,
+        NavigationLayoutComponent,
+        RouterOutlet,
+        MatIconModule,
+        MatButtonModule,
+        GithubButtonComponent,
+        SignOutCardComponent,
+        ThemeSelectorComponent,
+    ],
+    templateUrl: './main.component.html',
+    styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
   appTitle = 'Users Role NX';

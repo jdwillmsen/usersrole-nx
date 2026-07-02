@@ -11,21 +11,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-  selector: 'usersrole-nx-alerts',
-  standalone: true,
-  imports: [
-    CommonModule,
-    AlertComponent,
-    MatButtonModule,
-    MatSelectModule,
-    MatIconModule,
-    FormsModule,
-    MatInputModule,
-    MatCheckboxModule,
-    ReactiveFormsModule,
-  ],
-  templateUrl: './alerts.component.html',
-  styleUrls: ['./alerts.component.scss'],
+    selector: 'usersrole-nx-alerts',
+    imports: [
+        CommonModule,
+        AlertComponent,
+        MatButtonModule,
+        MatSelectModule,
+        MatIconModule,
+        FormsModule,
+        MatInputModule,
+        MatCheckboxModule,
+        ReactiveFormsModule,
+    ],
+    templateUrl: './alerts.component.html',
+    styleUrls: ['./alerts.component.scss']
 })
 export class AlertsComponent {
   options: AlertOptions = {

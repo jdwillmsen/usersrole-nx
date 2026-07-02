@@ -15,18 +15,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'usersrole-nx-users',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    AgGridModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatTooltipModule,
-  ],
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss'],
+    selector: 'usersrole-nx-users',
+    imports: [
+        CommonModule,
+        MatIconModule,
+        AgGridModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatTooltipModule,
+    ],
+    templateUrl: './users.component.html',
+    styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
   static columnDefs: ColDef[] = [

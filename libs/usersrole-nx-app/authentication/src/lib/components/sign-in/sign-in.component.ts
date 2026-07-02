@@ -14,18 +14,17 @@ import { RouterLink } from '@angular/router';
 import { EmailSignInComponent } from '../email-sign-in/email-sign-in.component';
 
 @Component({
-  selector: 'usersrole-nx-sign-in',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    RouterLink,
-    EmailSignInComponent,
-  ],
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss'],
+    selector: 'usersrole-nx-sign-in',
+    imports: [
+        CommonModule,
+        MatIconModule,
+        MatButtonModule,
+        MatCardModule,
+        RouterLink,
+        EmailSignInComponent,
+    ],
+    templateUrl: './sign-in.component.html',
+    styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent {
   constructor(

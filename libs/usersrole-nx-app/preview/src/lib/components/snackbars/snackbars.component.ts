@@ -14,20 +14,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-  selector: 'usersrole-nx-snackbars',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatInputModule,
-    FormsModule,
-    MatSelectModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    MatCheckboxModule,
-  ],
-  templateUrl: './snackbars.component.html',
-  styleUrls: ['./snackbars.component.scss'],
+    selector: 'usersrole-nx-snackbars',
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatInputModule,
+        FormsModule,
+        MatSelectModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatCheckboxModule,
+    ],
+    templateUrl: './snackbars.component.html',
+    styleUrls: ['./snackbars.component.scss']
 })
 export class SnackbarsComponent {
   options: SnackbarOptions = {

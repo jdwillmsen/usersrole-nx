@@ -9,19 +9,18 @@ import { NavigationItemComponent } from '../navigation-item/navigation-item.comp
 import { NavigationItem } from '../../models/navigation-item.model';
 
 @Component({
-  selector: 'usersrole-nx-navigation-layout',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatTooltipModule,
-    MatButtonModule,
-    MatIconModule,
-    NavigationItemComponent,
-  ],
-  templateUrl: './navigation-layout.component.html',
-  styleUrls: ['./navigation-layout.component.scss'],
+    selector: 'usersrole-nx-navigation-layout',
+    imports: [
+        CommonModule,
+        MatSidenavModule,
+        MatListModule,
+        MatTooltipModule,
+        MatButtonModule,
+        MatIconModule,
+        NavigationItemComponent,
+    ],
+    templateUrl: './navigation-layout.component.html',
+    styleUrls: ['./navigation-layout.component.scss']
 })
 export class NavigationLayoutComponent {
   @Input() isSideNavEnabled = true;

@@ -5,11 +5,10 @@ import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'usersrole-nx-forbidden',
-  standalone: true,
-  imports: [CommonModule, MatIconModule, RouterLink, MatButtonModule],
-  templateUrl: './forbidden.component.html',
-  styleUrls: ['./forbidden.component.scss'],
+    selector: 'usersrole-nx-forbidden',
+    imports: [CommonModule, MatIconModule, RouterLink, MatButtonModule],
+    templateUrl: './forbidden.component.html',
+    styleUrls: ['./forbidden.component.scss']
 })
 export class ForbiddenComponent {
   @Input() redirectLink = '/home';

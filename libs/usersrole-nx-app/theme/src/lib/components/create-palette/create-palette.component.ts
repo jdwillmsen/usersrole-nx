@@ -16,18 +16,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { PaletteColors } from '@usersrole-nx/shared';
 
 @Component({
-  selector: 'usersrole-nx-create-palette',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatTooltipModule,
-    MatIconModule,
-    MatButtonModule,
-    FormsModule,
-  ],
-  templateUrl: './create-palette.component.html',
-  styleUrls: ['./create-palette.component.scss'],
+    selector: 'usersrole-nx-create-palette',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        MatTooltipModule,
+        MatIconModule,
+        MatButtonModule,
+        FormsModule,
+    ],
+    templateUrl: './create-palette.component.html',
+    styleUrls: ['./create-palette.component.scss']
 })
 export class CreatePaletteComponent implements OnInit {
   @Input() paletteType: PaletteColors = 'primary';

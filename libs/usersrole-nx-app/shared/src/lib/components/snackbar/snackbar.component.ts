@@ -9,11 +9,10 @@ import {
 import { SnackbarData } from '../../models/snackbar.model';
 
 @Component({
-  selector: 'usersrole-nx-snackbar',
-  standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule],
-  templateUrl: './snackbar.component.html',
-  styleUrls: ['./snackbar.component.scss'],
+    selector: 'usersrole-nx-snackbar',
+    imports: [CommonModule, MatIconModule, MatButtonModule],
+    templateUrl: './snackbar.component.html',
+    styleUrls: ['./snackbar.component.scss']
 })
 export class SnackbarComponent {
   constructor(

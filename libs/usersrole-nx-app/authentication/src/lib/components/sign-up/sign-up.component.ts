@@ -28,19 +28,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'usersrole-nx-sign-up',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatInputModule,
-    MatCardModule,
-    RouterLink,
-    MatButtonModule,
-    MatIconModule,
-    ReactiveFormsModule,
-  ],
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss'],
+    selector: 'usersrole-nx-sign-up',
+    imports: [
+        CommonModule,
+        MatInputModule,
+        MatCardModule,
+        RouterLink,
+        MatButtonModule,
+        MatIconModule,
+        ReactiveFormsModule,
+    ],
+    templateUrl: './sign-up.component.html',
+    styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent {
   hide = true;

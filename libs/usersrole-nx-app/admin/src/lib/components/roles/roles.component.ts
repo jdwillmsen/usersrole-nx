@@ -23,18 +23,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @Component({
-  selector: 'usersrole-nx-roles',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatInputModule,
-    MatSelectModule,
-    ReactiveFormsModule,
-    MatAutocompleteModule,
-  ],
-  templateUrl: './roles.component.html',
-  styleUrls: ['./roles.component.scss'],
+    selector: 'usersrole-nx-roles',
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatInputModule,
+        MatSelectModule,
+        ReactiveFormsModule,
+        MatAutocompleteModule,
+    ],
+    templateUrl: './roles.component.html',
+    styleUrls: ['./roles.component.scss']
 })
 export class RolesComponent implements OnInit {
   rolesForm = new FormGroup(
