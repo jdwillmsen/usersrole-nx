@@ -3,8 +3,8 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/usersrole-nx-app/core/src",
   "prefix": "usersrole-nx",
-  "tags": ["type:core", "scope:usersrole-nx-app"],
   "projectType": "library",
+  "tags": ["type:core", "scope:usersrole-nx-app"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
@@ -22,13 +22,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/usersrole-nx-app/core/**/*.ts",
-          "libs/usersrole-nx-app/core/**/*.html"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     }
   }
 }

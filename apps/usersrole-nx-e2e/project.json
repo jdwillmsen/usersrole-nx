@@ -3,6 +3,8 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/usersrole-nx-e2e/src",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["usersrole-nx"],
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",
@@ -23,12 +25,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/usersrole-nx-e2e/**/*.{js,ts}"]
-      }
+      "outputs": ["{options.outputFile}"]
     }
-  },
-  "tags": [],
-  "implicitDependencies": ["usersrole-nx"]
+  }
 }
