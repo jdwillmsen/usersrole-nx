@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { MatButtonModule } from '@angular/material/button';
 import { AuthenticationService, ThemeStorageService } from '@usersrole-nx/core';
 
 @Component({
     selector: 'usersrole-nx-sign-out',
-    imports: [CommonModule, MatButtonModule],
+    imports: [MatButtonModule],
     templateUrl: './sign-out.component.html',
     styleUrls: ['./sign-out.component.scss']
 })

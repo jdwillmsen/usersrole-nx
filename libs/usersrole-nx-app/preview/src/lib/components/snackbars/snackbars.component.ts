@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Icon, SnackbarOptions, Variant } from '@usersrole-nx/shared';
 import { SnackbarService } from '@usersrole-nx/core';
@@ -16,15 +16,14 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 @Component({
     selector: 'usersrole-nx-snackbars',
     imports: [
-        CommonModule,
-        MatButtonModule,
-        MatInputModule,
-        FormsModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-        MatIconModule,
-        MatCheckboxModule,
-    ],
+    MatButtonModule,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatCheckboxModule
+],
     templateUrl: './snackbars.component.html',
     styleUrls: ['./snackbars.component.scss']
 })

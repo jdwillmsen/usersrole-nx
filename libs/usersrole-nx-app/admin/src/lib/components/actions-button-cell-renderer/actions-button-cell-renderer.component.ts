@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ICellRendererParams } from 'ag-grid-community';
 import { SnackbarService, UsersService } from '@usersrole-nx/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -17,7 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 @Component({
     selector: 'usersrole-nx-actions-button-cell-renderer',
-    imports: [CommonModule, MatButtonModule, MatTooltipModule, MatIconModule],
+    imports: [MatButtonModule, MatTooltipModule, MatIconModule],
     templateUrl: './actions-button-cell-renderer.component.html',
     styleUrls: ['./actions-button-cell-renderer.component.scss']
 })

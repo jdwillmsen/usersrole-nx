@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Palette, SiteTheme, Theme } from '@usersrole-nx/shared';
 import {
   AuthenticationService,
@@ -16,12 +16,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
     selector: 'usersrole-nx-theme-selector',
     imports: [
-        CommonModule,
-        MatMenuModule,
-        MatIconModule,
-        MatButtonModule,
-        MatTooltipModule,
-    ],
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTooltipModule
+],
     templateUrl: './theme-selector.component.html',
     styleUrls: ['./theme-selector.component.scss']
 })

@@ -5,7 +5,7 @@
       color="primary"
       data-cy="primary-button"
       mat-raised-button
-    >
+      >
       Primary Snackbar
     </button>
     <button
@@ -13,7 +13,7 @@
       color="accent"
       data-cy="accent-button"
       mat-raised-button
-    >
+      >
       Accent Snackbar
     </button>
     <button
@@ -21,7 +21,7 @@
       color="info"
       data-cy="info-button"
       mat-raised-button
-    >
+      >
       Info Snackbar
     </button>
     <button
@@ -29,7 +29,7 @@
       color="error"
       data-cy="error-button"
       mat-raised-button
-    >
+      >
       Error Snackbar
     </button>
     <button
@@ -37,7 +37,7 @@
       color="success"
       data-cy="success-button"
       mat-raised-button
-    >
+      >
       Success Snackbar
     </button>
     <button
@@ -45,14 +45,14 @@
       color="warn"
       data-cy="warn-button"
       mat-raised-button
-    >
+      >
       Warn Snackbar
     </button>
     <button
       (click)="snackbarService.clear()"
       data-cy="close-button"
       mat-raised-button
-    >
+      >
       Close Snackbar
     </button>
   </div>
@@ -61,7 +61,7 @@
       appearance="outline"
       data-cy="auto-close-time-field"
       subscriptSizing="dynamic"
-    >
+      >
       <mat-label>Auto Close Time</mat-label>
       <input
         [(ngModel)]="options.autoCloseTimeout"
@@ -71,70 +71,73 @@
         [step]="500"
         matInput
         type="number"
-      />
+        />
     </mat-form-field>
     <mat-form-field
       appearance="outline"
       data-cy="horizontal-position-field"
       subscriptSizing="dynamic"
-    >
+      >
       <mat-label>Horizontal Position</mat-label>
       <mat-select
         [(value)]="options.horizontalPosition"
         data-cy="horizontal-position-select"
-      >
-        <mat-option
-          *ngFor="let position of horizontalPositionList"
-          [attr.data-cy]="position + '-horizontal-option'"
-          [value]="position"
         >
-          {{ position }}
-        </mat-option>
+        @for (position of horizontalPositionList; track position) {
+          <mat-option
+            [attr.data-cy]="position + '-horizontal-option'"
+            [value]="position"
+            >
+            {{ position }}
+          </mat-option>
+        }
       </mat-select>
     </mat-form-field>
     <mat-form-field
       appearance="outline"
       data-cy="vertical-position-field"
       subscriptSizing="dynamic"
-    >
+      >
       <mat-label>Vertical Position</mat-label>
       <mat-select
         [(value)]="options.verticalPosition"
         data-cy="vertical-position-select"
-      >
-        <mat-option
-          *ngFor="let position of verticalPositionList"
-          [attr.data-cy]="position + '-vertical-option'"
-          [value]="position"
         >
-          {{ position }}
-        </mat-option>
+        @for (position of verticalPositionList; track position) {
+          <mat-option
+            [attr.data-cy]="position + '-vertical-option'"
+            [value]="position"
+            >
+            {{ position }}
+          </mat-option>
+        }
       </mat-select>
     </mat-form-field>
     <mat-form-field
       appearance="outline"
       data-cy="variant-field"
       subscriptSizing="dynamic"
-    >
+      >
       <mat-label>Variant</mat-label>
       <mat-select [formControl]="variant" data-cy="variant-select">
         <mat-select-trigger data-cy="variant-select-value">
           {{ variant.value?.display }}
         </mat-select-trigger>
-        <mat-option
-          *ngFor="let variant of variantList"
-          [attr.data-cy]="variant.value + '-variant-option'"
-          [value]="variant"
-        >
-          {{ variant.display }}
-        </mat-option>
+        @for (variant of variantList; track variant) {
+          <mat-option
+            [attr.data-cy]="variant.value + '-variant-option'"
+            [value]="variant"
+            >
+            {{ variant.display }}
+          </mat-option>
+        }
       </mat-select>
     </mat-form-field>
     <mat-form-field
       appearance="outline"
       data-cy="icon-field"
       subscriptSizing="dynamic"
-    >
+      >
       <mat-label>Icon</mat-label>
       <mat-select [(value)]="options.icon">
         <mat-select-trigger>
@@ -144,20 +147,21 @@
           </mat-icon>
         </mat-select-trigger>
         <mat-option data-cy="none-icon-option">None</mat-option>
-        <mat-option
-          *ngFor="let icon of iconList"
-          [attr.data-cy]="icon.value + '-icon-option'"
-          [value]="icon.value"
-        >
-          <mat-icon>{{ icon.value }}</mat-icon>
-        </mat-option>
+        @for (icon of iconList; track icon) {
+          <mat-option
+            [attr.data-cy]="icon.value + '-icon-option'"
+            [value]="icon.value"
+            >
+            <mat-icon>{{ icon.value }}</mat-icon>
+          </mat-option>
+        }
       </mat-select>
     </mat-form-field>
     <mat-form-field
       appearance="outline"
       data-cy="button-text-field"
       subscriptSizing="dynamic"
-    >
+      >
       <mat-label>Button Text</mat-label>
       <input [(ngModel)]="options.buttonText" matInput type="text" />
       <button
@@ -167,7 +171,7 @@
         data-cy="button-text-clear-button"
         mat-icon-button
         matSuffix
-      >
+        >
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
@@ -175,7 +179,7 @@
       appearance="outline"
       data-cy="snackbar-message-field"
       subscriptSizing="dynamic"
-    >
+      >
       <mat-label>Snackbar Message</mat-label>
       <textarea
         #autosize="cdkTextareaAutosize"
@@ -184,7 +188,7 @@
         cdkTextareaAutosize
         data-cy="snackbar-message-textarea"
         matInput
-      >
+        >
       </textarea>
     </mat-form-field>
   </div>

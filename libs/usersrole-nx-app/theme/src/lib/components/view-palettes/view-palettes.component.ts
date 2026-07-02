@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { PaletteComponent } from '../palette/palette.component';
 
 @Component({
     selector: 'usersrole-nx-view-palettes',
-    imports: [CommonModule, PaletteComponent],
+    imports: [PaletteComponent],
     templateUrl: './view-palettes.component.html',
     styleUrls: ['./view-palettes.component.scss']
 })

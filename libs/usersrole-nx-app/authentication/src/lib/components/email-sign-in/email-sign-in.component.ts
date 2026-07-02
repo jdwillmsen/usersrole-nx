@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {
   EMAIL_PATTERN_VALIDATION_MESSAGE,
   EMAIL_REQUIRED_VALIDATION_MESSAGE,
@@ -21,12 +21,11 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
     selector: 'usersrole-nx-email-sign-in',
     imports: [
-        CommonModule,
-        MatButtonModule,
-        MatInputModule,
-        MatIconModule,
-        ReactiveFormsModule,
-    ],
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule
+],
     templateUrl: './email-sign-in.component.html',
     styleUrls: ['./email-sign-in.component.scss']
 })

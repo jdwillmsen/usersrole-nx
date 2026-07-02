@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
     selector: 'usersrole-nx-navigation-tile',
-    imports: [CommonModule, RouterLink, MatCardModule],
+    imports: [RouterLink, MatCardModule],
     templateUrl: './navigation-tile.component.html',
     styleUrls: ['./navigation-tile.component.scss']
 })

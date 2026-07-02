@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -10,7 +10,7 @@ import { SnackbarData } from '../../models/snackbar.model';
 
 @Component({
     selector: 'usersrole-nx-snackbar',
-    imports: [CommonModule, MatIconModule, MatButtonModule],
+    imports: [MatIconModule, MatButtonModule],
     templateUrl: './snackbar.component.html',
     styleUrls: ['./snackbar.component.scss']
 })

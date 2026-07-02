@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {
   CONFIRM_PASSWORD_REQUIRED_VALIDATION_MESSAGE,
   CreateUserRequest,
@@ -30,14 +30,13 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
     selector: 'usersrole-nx-sign-up',
     imports: [
-        CommonModule,
-        MatInputModule,
-        MatCardModule,
-        RouterLink,
-        MatButtonModule,
-        MatIconModule,
-        ReactiveFormsModule,
-    ],
+    MatInputModule,
+    MatCardModule,
+    RouterLink,
+    MatButtonModule,
+    MatIconModule,
+    ReactiveFormsModule
+],
     templateUrl: './sign-up.component.html',
     styleUrls: ['./sign-up.component.scss']
 })

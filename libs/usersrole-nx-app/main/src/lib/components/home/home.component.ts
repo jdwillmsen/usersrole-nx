@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { HomeTileComponent } from '../home-tile/home-tile.component';
 import { HomeTile } from '../../models/home-tile.model';
 
 @Component({
     selector: 'usersrole-nx-home',
-    imports: [CommonModule, HomeTileComponent],
+    imports: [HomeTileComponent],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })

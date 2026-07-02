@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CreatePaletteComponent } from '../create-palette/create-palette.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,12 +20,11 @@ import {
 @Component({
     selector: 'usersrole-nx-create-theme',
     imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        CreatePaletteComponent,
-        MatIconModule,
-        MatButtonModule,
-    ],
+    ReactiveFormsModule,
+    CreatePaletteComponent,
+    MatIconModule,
+    MatButtonModule
+],
     templateUrl: './create-theme.component.html',
     styleUrls: ['./create-theme.component.scss']
 })

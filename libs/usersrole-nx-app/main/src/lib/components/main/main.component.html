@@ -5,11 +5,15 @@
   [appTooltip]="appToolTip"
   [color]="headerColor"
   [isXSmallScreen]="isXSmallScreen && !!user"
->
+  >
   <span class="header-actions">
     <usersrole-nx-github-button [githubLink]="githubLink" />
-    <usersrole-nx-theme-selector *ngIf="user" />
-    <usersrole-nx-sign-out-card *ngIf="user" [user]="user" />
+    @if (user) {
+      <usersrole-nx-theme-selector />
+    }
+    @if (user) {
+      <usersrole-nx-sign-out-card [user]="user" />
+    }
   </span>
 </usersrole-nx-header>
 <usersrole-nx-navigation-layout
@@ -18,6 +22,6 @@
   [isSideNavOpened]="isSideNavOpened"
   [navigationItems]="navigationItems()"
   [sideNavMode]="sideNavMode"
->
+  >
   <router-outlet></router-outlet>
 </usersrole-nx-navigation-layout>

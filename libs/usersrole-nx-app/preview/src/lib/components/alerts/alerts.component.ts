@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { AlertService } from '../../services/alert/alert.service';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertOptions, Icon, Variant } from '@usersrole-nx/shared';
@@ -13,16 +13,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 @Component({
     selector: 'usersrole-nx-alerts',
     imports: [
-        CommonModule,
-        AlertComponent,
-        MatButtonModule,
-        MatSelectModule,
-        MatIconModule,
-        FormsModule,
-        MatInputModule,
-        MatCheckboxModule,
-        ReactiveFormsModule,
-    ],
+    AlertComponent,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
+    FormsModule,
+    MatInputModule,
+    MatCheckboxModule,
+    ReactiveFormsModule
+],
     templateUrl: './alerts.component.html',
     styleUrls: ['./alerts.component.scss']
 })

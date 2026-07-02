@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -7,7 +7,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
     selector: 'usersrole-nx-github-button',
-    imports: [CommonModule, MatButtonModule, MatIconModule, MatTooltipModule],
+    imports: [MatButtonModule, MatIconModule, MatTooltipModule],
     templateUrl: './github-button.component.html',
     styleUrls: ['./github-button.component.scss']
 })

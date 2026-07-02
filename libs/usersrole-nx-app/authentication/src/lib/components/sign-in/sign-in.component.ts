@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {
   AuthenticationService,
   SnackbarService,
@@ -16,13 +16,12 @@ import { EmailSignInComponent } from '../email-sign-in/email-sign-in.component';
 @Component({
     selector: 'usersrole-nx-sign-in',
     imports: [
-        CommonModule,
-        MatIconModule,
-        MatButtonModule,
-        MatCardModule,
-        RouterLink,
-        EmailSignInComponent,
-    ],
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    RouterLink,
+    EmailSignInComponent
+],
     templateUrl: './sign-in.component.html',
     styleUrls: ['./sign-in.component.scss']
 })

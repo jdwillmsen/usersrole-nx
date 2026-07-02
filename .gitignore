@@ -59,3 +59,5 @@ firebase-export*
 
 # Cypress
 /apps/usersrole-nx-e2e/src/fixtures/accounts.json
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md

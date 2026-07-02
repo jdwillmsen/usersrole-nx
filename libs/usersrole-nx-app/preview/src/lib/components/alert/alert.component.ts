@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Alert, AlertVariants } from '@usersrole-nx/shared';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
     selector: 'usersrole-nx-alert',
-    imports: [CommonModule, MatIconModule, MatButtonModule],
+    imports: [MatIconModule, MatButtonModule],
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.scss'],
     animations: [

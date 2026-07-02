@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { User } from 'firebase/auth';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,14 +11,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
     selector: 'usersrole-nx-sign-out-card',
     imports: [
-        CommonModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        SignOutComponent,
-        MatTooltipModule,
-    ],
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    SignOutComponent,
+    MatTooltipModule
+],
     templateUrl: './sign-out-card.component.html',
     styleUrls: ['./sign-out-card.component.scss']
 })

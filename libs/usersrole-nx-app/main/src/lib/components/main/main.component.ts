@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {
   HeaderComponent,
   NavigationLayoutComponent,
@@ -20,16 +20,15 @@ import { NavigationService } from '../../services/navigation/navigation.service'
 @Component({
     selector: 'usersrole-nx-main',
     imports: [
-        CommonModule,
-        HeaderComponent,
-        NavigationLayoutComponent,
-        RouterOutlet,
-        MatIconModule,
-        MatButtonModule,
-        GithubButtonComponent,
-        SignOutCardComponent,
-        ThemeSelectorComponent,
-    ],
+    HeaderComponent,
+    NavigationLayoutComponent,
+    RouterOutlet,
+    MatIconModule,
+    MatButtonModule,
+    GithubButtonComponent,
+    SignOutCardComponent,
+    ThemeSelectorComponent
+],
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss']
 })
