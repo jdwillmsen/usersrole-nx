@@ -159,10 +159,10 @@
       }
     },
     "deploy": {
-      "executor": "@angular/fire:deploy",
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
       "options": {
-        "version": 2,
-        "browserTarget": "usersrole-nx:build:production"
+        "command": "firebase deploy --only hosting"
       }
     }
   },

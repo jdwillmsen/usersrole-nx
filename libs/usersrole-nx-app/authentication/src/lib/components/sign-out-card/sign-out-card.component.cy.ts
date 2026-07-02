@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { SignOutCardComponent } from './sign-out-card.component';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignInComponent } from '../sign-in/sign-in.component';
@@ -22,7 +22,7 @@ describe(SignOutCardComponent.name, () => {
       ],
       providers: [
         {
-          provide: AngularFireAuth,
+          provide: AUTH,
           useValue: {
             signOut: () => new Promise((resolve) => resolve(true)),
           },

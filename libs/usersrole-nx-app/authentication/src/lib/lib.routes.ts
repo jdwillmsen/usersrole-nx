@@ -2,35 +2,22 @@ import { Route } from '@angular/router';
 import { ForbiddenComponent } from './components/forbidden/forbidden.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import {
-  redirectLoggedInToHome,
-  redirectUnauthorizedToLogin,
-} from '@usersrole-nx/core';
-import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
+import { authGuard, unauthGuard } from '@usersrole-nx/core';
 
 export const authenticationRoutes: Route[] = [
   {
     path: 'forbidden',
     component: ForbiddenComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: {
-      authGuardPipe: redirectUnauthorizedToLogin,
-    },
+    canActivate: [authGuard],
   },
   {
     path: 'sign-in',
     component: SignInComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: {
-      authGuardPipe: redirectLoggedInToHome,
-    },
+    canActivate: [unauthGuard],
   },
   {
     path: 'sign-up',
     component: SignUpComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: {
-      authGuardPipe: redirectLoggedInToHome,
-    },
+    canActivate: [unauthGuard],
   },
 ];

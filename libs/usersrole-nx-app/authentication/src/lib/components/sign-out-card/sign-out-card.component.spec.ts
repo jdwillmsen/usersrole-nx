@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SignOutCardComponent } from './sign-out-card.component';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('SignOutCardComponent', () => {
@@ -12,7 +12,7 @@ describe('SignOutCardComponent', () => {
       imports: [SignOutCardComponent, MatSnackBarModule],
       providers: [
         {
-          provide: AngularFireAuth,
+          provide: AUTH,
           useValue: {},
         },
       ],

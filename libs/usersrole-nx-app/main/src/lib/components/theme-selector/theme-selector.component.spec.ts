@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ThemeSelectorComponent } from './theme-selector.component';
 import { FirestoreService } from '@usersrole-nx/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('ThemeSelectorComponent', () => {
@@ -17,7 +17,7 @@ describe('ThemeSelectorComponent', () => {
           useValue: {},
         },
         {
-          provide: AngularFireAuth,
+          provide: AUTH,
           useValue: {},
         },
       ],

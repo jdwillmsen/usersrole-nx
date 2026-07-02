@@ -12,19 +12,24 @@ import { appRoutes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getFunctions, provideFunctions } from '@angular/fire/functions';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFunctions } from 'firebase/functions';
+import { getFirestore } from 'firebase/firestore';
 import {
+  AUTH,
   AuthTokenHttpInterceptorProvider,
   ENVIRONMENT,
   ErrorHandlerService,
+  FIREBASE_APP,
+  FIRESTORE,
+  FUNCTIONS,
   GlobalHttpErrorHandlerInterceptorProvider,
 } from '@usersrole-nx/core';
 import { environment } from '../environments/environment';
 import { provideServiceWorker } from '@angular/service-worker';
+
+const firebaseApp = initializeApp(environment.firebase);
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -32,15 +37,11 @@ export const appConfig: ApplicationConfig = {
     GlobalHttpErrorHandlerInterceptorProvider,
     provideHttpClient(),
     provideAnimations(),
-    importProvidersFrom(
-      HttpClientModule,
-      MatSnackBarModule,
-      provideAuth(() => getAuth()),
-      provideFunctions(() => getFunctions()),
-      provideFirestore(() => getFirestore()),
-      AngularFireModule.initializeApp(environment.firebase),
-      provideFirebaseApp(() => initializeApp(environment.firebase)),
-    ),
+    importProvidersFrom(HttpClientModule, MatSnackBarModule),
+    { provide: FIREBASE_APP, useValue: firebaseApp },
+    { provide: AUTH, useFactory: () => getAuth(firebaseApp) },
+    { provide: FIRESTORE, useFactory: () => getFirestore(firebaseApp) },
+    { provide: FUNCTIONS, useFactory: () => getFunctions(firebaseApp) },
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
     {
       provide: ENVIRONMENT,
@@ -50,7 +51,6 @@ export const appConfig: ApplicationConfig = {
       provide: ErrorHandler,
       useClass: ErrorHandlerService,
     },
-    { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000',

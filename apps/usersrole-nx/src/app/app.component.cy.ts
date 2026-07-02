@@ -4,10 +4,9 @@ import { mount } from 'cypress/angular';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ENVIRONMENT, FirestoreService } from '@usersrole-nx/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { of } from 'rxjs';
 
 describe(AppComponent.name, () => {
   beforeEach(() => {
@@ -15,9 +14,17 @@ describe(AppComponent.name, () => {
       imports: [BrowserAnimationsModule],
       providers: [
         {
-          provide: AngularFireAuth,
+          provide: AUTH,
           useValue: {
-            user: of(),
+            onAuthStateChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+            onIdTokenChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+            currentUser: null,
           },
         },
         {

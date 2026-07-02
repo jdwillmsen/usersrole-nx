@@ -9,5 +9,6 @@ export * from './lib/services/permission/permission.service';
 export * from './lib/interceptors/auth-token/auth-token.interceptor';
 export * from './lib/interceptors/global-http-error-handler/global-http-error-handler.interceptor';
 export * from './lib/guards/role/role.guard';
+export * from './lib/guards/auth/auth.guard';
 export * from './lib/environment.token';
-export * from './lib/lib.routes';
+export * from './lib/firebase.tokens';

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import admin from 'firebase-admin';
+import { DecodedIdToken, getAuth } from 'firebase-admin/auth';
 
 export async function isAuthenticated(
   req: Request,
@@ -25,9 +25,7 @@ export async function isAuthenticated(
   const token = split[1];
 
   try {
-    const decodedToken: admin.auth.DecodedIdToken = await admin
-      .auth()
-      .verifyIdToken(token);
+    const decodedToken: DecodedIdToken = await getAuth().verifyIdToken(token);
     res.locals = {
       ...res.locals,
       uid: decodedToken.uid,

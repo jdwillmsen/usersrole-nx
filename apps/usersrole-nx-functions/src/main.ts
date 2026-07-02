@@ -1,4 +1,4 @@
-import admin from 'firebase-admin';
+import { initializeApp } from 'firebase-admin/app';
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -9,7 +9,7 @@ import { onRequest } from 'firebase-functions/v2/https';
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3002;
 
-admin.initializeApp();
+initializeApp();
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({ origin: true }));

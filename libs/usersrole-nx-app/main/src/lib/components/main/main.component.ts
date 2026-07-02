@@ -14,7 +14,7 @@ import { GithubButtonComponent } from '@usersrole-nx/shared';
 import { SignOutCardComponent } from '@usersrole-nx/authentication';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 import { AuthenticationService, SnackbarService } from '@usersrole-nx/core';
-import firebase from 'firebase/compat/app';
+import { User } from 'firebase/auth';
 import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
@@ -43,7 +43,7 @@ export class MainComponent {
   isSideNavOpened = false;
   sideNavMode: MatDrawerMode = 'side';
   githubLink = 'https://github.com/jdwillmsen/usersrole-nx';
-  user: firebase.User | null = null;
+  user: User | null = null;
 
   constructor(
     private breakpointObserver: BreakpointObserver,

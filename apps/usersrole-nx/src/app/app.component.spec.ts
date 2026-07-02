@@ -4,9 +4,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { expect } from '@jest/globals';
 import { HttpClientModule } from '@angular/common/http';
 import { ENVIRONMENT, FirestoreService } from '@usersrole-nx/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { of } from 'rxjs';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -23,9 +22,17 @@ describe('AppComponent', () => {
           useValue: {},
         },
         {
-          provide: AngularFireAuth,
+          provide: AUTH,
           useValue: {
-            user: of(),
+            onAuthStateChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+            onIdTokenChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+            currentUser: null,
           },
         },
         {

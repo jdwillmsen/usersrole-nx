@@ -2,11 +2,13 @@ import { of, throwError } from 'rxjs';
 import { Role } from '@usersrole-nx/shared';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { PermissionService } from './permission.service';
+import { Auth } from 'firebase/auth';
+import * as rxfireAuth from 'rxfire/auth';
 
 describe('PermissionService', () => {
   let permissionsService: PermissionService;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let angularFireAuthMock: jest.Mocked<any>;
+  let userSpy: jest.SpyInstance;
+  const authMock = {} as Auth;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const routerMock: jest.Mocked<any> = {
     navigate: jest.fn(),
@@ -21,15 +23,21 @@ describe('PermissionService', () => {
   };
 
   beforeEach(() => {
-    angularFireAuthMock = {
-      user: of(null),
-    };
+    jest.clearAllMocks();
+    userSpy = jest
+      .spyOn(rxfireAuth, 'user')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .mockReturnValue(of(null) as any);
     permissionsService = new PermissionService(
       routerMock,
       usersServiceMock,
-      angularFireAuthMock,
+      authMock,
       snackbarServiceMock,
     );
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
   it('should create an instance of PermissionsService', () => {
@@ -56,7 +64,8 @@ describe('PermissionService', () => {
       data: { roles },
     } as any; // eslint-disable-line @typescript-eslint/no-explicit-any
     const userDetails = { roles: ['admin', 'user'] };
-    angularFireAuthMock.user = of({ uid: 'testUser' });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    userSpy.mockReturnValue(of({ uid: 'testUser' }) as any);
     usersServiceMock.user$.mockReturnValue(of(userDetails));
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -73,7 +82,8 @@ describe('PermissionService', () => {
       data: { roles },
     } as any; // eslint-disable-line @typescript-eslint/no-explicit-any
     const userDetails = { roles: ['users'] };
-    angularFireAuthMock.user = of({ uid: 'testUser' });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    userSpy.mockReturnValue(of({ uid: 'testUser' }) as any);
     usersServiceMock.user$.mockReturnValue(of(userDetails));
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -124,7 +134,8 @@ describe('PermissionService', () => {
   it('should update roles when user is not null', (done) => {
     const user = { uid: 'testUser' };
     const userRoles: Role[] = ['admin', 'user'];
-    angularFireAuthMock.user = of(user);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    userSpy.mockReturnValue(of(user) as any);
     usersServiceMock.user$.mockReturnValue(of({ roles: userRoles }));
 
     permissionsService.getRole();
@@ -138,9 +149,11 @@ describe('PermissionService', () => {
 
   it('should handle error when user retrieval fails', (done) => {
     const errorMessage = 'User retrieval error';
-    angularFireAuthMock.user = throwError(() => {
-      return { message: errorMessage };
-    });
+    userSpy.mockReturnValue(
+      throwError(() => {
+        return { message: errorMessage };
+      }),
+    );
 
     permissionsService.getRole();
 

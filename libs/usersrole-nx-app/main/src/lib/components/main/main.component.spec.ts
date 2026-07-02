@@ -4,9 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ENVIRONMENT, FirestoreService } from '@usersrole-nx/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { of } from 'rxjs';
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -30,8 +29,18 @@ describe('MainComponent', () => {
           useValue: {},
         },
         {
-          provide: AngularFireAuth,
-          useValue: { user: of() },
+          provide: AUTH,
+          useValue: {
+            onAuthStateChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+            onIdTokenChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+            currentUser: null,
+          },
         },
         {
           provide: ENVIRONMENT,

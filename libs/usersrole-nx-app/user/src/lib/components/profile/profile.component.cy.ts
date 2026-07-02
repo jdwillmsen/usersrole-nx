@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { ProfileComponent } from './profile.component';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { ENVIRONMENT, UsersService } from '@usersrole-nx/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -33,9 +33,17 @@ describe(ProfileComponent.name, () => {
         imports: [HttpClientModule, MatSnackBarModule],
         providers: [
           {
-            provide: AngularFireAuth,
+            provide: AUTH,
             useValue: {
-              user: of(() => true),
+              onAuthStateChanged: (next: (user: unknown) => void) => {
+                next({ uid: 'test-uid' });
+                return () => undefined;
+              },
+              onIdTokenChanged: (next: (user: unknown) => void) => {
+                next({ uid: 'test-uid' });
+                return () => undefined;
+              },
+              currentUser: null,
             },
           },
         ],

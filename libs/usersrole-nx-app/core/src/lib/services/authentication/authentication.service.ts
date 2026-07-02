@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, from, Observable, of, switchMap } from 'rxjs';
 import { Router } from '@angular/router';
 import { SnackbarService } from '../snackbar/snackbar.service';
@@ -17,29 +17,40 @@ import {
   WRONG_USERNAME,
 } from '@usersrole-nx/shared';
 import { handleError } from '../error-handler/error-handler.service';
-import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat';
+import {
+  Auth,
+  AuthCredential,
+  fetchSignInMethodsForEmail,
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  linkWithCredential,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  User,
+} from 'firebase/auth';
+import { authState } from 'rxfire/auth';
+import { AUTH } from '../../firebase.tokens';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  private user: BehaviorSubject<Observable<firebase.User | null>> =
-    new BehaviorSubject<Observable<firebase.User | null>>(of(null));
+  private user: BehaviorSubject<Observable<User | null>> = new BehaviorSubject<
+    Observable<User | null>
+  >(of(null));
   user$ = this.user.asObservable().pipe(switchMap((user) => user));
   constructor(
-    private angularFireAuth: AngularFireAuth,
+    @Inject(AUTH) private auth: Auth,
     private router: Router,
     private snackbarService: SnackbarService,
   ) {
-    this.user.next(angularFireAuth.authState);
+    this.user.next(authState(this.auth));
   }
 
   emailAuth(email: string, password: string): Observable<void> {
     return from(
-      this.angularFireAuth
-        .signInWithEmailAndPassword(email, password)
+      signInWithEmailAndPassword(this.auth, email, password)
         .then(() => {
           this.router.navigate(['home']).then(() => {
             this.snackbarService.success(
@@ -75,8 +86,7 @@ export class AuthenticationService {
   }
   authLogin(provider: SupportedAuthProviders): Observable<void> {
     return from(
-      this.angularFireAuth
-        .signInWithPopup(provider)
+      signInWithPopup(this.auth, provider)
         .then(() => {
           this.router.navigate(['home']).then(() => {
             this.snackbarService.success(SUCCESS_SIGN_IN_MESSAGE, {
@@ -93,8 +103,7 @@ export class AuthenticationService {
 
   authLogout(): Observable<void> {
     return from(
-      this.angularFireAuth
-        .signOut()
+      signOut(this.auth)
         .then(() => {
           this.router.navigate(['sign-in']).then(() => {
             this.snackbarService.success(
@@ -126,7 +135,7 @@ export class AuthenticationService {
 
   handleAuthLoginFailure(error: {
     email: string;
-    credential: firebase.auth.AuthCredential;
+    credential: AuthCredential;
     code: string;
   }): void {
     if (
@@ -134,8 +143,7 @@ export class AuthenticationService {
       error.credential &&
       error.code === ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL
     ) {
-      this.angularFireAuth
-        .fetchSignInMethodsForEmail(error.email)
+      fetchSignInMethodsForEmail(this.auth, error.email)
         .then((providers) => {
           console.error(providers);
           const firstPopupProviderMethod = providers.find((p) =>
@@ -148,12 +156,10 @@ export class AuthenticationService {
           }
           const linkedProvider = this.getProvider(firstPopupProviderMethod);
           linkedProvider.setCustomParameters({ login_hint: error.email });
-          this.angularFireAuth
-            .signInWithPopup(linkedProvider)
+          signInWithPopup(this.auth, linkedProvider)
             .then((result) => {
               if (result.user) {
-                result.user.linkWithCredential(error.credential);
-                // this.router.navigate(['home']);
+                linkWithCredential(result.user, error.credential);
               }
             })
             .catch((error) => handleError(error, this.snackbarService));
