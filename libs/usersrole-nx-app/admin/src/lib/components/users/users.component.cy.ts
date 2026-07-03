@@ -62,25 +62,25 @@ function testScreenSize(size: string, width: number, height: number) {
       cy.getByCy('create-user-button')
         .should('be.visible')
         .and('contain.text', 'Create User');
-      cy.get('.ag-header-row > [col-id="uid"]')
+      cy.get('.ag-header-row [col-id="uid"]')
         .should('be.visible')
         .and('contain.text', 'Uid');
-      cy.get('.ag-header-row > [col-id="email"]')
+      cy.get('.ag-header-row [col-id="email"]')
         .should('be.visible')
         .and('contain.text', 'Email');
-      cy.get('.ag-header-row > [col-id="displayName"]')
+      cy.get('.ag-header-row [col-id="displayName"]')
         .should('be.visible')
         .and('contain.text', 'Display Name');
-      cy.get('.ag-header-row > [col-id="roles"]')
+      cy.get('.ag-header-row [col-id="roles"]')
         .should('be.visible')
         .and('contain.text', 'Roles');
-      cy.get('.ag-header-row > [col-id="lastSignInTime"]')
+      cy.get('.ag-header-row [col-id="lastSignInTime"]')
         .should('be.visible')
         .and('contain.text', 'Last Sign In Time');
-      cy.get('.ag-header-row > [col-id="creationTime"]')
+      cy.get('.ag-header-row [col-id="creationTime"]')
         .should('be.visible')
         .and('contain.text', 'Creation Time');
-      cy.get('.ag-header-row > [col-id="actions"]')
+      cy.get('.ag-header-row [col-id="actions"]')
         .should('be.visible')
         .and('contain.text', 'Actions');
       cy.contains('test-uid-1');
@@ -126,7 +126,7 @@ function testScreenSize(size: string, width: number, height: number) {
       ).as('getUsers');
       cy.mount(UsersComponent);
       cy.get(
-        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-menu-button > .ag-icon',
+        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-filter-button > .ag-icon',
       )
         .click()
         .type('test-user-1@usersrole.com');
@@ -162,7 +162,7 @@ function testScreenSize(size: string, width: number, height: number) {
       ).as('getUsers');
       cy.mount(UsersComponent);
       cy.get(
-        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-menu-button > .ag-icon',
+        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-filter-button > .ag-icon',
       )
         .click()
         .type('test-user-1@usersrole.com');
@@ -204,7 +204,7 @@ function testScreenSize(size: string, width: number, height: number) {
       ).as('getUsers');
       cy.mount(UsersComponent);
       cy.get(
-        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-menu-button > .ag-icon',
+        '[col-id="email"] > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-cell-filter-button > .ag-icon',
       )
         .click()
         .type('test-user-1@usersrole.com');
