@@ -5,7 +5,7 @@
   [appTooltip]="appToolTip"
   [color]="headerColor"
   [isXSmallScreen]="isXSmallScreen && !!user"
-  >
+>
   <span class="header-actions">
     <usersrole-nx-github-button [githubLink]="githubLink" />
     @if (user) {
@@ -22,6 +22,6 @@
   [isSideNavOpened]="isSideNavOpened"
   [navigationItems]="navigationItems()"
   [sideNavMode]="sideNavMode"
-  >
+>
   <router-outlet></router-outlet>
 </usersrole-nx-navigation-layout>

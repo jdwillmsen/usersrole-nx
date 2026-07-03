@@ -3,11 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RolesService } from './roles.service';
 import { EMPTY, throwError } from 'rxjs';
 import { UpdateUserRolesRequest } from '@usersrole-nx/shared';
-import {
-  Environment,
-  ENVIRONMENT,
-  SnackbarService,
-} from '@usersrole-nx/core';
+import { Environment, ENVIRONMENT, SnackbarService } from '@usersrole-nx/core';
 
 describe('RolesService', () => {
   let rolesService: RolesService;

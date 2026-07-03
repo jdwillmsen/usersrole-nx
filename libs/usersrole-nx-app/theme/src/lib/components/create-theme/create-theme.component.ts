@@ -18,15 +18,15 @@ import {
 } from '@usersrole-nx/core';
 
 @Component({
-    selector: 'usersrole-nx-create-theme',
-    imports: [
+  selector: 'usersrole-nx-create-theme',
+  imports: [
     ReactiveFormsModule,
     CreatePaletteComponent,
     MatIconModule,
-    MatButtonModule
-],
-    templateUrl: './create-theme.component.html',
-    styleUrls: ['./create-theme.component.scss']
+    MatButtonModule,
+  ],
+  templateUrl: './create-theme.component.html',
+  styleUrls: ['./create-theme.component.scss'],
 })
 export class CreateThemeComponent {
   private firestoreService = inject(FirestoreService);

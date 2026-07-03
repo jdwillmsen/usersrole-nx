@@ -14,15 +14,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-    selector: 'usersrole-nx-theme-selector',
-    imports: [
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTooltipModule
-],
-    templateUrl: './theme-selector.component.html',
-    styleUrls: ['./theme-selector.component.scss']
+  selector: 'usersrole-nx-theme-selector',
+  imports: [MatMenuModule, MatIconModule, MatButtonModule, MatTooltipModule],
+  templateUrl: './theme-selector.component.html',
+  styleUrls: ['./theme-selector.component.scss'],
 })
 export class ThemeSelectorComponent {
   private styleManagerService = inject(StyleManagerService);

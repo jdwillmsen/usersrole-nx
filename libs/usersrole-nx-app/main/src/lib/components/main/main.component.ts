@@ -18,8 +18,8 @@ import { User } from 'firebase/auth';
 import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
-    selector: 'usersrole-nx-main',
-    imports: [
+  selector: 'usersrole-nx-main',
+  imports: [
     HeaderComponent,
     NavigationLayoutComponent,
     RouterOutlet,
@@ -27,10 +27,10 @@ import { NavigationService } from '../../services/navigation/navigation.service'
     MatButtonModule,
     GithubButtonComponent,
     SignOutCardComponent,
-    ThemeSelectorComponent
-],
-    templateUrl: './main.component.html',
-    styleUrls: ['./main.component.scss']
+    ThemeSelectorComponent,
+  ],
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
   private breakpointObserver = inject(BreakpointObserver);

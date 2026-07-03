@@ -23,17 +23,17 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 ModuleRegistry.registerModules([AllCommunityModule]);
 
 @Component({
-    selector: 'usersrole-nx-users',
-    imports: [
-        CommonModule,
-        MatIconModule,
-        AgGridModule,
-        MatButtonModule,
-        MatDialogModule,
-        MatTooltipModule,
-    ],
-    templateUrl: './users.component.html',
-    styleUrls: ['./users.component.scss']
+  selector: 'usersrole-nx-users',
+  imports: [
+    CommonModule,
+    MatIconModule,
+    AgGridModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatTooltipModule,
+  ],
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
   private userService = inject(UsersService);

@@ -3,7 +3,7 @@
     [@fade]="{ value: fade, params: { fadeTime: fadeTime } }"
     class="{{ cssClass(alert) }}"
     data-cy="alert"
-    >
+  >
     @if (alert.icon) {
       <mat-icon class="icon" data-cy="icon">
         {{ alert.icon }}
@@ -19,7 +19,7 @@
         data-cy="close-button"
         mat-icon-button
         type="button"
-        >
+      >
         <mat-icon>close</mat-icon>
       </button>
     }

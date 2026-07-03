@@ -16,10 +16,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    selector: 'usersrole-nx-actions-button-cell-renderer',
-    imports: [MatButtonModule, MatTooltipModule, MatIconModule],
-    templateUrl: './actions-button-cell-renderer.component.html',
-    styleUrls: ['./actions-button-cell-renderer.component.scss']
+  selector: 'usersrole-nx-actions-button-cell-renderer',
+  imports: [MatButtonModule, MatTooltipModule, MatIconModule],
+  templateUrl: './actions-button-cell-renderer.component.html',
+  styleUrls: ['./actions-button-cell-renderer.component.scss'],
 })
 export class ActionsButtonCellRendererComponent
   implements ICellRendererAngularComp

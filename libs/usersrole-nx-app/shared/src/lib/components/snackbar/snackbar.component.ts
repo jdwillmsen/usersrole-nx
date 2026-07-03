@@ -9,10 +9,10 @@ import {
 import { SnackbarData } from '../../models/snackbar.model';
 
 @Component({
-    selector: 'usersrole-nx-snackbar',
-    imports: [MatIconModule, MatButtonModule],
-    templateUrl: './snackbar.component.html',
-    styleUrls: ['./snackbar.component.scss']
+  selector: 'usersrole-nx-snackbar',
+  imports: [MatIconModule, MatButtonModule],
+  templateUrl: './snackbar.component.html',
+  styleUrls: ['./snackbar.component.scss'],
 })
 export class SnackbarComponent {
   // MAT_SNACK_BAR_DATA is InjectionToken<any>; the double cast keeps the

@@ -14,10 +14,10 @@ import { AUTH, UsersService } from '@usersrole-nx/core';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
-    selector: 'usersrole-nx-profile',
-    imports: [CommonModule, ReactiveFormsModule, MatInputModule, FormsModule],
-    templateUrl: './profile.component.html',
-    styleUrls: ['./profile.component.scss']
+  selector: 'usersrole-nx-profile',
+  imports: [CommonModule, ReactiveFormsModule, MatInputModule, FormsModule],
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
   private auth = inject<Auth>(AUTH);

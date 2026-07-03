@@ -6,15 +6,10 @@ import { NavigationItem } from '../../models/navigation-item.model';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-    selector: 'usersrole-nx-navigation-item',
-    imports: [
-    MatIconModule,
-    MatListModule,
-    RouterLinkActive,
-    RouterLink
-],
-    templateUrl: './navigation-item.component.html',
-    styleUrls: ['./navigation-item.component.scss']
+  selector: 'usersrole-nx-navigation-item',
+  imports: [MatIconModule, MatListModule, RouterLinkActive, RouterLink],
+  templateUrl: './navigation-item.component.html',
+  styleUrls: ['./navigation-item.component.scss'],
 })
 export class NavigationItemComponent {
   @Input() navigationItem: NavigationItem = {

@@ -4,15 +4,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { AuthenticationService, ThemeStorageService } from '@usersrole-nx/core';
 
 @Component({
-    selector: 'usersrole-nx-sign-out',
-    imports: [MatButtonModule],
-    templateUrl: './sign-out.component.html',
-    styleUrls: ['./sign-out.component.scss']
+  selector: 'usersrole-nx-sign-out',
+  imports: [MatButtonModule],
+  templateUrl: './sign-out.component.html',
+  styleUrls: ['./sign-out.component.scss'],
 })
 export class SignOutComponent {
   private authenticationService = inject(AuthenticationService);
   private themeStorageService = inject(ThemeStorageService);
-
 
   logout() {
     this.authenticationService.authLogout();

@@ -3,9 +3,9 @@ import { RouterModule } from '@angular/router';
 import { MainComponent } from '@usersrole-nx/main';
 
 @Component({
-    imports: [RouterModule, MainComponent],
-    selector: 'usersrole-nx-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+  imports: [RouterModule, MainComponent],
+  selector: 'usersrole-nx-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {}

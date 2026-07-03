@@ -28,17 +28,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    selector: 'usersrole-nx-sign-up',
-    imports: [
+  selector: 'usersrole-nx-sign-up',
+  imports: [
     MatInputModule,
     MatCardModule,
     RouterLink,
     MatButtonModule,
     MatIconModule,
-    ReactiveFormsModule
-],
-    templateUrl: './sign-up.component.html',
-    styleUrls: ['./sign-up.component.scss']
+    ReactiveFormsModule,
+  ],
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent {
   private usersService = inject(UsersService);

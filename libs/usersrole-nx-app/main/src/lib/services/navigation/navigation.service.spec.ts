@@ -12,7 +12,9 @@ describe('NavigationService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [{ provide: PermissionService, useValue: permissionServiceMock }],
+      providers: [
+        { provide: PermissionService, useValue: permissionServiceMock },
+      ],
     });
     navigationService = TestBed.inject(NavigationService);
   });

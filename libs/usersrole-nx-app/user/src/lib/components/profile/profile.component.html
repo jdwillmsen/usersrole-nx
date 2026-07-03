@@ -1,5 +1,4 @@
-@if (user$ | async) {
-}
+@if (user$ | async) {}
 <div class="profile-container">
   <h1 data-cy="title">Profile</h1>
   <form [formGroup]="profileForm" class="profile-form">
@@ -11,7 +10,7 @@
         placeholder="Email Address"
         readonly
         type="email"
-        />
+      />
     </mat-form-field>
     <mat-form-field appearance="outline" data-cy="display-name-field">
       <mat-label>Display Name</mat-label>
@@ -21,7 +20,7 @@
         placeholder="Display Name"
         readonly
         type="text"
-        />
+      />
     </mat-form-field>
     <mat-form-field appearance="outline" data-cy="roles-field">
       <mat-label>Roles</mat-label>
@@ -32,7 +31,7 @@
         placeholder="Roles"
         readonly
         type="text"
-        />
+      />
     </mat-form-field>
   </form>
 </div>

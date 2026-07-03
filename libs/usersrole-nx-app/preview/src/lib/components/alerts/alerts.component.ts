@@ -11,8 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-    selector: 'usersrole-nx-alerts',
-    imports: [
+  selector: 'usersrole-nx-alerts',
+  imports: [
     AlertComponent,
     MatButtonModule,
     MatSelectModule,
@@ -20,10 +20,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FormsModule,
     MatInputModule,
     MatCheckboxModule,
-    ReactiveFormsModule
-],
-    templateUrl: './alerts.component.html',
-    styleUrls: ['./alerts.component.scss']
+    ReactiveFormsModule,
+  ],
+  templateUrl: './alerts.component.html',
+  styleUrls: ['./alerts.component.scss'],
 })
 export class AlertsComponent {
   protected alertService = inject(AlertService);

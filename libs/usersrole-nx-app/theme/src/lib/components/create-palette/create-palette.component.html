@@ -7,7 +7,7 @@
         [matTooltip]="'Restore Defaults'"
         data-cy="restore-button"
         mat-icon-button
-        >
+      >
         <mat-icon>restore</mat-icon>
       </button>
       <input
@@ -18,7 +18,7 @@
         class="color-selector"
         data-cy="main-color-input"
         type="color"
-        />
+      />
     </div>
     @for (color of colors; track color) {
       <div
@@ -27,18 +27,18 @@
           'background-color': paletteForm.get('color' + color)?.value
         }"
         class="palette-row"
-        >
+      >
         <span
           [attr.data-cy]="color + '-color'"
           [ngStyle]="{ color: paletteForm.get('colorContrast' + color)?.value }"
-          >
+        >
           {{ color }}
         </span>
         <span
           [attr.data-cy]="color + '-color-value'"
           [ngStyle]="{ color: paletteForm.get('colorContrast' + color)?.value }"
           class="palette-color-text"
-          >
+        >
           {{ paletteForm.get('color' + color)?.value }}
         </span>
         <a
@@ -48,7 +48,7 @@
           [ngStyle]="{ color: paletteForm.get('colorContrast' + color)?.value }"
           class="palette-color-link"
           target="_blank"
-          >
+        >
           <mat-icon>launch</mat-icon>
         </a>
         <span class="palette-spacer"></span>
@@ -58,7 +58,7 @@
           [matTooltip]="'Toggle Contrast'"
           [ngStyle]="{ color: paletteForm.get('colorContrast' + color)?.value }"
           mat-icon-button
-          >
+        >
           <mat-icon>
             {{ getTextIcon(paletteForm.get('colorContrast' + color)?.value) }}
           </mat-icon>
@@ -69,7 +69,7 @@
           [matTooltip]="'Select Color'"
           class="color-selector"
           type="color"
-          />
+        />
       </div>
     }
   </div>

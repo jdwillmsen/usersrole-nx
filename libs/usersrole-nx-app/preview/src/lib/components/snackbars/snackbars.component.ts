@@ -14,18 +14,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-    selector: 'usersrole-nx-snackbars',
-    imports: [
+  selector: 'usersrole-nx-snackbars',
+  imports: [
     MatButtonModule,
     MatInputModule,
     FormsModule,
     MatSelectModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatCheckboxModule
-],
-    templateUrl: './snackbars.component.html',
-    styleUrls: ['./snackbars.component.scss']
+    MatCheckboxModule,
+  ],
+  templateUrl: './snackbars.component.html',
+  styleUrls: ['./snackbars.component.scss'],
 })
 export class SnackbarsComponent {
   protected snackbarService = inject(SnackbarService);

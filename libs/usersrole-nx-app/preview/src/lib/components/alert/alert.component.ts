@@ -9,18 +9,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-    selector: 'usersrole-nx-alert',
-    imports: [MatIconModule, MatButtonModule],
-    templateUrl: './alert.component.html',
-    styleUrls: ['./alert.component.scss'],
-    animations: [
-        trigger('fade', [
-            transition('true => void', [
-                style({ opacity: 1 }),
-                animate('{{fadeTime}}ms', style({ opacity: 0 })),
-            ]),
-        ]),
-    ]
+  selector: 'usersrole-nx-alert',
+  imports: [MatIconModule, MatButtonModule],
+  templateUrl: './alert.component.html',
+  styleUrls: ['./alert.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition('true => void', [
+        style({ opacity: 1 }),
+        animate('{{fadeTime}}ms', style({ opacity: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class AlertComponent implements OnInit, OnDestroy {
   private router = inject(Router);

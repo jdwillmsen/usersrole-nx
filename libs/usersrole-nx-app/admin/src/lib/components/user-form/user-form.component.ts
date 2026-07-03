@@ -33,20 +33,20 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
-    selector: 'usersrole-nx-user-form',
-    imports: [
-        CommonModule,
-        MatDialogModule,
-        MatButtonModule,
-        MatIconModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MatOptionModule,
-        MatSelectModule,
-    ],
-    templateUrl: './user-form.component.html',
-    styleUrls: ['./user-form.component.scss']
+  selector: 'usersrole-nx-user-form',
+  imports: [
+    CommonModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatOptionModule,
+    MatSelectModule,
+  ],
+  templateUrl: './user-form.component.html',
+  styleUrls: ['./user-form.component.scss'],
 })
 export class UserFormComponent implements OnInit {
   private dialogRef = inject<MatDialogRef<UserFormComponent>>(MatDialogRef);

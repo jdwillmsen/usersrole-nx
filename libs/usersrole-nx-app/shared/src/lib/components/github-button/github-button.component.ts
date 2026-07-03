@@ -6,10 +6,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-    selector: 'usersrole-nx-github-button',
-    imports: [MatButtonModule, MatIconModule, MatTooltipModule],
-    templateUrl: './github-button.component.html',
-    styleUrls: ['./github-button.component.scss']
+  selector: 'usersrole-nx-github-button',
+  imports: [MatButtonModule, MatIconModule, MatTooltipModule],
+  templateUrl: './github-button.component.html',
+  styleUrls: ['./github-button.component.scss'],
 })
 export class GithubButtonComponent {
   private readonly matIconRegistry = inject(MatIconRegistry);

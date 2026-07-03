@@ -19,15 +19,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    selector: 'usersrole-nx-email-sign-in',
-    imports: [
+  selector: 'usersrole-nx-email-sign-in',
+  imports: [
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    ReactiveFormsModule
-],
-    templateUrl: './email-sign-in.component.html',
-    styleUrls: ['./email-sign-in.component.scss']
+    ReactiveFormsModule,
+  ],
+  templateUrl: './email-sign-in.component.html',
+  styleUrls: ['./email-sign-in.component.scss'],
 })
 export class EmailSignInComponent {
   private readonly authenticationService = inject(AuthenticationService);
