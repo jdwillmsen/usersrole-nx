@@ -10,7 +10,6 @@ export class ErrorHandlerService implements ErrorHandler {
   snackbarService = inject(SnackbarService);
   zone = inject(NgZone);
 
-
   handleError(error: unknown): void {
     if (!errorIsAngularFireError(error)) {
       this.zone.run(() => {
