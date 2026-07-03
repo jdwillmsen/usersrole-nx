@@ -1,5 +1,9 @@
+import { TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
 import { AuthenticationService } from './authentication.service';
 import { of } from 'rxjs';
+import { SnackbarService } from '../snackbar/snackbar.service';
+import { AUTH } from '../../firebase.tokens';
 import * as firebaseAuth from 'firebase/auth';
 import {
   AuthCredential,
@@ -53,11 +57,14 @@ describe('AuthenticationService', () => {
     routerMock.navigate.mockImplementation(() => Promise.resolve(true));
     linkWithCredentialSpy.mockResolvedValue({});
 
-    authService = new AuthenticationService(
-      authMock,
-      routerMock,
-      snackbarServiceMock,
-    );
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: AUTH, useValue: authMock },
+        { provide: Router, useValue: routerMock },
+        { provide: SnackbarService, useValue: snackbarServiceMock },
+      ],
+    });
+    authService = TestBed.inject(AuthenticationService);
   });
 
   afterEach(() => {

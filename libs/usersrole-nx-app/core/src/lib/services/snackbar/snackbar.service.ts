@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -14,11 +14,11 @@ import {
   providedIn: 'root',
 })
 export class SnackbarService {
+  private snackbar = inject(MatSnackBar);
+
   private duration = 3000;
   private horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   private verticalPosition: MatSnackBarVerticalPosition = 'bottom';
-
-  constructor(private snackbar: MatSnackBar) {}
 
   send(type: PaletteColors, message: string, options?: SnackbarOptions) {
     const panelClass = [];

@@ -1,5 +1,7 @@
+import { TestBed } from '@angular/core/testing';
 import { NavigationService } from './navigation.service';
 import { Role } from '@usersrole-nx/shared';
+import { PermissionService } from '@usersrole-nx/core';
 
 describe('NavigationService', () => {
   let navigationService: NavigationService;
@@ -9,7 +11,10 @@ describe('NavigationService', () => {
   };
 
   beforeEach(() => {
-    navigationService = new NavigationService(permissionServiceMock);
+    TestBed.configureTestingModule({
+      providers: [{ provide: PermissionService, useValue: permissionServiceMock }],
+    });
+    navigationService = TestBed.inject(NavigationService);
   });
 
   it('should be created', () => {

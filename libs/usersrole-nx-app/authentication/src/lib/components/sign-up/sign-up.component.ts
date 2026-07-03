@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import {
   CONFIRM_PASSWORD_REQUIRED_VALIDATION_MESSAGE,
@@ -41,6 +41,10 @@ import { MatIconModule } from '@angular/material/icon';
     styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent {
+  private usersService = inject(UsersService);
+  private router = inject(Router);
+  private snackbarService = inject(SnackbarService);
+
   hide = true;
   signUpForm = new FormGroup({
     email: new FormControl('', {
@@ -97,12 +101,6 @@ export class SignUpComponent {
       { type: 'passwordMatch', message: PASSWORD_MATCH_VALIDATION_MESSAGE },
     ],
   };
-
-  constructor(
-    private usersService: UsersService,
-    private router: Router,
-    private snackbarService: SnackbarService,
-  ) {}
 
   signUp() {
     const emailControl = this.signUpForm.get('email');

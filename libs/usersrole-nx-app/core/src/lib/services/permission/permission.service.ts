@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { map, of, switchMap } from 'rxjs';
 import { Role } from '@usersrole-nx/shared';
@@ -12,14 +12,14 @@ import { AUTH } from '../../firebase.tokens';
   providedIn: 'root',
 })
 export class PermissionService {
+  private router = inject(Router);
+  private usersService = inject(UsersService);
+  private auth = inject<Auth>(AUTH);
+  private snackbarService = inject(SnackbarService);
+
   roles: Role[] = [];
 
-  constructor(
-    private router: Router,
-    private usersService: UsersService,
-    @Inject(AUTH) private auth: Auth,
-    private snackbarService: SnackbarService,
-  ) {
+  constructor() {
     this.getRole();
   }
 

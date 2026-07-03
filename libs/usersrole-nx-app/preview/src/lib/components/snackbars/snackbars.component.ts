@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Icon, SnackbarOptions, Variant } from '@usersrole-nx/shared';
@@ -28,6 +28,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     styleUrls: ['./snackbars.component.scss']
 })
 export class SnackbarsComponent {
+  protected snackbarService = inject(SnackbarService);
+
   options: SnackbarOptions = {
     variant: 'filled',
     autoClose: false,
@@ -81,8 +83,6 @@ export class SnackbarsComponent {
       value: 'new_releases',
     },
   ];
-
-  constructor(protected snackbarService: SnackbarService) {}
 
   getOptions(): SnackbarOptions {
     this.options.variant = this.variant.value?.value;

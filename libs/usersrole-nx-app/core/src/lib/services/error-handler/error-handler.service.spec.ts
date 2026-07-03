@@ -7,16 +7,20 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ErrorHandlerService', () => {
   let service: ErrorHandlerService;
+  let zoneRunSpy: jest.SpyInstance;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const snackbarServiceMock: jest.Mocked<any> = {
     error: jest.fn(),
   };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const ngZoneMock: jest.Mocked<any> = {
-    run: jest.fn(),
-  };
   beforeEach(() => {
-    service = new ErrorHandlerService(snackbarServiceMock, ngZoneMock);
+    TestBed.configureTestingModule({
+      providers: [
+        ErrorHandlerService,
+        { provide: SnackbarService, useValue: snackbarServiceMock },
+      ],
+    });
+    service = TestBed.inject(ErrorHandlerService);
+    zoneRunSpy = jest.spyOn(service.zone, 'run');
   });
 
   it('should be created', () => {
@@ -32,7 +36,7 @@ describe('ErrorHandlerService', () => {
 
     service.handleError(errorMock);
 
-    expect(ngZoneMock.run).toHaveBeenCalled();
+    expect(zoneRunSpy).toHaveBeenCalled();
   });
 
   it('should log the error message to console when handleError is called', () => {

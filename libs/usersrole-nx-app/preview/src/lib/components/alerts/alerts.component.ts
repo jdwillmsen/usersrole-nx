@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { AlertService } from '../../services/alert/alert.service';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -26,6 +26,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     styleUrls: ['./alerts.component.scss']
 })
 export class AlertsComponent {
+  protected alertService = inject(AlertService);
+
   options: AlertOptions = {
     autoClose: false,
     autoCloseTimeout: 3000,
@@ -70,6 +72,4 @@ export class AlertsComponent {
     },
   ];
   variant = new FormControl(this.variantList[0]);
-
-  constructor(protected alertService: AlertService) {}
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Alert, AlertVariants } from '@usersrole-nx/shared';
@@ -23,6 +23,9 @@ import { MatButtonModule } from '@angular/material/button';
     ]
 })
 export class AlertComponent implements OnInit, OnDestroy {
+  private router = inject(Router);
+  private alertService = inject(AlertService);
+
   @Input() id = 'default-alert';
   @Input() fade = false;
   @Input() fadeTime = 500;
@@ -31,11 +34,6 @@ export class AlertComponent implements OnInit, OnDestroy {
   alertSubscription!: Subscription;
   routeSubscription!: Subscription;
   autoCloseTimeout = 3000;
-
-  constructor(
-    private router: Router,
-    private alertService: AlertService,
-  ) {}
 
   ngOnInit() {
     this.alertSubscription = this.alertService

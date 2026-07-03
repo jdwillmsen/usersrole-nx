@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NavigationItem } from '@usersrole-nx/shared-ui';
 import { Role } from '@usersrole-nx/shared';
 import { PermissionService } from '@usersrole-nx/core';
@@ -7,6 +7,8 @@ import { PermissionService } from '@usersrole-nx/core';
   providedIn: 'root',
 })
 export class NavigationService {
+  private permissionService = inject(PermissionService);
+
   navigationItems: (NavigationItem & { roles?: Role[] })[] = [
     {
       path: '/home',
@@ -57,7 +59,6 @@ export class NavigationService {
       roles: ['read', 'admin', 'manager'],
     },
   ];
-  constructor(private permissionService: PermissionService) {}
 
   getNavigationItems() {
     return this.navigationItems.filter((item) => this.checkRoles(item.roles));

@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Environment, ENVIRONMENT } from '../../environment.token';
 import { SnackbarService } from '../snackbar/snackbar.service';
 import { HttpClient } from '@angular/common/http';
@@ -14,12 +14,11 @@ import { handleError } from '../error-handler/error-handler.service';
   providedIn: 'root',
 })
 export class UsersService {
+  private environment = inject<Environment>(ENVIRONMENT);
+  private http = inject(HttpClient);
+  private snackbarService = inject(SnackbarService);
+
   private baseUrl = `${this.environment.functionsBaseUrl}/users`;
-  constructor(
-    @Inject(ENVIRONMENT) private environment: Environment,
-    private http: HttpClient,
-    private snackbarService: SnackbarService,
-  ) {}
 
   get users$(): Observable<User[]> {
     return this.http.get<{ users: User[] }>(`${this.baseUrl}`).pipe(

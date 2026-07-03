@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import {
   AuthenticationService,
@@ -26,13 +26,13 @@ import { EmailSignInComponent } from '../email-sign-in/email-sign-in.component';
     styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent {
-  constructor(
-    private readonly authenticationService: AuthenticationService,
-    private readonly matIconRegistry: MatIconRegistry,
-    private readonly domSanitizer: DomSanitizer,
-    private snackbarService: SnackbarService,
-    private readonly styleManagerService: StyleManagerService,
-  ) {
+  private readonly authenticationService = inject(AuthenticationService);
+  private readonly matIconRegistry = inject(MatIconRegistry);
+  private readonly domSanitizer = inject(DomSanitizer);
+  private snackbarService = inject(SnackbarService);
+  private readonly styleManagerService = inject(StyleManagerService);
+
+  constructor() {
     this.matIconRegistry.addSvgIcon(
       'google-logo',
       this.domSanitizer.bypassSecurityTrustResourceUrl(

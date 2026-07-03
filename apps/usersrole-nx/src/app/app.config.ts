@@ -37,7 +37,7 @@ export const appConfig: ApplicationConfig = {
     GlobalHttpErrorHandlerInterceptorProvider,
     provideHttpClient(),
     provideAnimations(),
-    importProvidersFrom(HttpClientModule, MatSnackBarModule),
+    importProvidersFrom(MatSnackBarModule),
     { provide: FIREBASE_APP, useValue: firebaseApp },
     { provide: AUTH, useFactory: () => getAuth(firebaseApp) },
     { provide: FIRESTORE, useFactory: () => getFirestore(firebaseApp) },

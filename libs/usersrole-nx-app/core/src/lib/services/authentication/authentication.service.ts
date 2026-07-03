@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, from, Observable, of, switchMap } from 'rxjs';
 import { Router } from '@angular/router';
 import { SnackbarService } from '../snackbar/snackbar.service';
@@ -36,15 +36,15 @@ import { AUTH } from '../../firebase.tokens';
   providedIn: 'root',
 })
 export class AuthenticationService {
+  private auth = inject<Auth>(AUTH);
+  private router = inject(Router);
+  private snackbarService = inject(SnackbarService);
+
   private user: BehaviorSubject<Observable<User | null>> = new BehaviorSubject<
     Observable<User | null>
   >(of(null));
   user$ = this.user.asObservable().pipe(switchMap((user) => user));
-  constructor(
-    @Inject(AUTH) private auth: Auth,
-    private router: Router,
-    private snackbarService: SnackbarService,
-  ) {
+  constructor() {
     this.user.next(authState(this.auth));
   }
 

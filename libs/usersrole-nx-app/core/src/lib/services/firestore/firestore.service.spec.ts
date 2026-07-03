@@ -1,4 +1,6 @@
+import { TestBed } from '@angular/core/testing';
 import { FirestoreService } from './firestore.service';
+import { FIRESTORE } from '../../firebase.tokens';
 
 describe('FirestoreService', () => {
   let firestoreService: FirestoreService;
@@ -6,7 +8,10 @@ describe('FirestoreService', () => {
   const firestoreMock: jest.Mocked<any> = {};
 
   beforeEach(() => {
-    firestoreService = new FirestoreService(firestoreMock);
+    TestBed.configureTestingModule({
+      providers: [{ provide: FIRESTORE, useValue: firestoreMock }],
+    });
+    firestoreService = TestBed.inject(FirestoreService);
   });
 
   it('should create an instance of FirestoreService', () => {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import {
   HeaderComponent,
@@ -33,6 +33,11 @@ import { NavigationService } from '../../services/navigation/navigation.service'
     styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
+  private breakpointObserver = inject(BreakpointObserver);
+  private authenticationService = inject(AuthenticationService);
+  private snackbarService = inject(SnackbarService);
+  private navigationService = inject(NavigationService);
+
   appTitle = 'Users Role NX';
   appRouterLink = '/home';
   appToolTip = 'Home';
@@ -43,12 +48,7 @@ export class MainComponent {
   githubLink = 'https://github.com/jdwillmsen/usersrole-nx';
   user: User | null = null;
 
-  constructor(
-    private breakpointObserver: BreakpointObserver,
-    private authenticationService: AuthenticationService,
-    private snackbarService: SnackbarService,
-    private navigationService: NavigationService,
-  ) {
+  constructor() {
     this.breakpointObserver.observe(Breakpoints.XSmall).subscribe((result) => {
       this.isXSmallScreen = result.matches;
       this.updateNavigationBasedOnScreenSize();

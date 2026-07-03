@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
@@ -12,12 +12,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     styleUrls: ['./github-button.component.scss']
 })
 export class GithubButtonComponent {
+  private readonly matIconRegistry = inject(MatIconRegistry);
+  private readonly domSanitizer = inject(DomSanitizer);
+
   // TODO: Check if theme is needed for when using on dark/light backgrounds
   @Input() githubLink = 'https://github.com';
-  constructor(
-    private readonly matIconRegistry: MatIconRegistry,
-    private readonly domSanitizer: DomSanitizer,
-  ) {
+  constructor() {
     this.matIconRegistry.addSvgIcon(
       'github-logo',
       this.domSanitizer.bypassSecurityTrustResourceUrl(

@@ -1,9 +1,13 @@
+import { TestBed } from '@angular/core/testing';
 import { of, throwError } from 'rxjs';
 import { Role } from '@usersrole-nx/shared';
-import { ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { PermissionService } from './permission.service';
 import { Auth } from 'firebase/auth';
 import * as rxfireAuth from 'rxfire/auth';
+import { UsersService } from '../users/users.service';
+import { SnackbarService } from '../snackbar/snackbar.service';
+import { AUTH } from '../../firebase.tokens';
 
 describe('PermissionService', () => {
   let permissionsService: PermissionService;
@@ -28,12 +32,15 @@ describe('PermissionService', () => {
       .spyOn(rxfireAuth, 'user')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .mockReturnValue(of(null) as any);
-    permissionsService = new PermissionService(
-      routerMock,
-      usersServiceMock,
-      authMock,
-      snackbarServiceMock,
-    );
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: Router, useValue: routerMock },
+        { provide: UsersService, useValue: usersServiceMock },
+        { provide: AUTH, useValue: authMock },
+        { provide: SnackbarService, useValue: snackbarServiceMock },
+      ],
+    });
+    permissionsService = TestBed.inject(PermissionService);
   });
 
   afterEach(() => {

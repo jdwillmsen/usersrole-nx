@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import {
   EMAIL_PATTERN_VALIDATION_MESSAGE,
@@ -30,6 +30,8 @@ import { MatIconModule } from '@angular/material/icon';
     styleUrls: ['./email-sign-in.component.scss']
 })
 export class EmailSignInComponent {
+  private readonly authenticationService = inject(AuthenticationService);
+
   form: FormGroup = new FormGroup({
     email: new FormControl('', [
       Validators.required,
@@ -54,8 +56,6 @@ export class EmailSignInComponent {
       },
     ],
   };
-
-  constructor(private readonly authenticationService: AuthenticationService) {}
 
   signIn() {
     if (this.form.valid) {

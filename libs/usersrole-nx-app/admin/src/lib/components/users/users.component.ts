@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import {
@@ -36,6 +36,11 @@ ModuleRegistry.registerModules([AllCommunityModule]);
     styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  private userService = inject(UsersService);
+  private dialog = inject(MatDialog);
+  private userFormService = inject(UserFormService);
+  private snackbarService = inject(SnackbarService);
+
   static columnDefs: ColDef[] = [
     { field: 'uid', cellDataType: 'text' },
     { field: 'email', cellDataType: 'text' },
@@ -103,13 +108,6 @@ export class UsersComponent implements OnInit {
     // opt out of the v33+ Theming API until the theme is migrated.
     theme: 'legacy',
   };
-
-  constructor(
-    private userService: UsersService,
-    private dialog: MatDialog,
-    private userFormService: UserFormService,
-    private snackbarService: SnackbarService,
-  ) {}
 
   ngOnInit() {
     this.users$ = this.userService.users$;

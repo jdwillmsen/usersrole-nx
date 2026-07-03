@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -20,6 +20,9 @@ import { MatInputModule } from '@angular/material/input';
     styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  private auth = inject<Auth>(AUTH);
+  private usersService = inject(UsersService);
+
   profileForm = new FormGroup({
     email: new FormControl(''),
     displayName: new FormControl(''),
@@ -27,11 +30,6 @@ export class ProfileComponent implements OnInit {
   });
   user$!: Observable<User>;
   displayRoles = '';
-
-  constructor(
-    @Inject(AUTH) private auth: Auth,
-    private usersService: UsersService,
-  ) {}
 
   ngOnInit() {
     this.user$ = user(this.auth).pipe(

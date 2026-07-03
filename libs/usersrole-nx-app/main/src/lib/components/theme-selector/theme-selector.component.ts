@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { Palette, SiteTheme, Theme } from '@usersrole-nx/shared';
 import {
@@ -25,19 +25,21 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     styleUrls: ['./theme-selector.component.scss']
 })
 export class ThemeSelectorComponent {
+  private styleManagerService = inject(StyleManagerService);
+  private firestoreService = inject(FirestoreService);
+  private authenticationService = inject(AuthenticationService);
+  private snackbarService = inject(SnackbarService);
+  private _themeStorageService = inject(ThemeStorageService);
+
   currentTheme: SiteTheme | undefined;
   themes: SiteTheme[];
   uid = '';
   customLightTheme: Theme | null = null;
   customDarkTheme: Theme | null = null;
 
-  constructor(
-    private styleManagerService: StyleManagerService,
-    private firestoreService: FirestoreService,
-    private authenticationService: AuthenticationService,
-    private snackbarService: SnackbarService,
-    private _themeStorageService: ThemeStorageService,
-  ) {
+  constructor() {
+    const _themeStorageService = this._themeStorageService;
+
     this.themes = this.styleManagerService.getThemes();
     const themeName = _themeStorageService.getStoredThemeName();
     if (themeName) {

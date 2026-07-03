@@ -5,9 +5,11 @@ import {
   UpdateUserRequest,
   User,
 } from '@usersrole-nx/shared';
-import { HttpErrorResponse } from '@angular/common/http';
+import { TestBed } from '@angular/core/testing';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
-import { Environment } from '../../environment.token';
+import { Environment, ENVIRONMENT } from '../../environment.token';
+import { SnackbarService } from '../snackbar/snackbar.service';
 
 describe('UsersService', () => {
   let usersService: UsersService;
@@ -70,11 +72,14 @@ describe('UsersService', () => {
   };
 
   beforeEach(() => {
-    usersService = new UsersService(
-      environmentMock,
-      httpClientMock,
-      snackbarServiceMock,
-    );
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: ENVIRONMENT, useValue: environmentMock },
+        { provide: HttpClient, useValue: httpClientMock },
+        { provide: SnackbarService, useValue: snackbarServiceMock },
+      ],
+    });
+    usersService = TestBed.inject(UsersService);
   });
 
   it('should create an instance of UsersService', () => {

@@ -1,5 +1,7 @@
+import { TestBed } from '@angular/core/testing';
 import { SnackbarService } from './snackbar.service';
 import {
+  MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
@@ -23,7 +25,10 @@ describe('SnackbarService', () => {
   const defaultVerticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   beforeEach(() => {
-    service = new SnackbarService(snackbarMock);
+    TestBed.configureTestingModule({
+      providers: [{ provide: MatSnackBar, useValue: snackbarMock }],
+    });
+    service = TestBed.inject(SnackbarService);
   });
 
   it('should be created', () => {

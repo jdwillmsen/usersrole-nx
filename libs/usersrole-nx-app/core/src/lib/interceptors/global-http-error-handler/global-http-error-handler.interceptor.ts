@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { catchError, EMPTY, Observable, retry, throwError, timer } from 'rxjs';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
@@ -6,7 +6,8 @@ import { HTTP_403_MESSAGE } from '@usersrole-nx/shared';
 
 @Injectable()
 export class GlobalHttpErrorHandlerInterceptor implements HttpInterceptor {
-  constructor(private snackbarService: SnackbarService) {}
+  private snackbarService = inject(SnackbarService);
+
 
   intercept(
     request: HttpRequest<unknown>,

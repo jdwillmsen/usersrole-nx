@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, InjectionToken, inject } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,8 +15,9 @@ import { SnackbarData } from '../../models/snackbar.model';
     styleUrls: ['./snackbar.component.scss']
 })
 export class SnackbarComponent {
-  constructor(
-    @Inject(MAT_SNACK_BAR_DATA) public data: SnackbarData,
-    public snackbarRef: MatSnackBarRef<SnackbarComponent>,
-  ) {}
+  // MAT_SNACK_BAR_DATA is InjectionToken<any>; the double cast keeps the
+  // functions build (node10 module resolution) from rejecting the token
+  // identity while still typing the injected value.
+  data = inject(MAT_SNACK_BAR_DATA as unknown as InjectionToken<SnackbarData>);
+  snackbarRef = inject<MatSnackBarRef<SnackbarComponent>>(MatSnackBarRef);
 }

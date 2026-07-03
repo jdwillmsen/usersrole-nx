@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { AuthenticationService, ThemeStorageService } from '@usersrole-nx/core';
@@ -10,10 +10,9 @@ import { AuthenticationService, ThemeStorageService } from '@usersrole-nx/core';
     styleUrls: ['./sign-out.component.scss']
 })
 export class SignOutComponent {
-  constructor(
-    private authenticationService: AuthenticationService,
-    private themeStorageService: ThemeStorageService,
-  ) {}
+  private authenticationService = inject(AuthenticationService);
+  private themeStorageService = inject(ThemeStorageService);
+
 
   logout() {
     this.authenticationService.authLogout();

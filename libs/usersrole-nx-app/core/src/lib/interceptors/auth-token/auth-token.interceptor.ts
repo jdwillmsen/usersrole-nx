@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, switchMap, take } from 'rxjs';
 import { Auth } from 'firebase/auth';
@@ -7,7 +7,8 @@ import { AUTH } from '../../firebase.tokens';
 
 @Injectable()
 export class AuthTokenInterceptor implements HttpInterceptor {
-  constructor(@Inject(AUTH) private auth: Auth) {}
+  private auth = inject<Auth>(AUTH);
+
 
   intercept(
     request: HttpRequest<unknown>,
