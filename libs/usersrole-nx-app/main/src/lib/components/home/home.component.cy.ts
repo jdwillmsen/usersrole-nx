@@ -52,5 +52,6 @@ function testScreenSize(size: string, width: number, height: number) {
     cy.getByCy('theme-tile').should('be.visible');
     cy.getByCy('users-tile').should('be.visible');
     cy.getByCy('roles-tile').should('be.visible');
+    cy.getByCy('about-tile').should('be.visible');
   });
 }

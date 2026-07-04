@@ -72,5 +72,12 @@ export class HomeComponent {
       description: 'This is the home link and is currently being displayed.',
       access: ['Read', 'Admin', 'Manager'],
     },
+    {
+      title: 'About',
+      link: '/about',
+      description:
+        'This is a page for viewing information about this application and its technology stack.',
+      access: ['Everyone'],
+    },
   ];
 }
