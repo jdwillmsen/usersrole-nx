@@ -268,6 +268,9 @@ function testScreenSize(size: string, width: number, height: number) {
       cy.getByCy('fade-time-field').type('{backspace}');
       cy.getByCy('icon-field').click();
       cy.getByCy('none-icon-option').click();
+      // Wait out the select panel's close animation; clicking the trigger
+      // while the old panel detaches gets swallowed and the panel stays shut.
+      cy.get('.mat-mdc-select-panel').should('not.exist');
       cy.getByCy('icon-field').should('not.have.value').click();
       cy.getByCy('settings-icon-option').click();
       cy.getByCy('max-alerts-field').type('1');
