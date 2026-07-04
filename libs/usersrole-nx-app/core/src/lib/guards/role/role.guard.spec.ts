@@ -9,7 +9,7 @@ import {
   RouterTestingHarness,
   RouterTestingModule,
 } from '@angular/router/testing';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '../../firebase.tokens';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PermissionService } from '../../services/permission/permission.service';
 import { UsersService } from '../../services/users/users.service';
@@ -59,9 +59,10 @@ describe('roleGuard', () => {
       component: TestSignInComponent,
     },
   ];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const angularFireAuthMock: jest.Mocked<any> = {
-    user: of(null),
+  // Never emits; roleGuard relies on the mocked PermissionService, not auth state
+  const authMock = {
+    onAuthStateChanged: () => () => undefined,
+    onIdTokenChanged: () => () => undefined,
   };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const usersServiceMock: jest.Mocked<any> = {
@@ -86,8 +87,8 @@ describe('roleGuard', () => {
       providers: [
         provideRouter(routes),
         {
-          provide: AngularFireAuth,
-          useValue: angularFireAuthMock,
+          provide: AUTH,
+          useValue: authMock,
         },
         {
           provide: UsersService,

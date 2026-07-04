@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { MatDrawerMode, MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -10,9 +10,7 @@ import { NavigationItem } from '../../models/navigation-item.model';
 
 @Component({
   selector: 'usersrole-nx-navigation-layout',
-  standalone: true,
   imports: [
-    CommonModule,
     MatSidenavModule,
     MatListModule,
     MatTooltipModule,

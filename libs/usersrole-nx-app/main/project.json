@@ -3,15 +3,16 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/usersrole-nx-app/main/src",
   "prefix": "usersrole-nx",
-  "tags": ["type:main", "scope:usersrole-nx-app"],
   "projectType": "library",
+  "tags": ["type:main", "scope:usersrole-nx-app"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "libs/usersrole-nx-app/main/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "tsConfig": "libs/usersrole-nx-app/main/tsconfig.spec.json"
       },
       "configurations": {
         "ci": {
@@ -22,13 +23,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/usersrole-nx-app/main/**/*.ts",
-          "libs/usersrole-nx-app/main/**/*.html"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "component-test": {
       "executor": "@nx/cypress:cypress",

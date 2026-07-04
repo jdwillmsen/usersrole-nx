@@ -5,6 +5,7 @@
   "prefix": "usersrole-nx",
   "sourceRoot": "apps/usersrole-nx/src",
   "tags": [],
+  "implicitDependencies": ["usersrole-nx-functions"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -105,36 +106,32 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "usersrole-nx:build:production"
+          "buildTarget": "usersrole-nx:build:production"
         },
         "development": {
-          "browserTarget": "usersrole-nx:build:development"
+          "buildTarget": "usersrole-nx:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "usersrole-nx:build"
+        "buildTarget": "usersrole-nx:build"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "apps/usersrole-nx/**/*.ts",
-          "apps/usersrole-nx/**/*.html"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/usersrole-nx/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "tsConfig": "apps/usersrole-nx/tsconfig.spec.json"
       },
       "configurations": {
         "ci": {
@@ -159,12 +156,11 @@
       }
     },
     "deploy": {
-      "executor": "@angular/fire:deploy",
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
       "options": {
-        "version": 2,
-        "browserTarget": "usersrole-nx:build:production"
+        "command": "firebase deploy --only hosting"
       }
     }
-  },
-  "implicitDependencies": ["usersrole-nx-functions"]
+  }
 }

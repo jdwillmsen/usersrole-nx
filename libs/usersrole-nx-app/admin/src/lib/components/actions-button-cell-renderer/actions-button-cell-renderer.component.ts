@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+
 import { ICellRendererParams } from 'ag-grid-community';
 import { SnackbarService, UsersService } from '@usersrole-nx/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -17,22 +17,19 @@ import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'usersrole-nx-actions-button-cell-renderer',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatTooltipModule, MatIconModule],
+  imports: [MatButtonModule, MatTooltipModule, MatIconModule],
   templateUrl: './actions-button-cell-renderer.component.html',
   styleUrls: ['./actions-button-cell-renderer.component.scss'],
 })
 export class ActionsButtonCellRendererComponent
   implements ICellRendererAngularComp
 {
-  private params!: ICellRendererParams;
+  private userService = inject(UsersService);
+  private dialog = inject(MatDialog);
+  private userFormService = inject(UserFormService);
+  private snackbarService = inject(SnackbarService);
 
-  constructor(
-    private userService: UsersService,
-    private dialog: MatDialog,
-    private userFormService: UserFormService,
-    private snackbarService: SnackbarService,
-  ) {}
+  private params!: ICellRendererParams;
 
   agInit(params: ICellRendererParams): void {
     this.params = params;

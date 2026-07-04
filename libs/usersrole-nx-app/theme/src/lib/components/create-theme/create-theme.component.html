@@ -27,12 +27,13 @@
     class="palettes-container"
     data-cy="palettes-container"
   >
-    <usersrole-nx-create-palette
-      *ngFor="let palette of palettes"
-      [attr.data-cy]="palette.type + '-palette'"
-      [formGroupName]="palette.name"
-      [paletteType]="palette.type"
-    >
-    </usersrole-nx-create-palette>
+    @for (palette of palettes; track palette) {
+      <usersrole-nx-create-palette
+        [attr.data-cy]="palette.type + '-palette'"
+        [formGroupName]="palette.name"
+        [paletteType]="palette.type"
+      >
+      </usersrole-nx-create-palette>
+    }
   </form>
 </div>

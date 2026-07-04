@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CreatePaletteComponent } from '../create-palette/create-palette.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,9 +19,7 @@ import {
 
 @Component({
   selector: 'usersrole-nx-create-theme',
-  standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     CreatePaletteComponent,
     MatIconModule,
@@ -31,6 +29,10 @@ import {
   styleUrls: ['./create-theme.component.scss'],
 })
 export class CreateThemeComponent {
+  private firestoreService = inject(FirestoreService);
+  private authenticationService = inject(AuthenticationService);
+  private snackbarService = inject(SnackbarService);
+
   themeForm = new FormGroup({
     primaryPalette: new FormGroup(new PaletteFormGroup().paletteFormGroup),
     accentPalette: new FormGroup(new PaletteFormGroup().paletteFormGroup),
@@ -49,11 +51,7 @@ export class CreateThemeComponent {
   ];
   uid = '';
 
-  constructor(
-    private firestoreService: FirestoreService,
-    private authenticationService: AuthenticationService,
-    private snackbarService: SnackbarService,
-  ) {
+  constructor() {
     this.authenticationService.user$.subscribe({
       next: (user) => {
         if (user !== null) {

@@ -1,8 +1,8 @@
 {
   "name": "usersrole-nx-functions-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "implicitDependencies": ["usersrole-nx-functions"],
   "projectType": "application",
+  "implicitDependencies": ["usersrole-nx-functions"],
   "targets": {
     "e2e": {
       "command": "start-server-and-test 'nx serve usersrole-nx-functions' http://localhost:3002 'nx _e2e usersrole-nx-functions-e2e'"
@@ -17,10 +17,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/usersrole-nx-functions-e2e/**/*.{js,ts}"]
-      }
+      "outputs": ["{options.outputFile}"]
     }
   }
 }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+
 import { AlertService } from '../../services/alert/alert.service';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertOptions, Icon, Variant } from '@usersrole-nx/shared';
@@ -12,9 +12,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'usersrole-nx-alerts',
-  standalone: true,
   imports: [
-    CommonModule,
     AlertComponent,
     MatButtonModule,
     MatSelectModule,
@@ -28,6 +26,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   styleUrls: ['./alerts.component.scss'],
 })
 export class AlertsComponent {
+  protected alertService = inject(AlertService);
+
   options: AlertOptions = {
     autoClose: false,
     autoCloseTimeout: 3000,
@@ -72,6 +72,4 @@ export class AlertsComponent {
     },
   ];
   variant = new FormControl(this.variantList[0]);
-
-  constructor(protected alertService: AlertService) {}
 }

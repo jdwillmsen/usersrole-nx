@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   AbstractControl,
@@ -24,7 +24,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @Component({
   selector: 'usersrole-nx-roles',
-  standalone: true,
   imports: [
     CommonModule,
     MatButtonModule,
@@ -37,6 +36,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
   styleUrls: ['./roles.component.scss'],
 })
 export class RolesComponent implements OnInit {
+  private usersService = inject(UsersService);
+  private rolesService = inject(RolesService);
+  private snackbarService = inject(SnackbarService);
+
   rolesForm = new FormGroup(
     {
       usersName: new FormControl<string | User>('', {
@@ -71,12 +74,6 @@ export class RolesComponent implements OnInit {
     },
   ];
   private filteredOptionsSubject = new BehaviorSubject<User[]>([]);
-
-  constructor(
-    private usersService: UsersService,
-    private rolesService: RolesService,
-    private snackbarService: SnackbarService,
-  ) {}
 
   ngOnInit() {
     this.filteredOptions$ = this.filteredOptionsSubject.asObservable();

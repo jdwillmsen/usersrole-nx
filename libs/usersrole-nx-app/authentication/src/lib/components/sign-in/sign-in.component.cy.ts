@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { SignInComponent } from './sign-in.component';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -17,7 +17,7 @@ describe(SignInComponent.name, () => {
         providers: [
           AuthenticationService,
           {
-            provide: AngularFireAuth,
+            provide: AUTH,
             useValue: {},
           },
           {

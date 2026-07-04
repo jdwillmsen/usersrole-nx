@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { SignOutComponent } from './sign-out.component';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe(SignOutComponent.name, () => {
@@ -8,7 +8,7 @@ describe(SignOutComponent.name, () => {
     TestBed.configureTestingModule({
       providers: [
         {
-          provide: AngularFireAuth,
+          provide: AUTH,
           useValue: {},
         },
       ],

@@ -1,4 +1,4 @@
-import { ErrorHandler, Injectable, NgZone } from '@angular/core';
+import { ErrorHandler, Injectable, NgZone, inject } from '@angular/core';
 import { SnackbarService } from '../snackbar/snackbar.service';
 import { DEFAULT_ERROR_MESSAGE } from '@usersrole-nx/shared';
 import { FirebaseError } from 'firebase-admin';
@@ -7,10 +7,8 @@ import { EMPTY } from 'rxjs';
 // Not providedIn 'root': needs special handling in app.config to override default error handler.
 @Injectable()
 export class ErrorHandlerService implements ErrorHandler {
-  constructor(
-    public snackbarService: SnackbarService,
-    public zone: NgZone,
-  ) {}
+  snackbarService = inject(SnackbarService);
+  zone = inject(NgZone);
 
   handleError(error: unknown): void {
     if (!errorIsAngularFireError(error)) {

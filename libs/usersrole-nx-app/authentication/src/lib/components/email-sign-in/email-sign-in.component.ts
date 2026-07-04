@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+
 import {
   EMAIL_PATTERN_VALIDATION_MESSAGE,
   EMAIL_REQUIRED_VALIDATION_MESSAGE,
@@ -20,9 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'usersrole-nx-email-sign-in',
-  standalone: true,
   imports: [
-    CommonModule,
     MatButtonModule,
     MatInputModule,
     MatIconModule,
@@ -32,6 +30,8 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./email-sign-in.component.scss'],
 })
 export class EmailSignInComponent {
+  private readonly authenticationService = inject(AuthenticationService);
+
   form: FormGroup = new FormGroup({
     email: new FormControl('', [
       Validators.required,
@@ -56,8 +56,6 @@ export class EmailSignInComponent {
       },
     ],
   };
-
-  constructor(private readonly authenticationService: AuthenticationService) {}
 
   signIn() {
     if (this.form.valid) {

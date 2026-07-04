@@ -27,15 +27,16 @@
     </span>
   </p>
   <div class="tiles" data-cy="tiles">
-    <usersrole-nx-home-tile
-      *ngFor="let tile of tiles"
-      [attr.data-cy]="tile.title.toLowerCase() + '-tile'"
-      [title]="tile.title"
-      [description]="tile.description"
-      [access]="tile.access.join(', ')"
-      [link]="tile.link"
-      class="tile"
-    >
-    </usersrole-nx-home-tile>
+    @for (tile of tiles; track tile) {
+      <usersrole-nx-home-tile
+        [attr.data-cy]="tile.title.toLowerCase() + '-tile'"
+        [title]="tile.title"
+        [description]="tile.description"
+        [access]="tile.access.join(', ')"
+        [link]="tile.link"
+        class="tile"
+      >
+      </usersrole-nx-home-tile>
+    }
   </div>
 </div>

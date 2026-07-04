@@ -1,5 +1,5 @@
 /* eslint-disable */
-export default {
+module.exports = {
   displayName: 'usersrole-nx-functions',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',

@@ -1,7 +1,9 @@
+import { TestBed } from '@angular/core/testing';
+import { HttpClient } from '@angular/common/http';
 import { RolesService } from './roles.service';
 import { EMPTY, throwError } from 'rxjs';
 import { UpdateUserRolesRequest } from '@usersrole-nx/shared';
-import { Environment } from '@usersrole-nx/core';
+import { Environment, ENVIRONMENT, SnackbarService } from '@usersrole-nx/core';
 
 describe('RolesService', () => {
   let rolesService: RolesService;
@@ -21,11 +23,14 @@ describe('RolesService', () => {
   const baseUrl = `${environmentMock.functionsBaseUrl}/users`;
 
   beforeEach(() => {
-    rolesService = new RolesService(
-      environmentMock,
-      httpClientMock,
-      snackbarServiceMock,
-    );
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: ENVIRONMENT, useValue: environmentMock },
+        { provide: HttpClient, useValue: httpClientMock },
+        { provide: SnackbarService, useValue: snackbarServiceMock },
+      ],
+    });
+    rolesService = TestBed.inject(RolesService);
   });
 
   it('should create an instance of RolesService', () => {
@@ -42,7 +47,7 @@ describe('RolesService', () => {
 
     rolesService.update(user).subscribe((result) => {
       expect(result).toBe(EMPTY);
-      expect(httpClientMock.patch).toBeCalledTimes(1);
+      expect(httpClientMock.patch).toHaveBeenCalledTimes(1);
       expect(httpClientMock.patch).toHaveBeenCalledWith(url, user);
       expect(snackbarServiceMock.error).not.toHaveBeenCalled();
     });
@@ -61,9 +66,9 @@ describe('RolesService', () => {
 
     rolesService.update(user).subscribe((result) => {
       expect(result).toBe(EMPTY);
-      expect(httpClientMock.patch).toBeCalledTimes(1);
+      expect(httpClientMock.patch).toHaveBeenCalledTimes(1);
       expect(httpClientMock.patch).toHaveBeenCalledWith(url, user);
-      expect(snackbarServiceMock.error).toBeCalledTimes(1);
+      expect(snackbarServiceMock.error).toHaveBeenCalledTimes(1);
       expect(snackbarServiceMock.error).toHaveBeenCalledWith(
         errorResponse.error,
         { variant: 'filled' },

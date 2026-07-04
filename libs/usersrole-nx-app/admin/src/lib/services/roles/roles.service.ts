@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   Environment,
   ENVIRONMENT,
@@ -13,13 +13,11 @@ import { UpdateUserRolesRequest } from '@usersrole-nx/shared';
   providedIn: 'root',
 })
 export class RolesService {
-  private baseUrl = `${this.environment.functionsBaseUrl}/users`;
+  private environment = inject<Environment>(ENVIRONMENT);
+  private http = inject(HttpClient);
+  private snackbarService = inject(SnackbarService);
 
-  constructor(
-    @Inject(ENVIRONMENT) private environment: Environment,
-    private http: HttpClient,
-    private snackbarService: SnackbarService,
-  ) {}
+  private baseUrl = `${this.environment.functionsBaseUrl}/users`;
 
   update(user: UpdateUserRolesRequest) {
     return this.http

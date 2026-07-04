@@ -8,8 +8,12 @@
 >
   <span class="header-actions">
     <usersrole-nx-github-button [githubLink]="githubLink" />
-    <usersrole-nx-theme-selector *ngIf="user" />
-    <usersrole-nx-sign-out-card *ngIf="user" [user]="user" />
+    @if (user) {
+      <usersrole-nx-theme-selector />
+    }
+    @if (user) {
+      <usersrole-nx-sign-out-card [user]="user" />
+    }
   </span>
 </usersrole-nx-header>
 <usersrole-nx-navigation-layout

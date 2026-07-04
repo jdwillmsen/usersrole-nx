@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { ColDef, FirstDataRenderedEvent, GridOptions } from 'ag-grid-community';
+import {
+  AllCommunityModule,
+  ColDef,
+  FirstDataRenderedEvent,
+  GridOptions,
+  ModuleRegistry,
+} from 'ag-grid-community';
 import { RolesCellRendererComponent } from '../roles-cell-renderer/roles-cell-renderer.component';
 import { ActionsButtonCellRendererComponent } from '../actions-button-cell-renderer/actions-button-cell-renderer.component';
 import { Observable } from 'rxjs';
@@ -14,9 +20,10 @@ import { AgGridModule } from 'ag-grid-angular';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+ModuleRegistry.registerModules([AllCommunityModule]);
+
 @Component({
   selector: 'usersrole-nx-users',
-  standalone: true,
   imports: [
     CommonModule,
     MatIconModule,
@@ -29,6 +36,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
+  private userService = inject(UsersService);
+  private dialog = inject(MatDialog);
+  private userFormService = inject(UserFormService);
+  private snackbarService = inject(SnackbarService);
+
   static columnDefs: ColDef[] = [
     { field: 'uid', cellDataType: 'text' },
     { field: 'email', cellDataType: 'text' },
@@ -84,17 +96,18 @@ export class UsersComponent implements OnInit {
     columnDefs: UsersComponent.columnDefs,
     defaultColDef: this.defaultColDef,
     pagination: true,
-    rowSelection: 'multiple',
+    rowSelection: {
+      mode: 'multiRow',
+      checkboxes: false,
+      headerCheckbox: false,
+      enableClickSelection: true,
+    },
     animateRows: true,
     enableCellTextSelection: true,
+    // Custom ag-theme-usersrole is built on the legacy Sass theming API;
+    // opt out of the v33+ Theming API until the theme is migrated.
+    theme: 'legacy',
   };
-
-  constructor(
-    private userService: UsersService,
-    private dialog: MatDialog,
-    private userFormService: UserFormService,
-    private snackbarService: SnackbarService,
-  ) {}
 
   ngOnInit() {
     this.users$ = this.userService.users$;

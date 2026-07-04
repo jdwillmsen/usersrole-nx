@@ -9,7 +9,7 @@ import {
   FirestoreService,
 } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { of } from 'rxjs';
 
 describe(MainComponent.name, () => {
@@ -18,9 +18,17 @@ describe(MainComponent.name, () => {
       imports: [BrowserAnimationsModule],
       providers: [
         {
-          provide: AngularFireAuth,
+          provide: AUTH,
           useValue: {
-            user: of(),
+            onAuthStateChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+            onIdTokenChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+            currentUser: null,
           },
         },
         {

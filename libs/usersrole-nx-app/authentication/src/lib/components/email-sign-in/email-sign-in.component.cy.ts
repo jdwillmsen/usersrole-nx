@@ -1,11 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { EmailSignInComponent } from './email-sign-in.component';
-import { AuthenticationService } from '@usersrole-nx/core';
+import {
+  AUTH,
+  AuthenticationService,
+  SnackbarService,
+} from '@usersrole-nx/core';
+import { SUCCESS_SIGN_IN_MESSAGE } from '@usersrole-nx/shared';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Route } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 describe(EmailSignInComponent.name, () => {
@@ -33,12 +37,8 @@ describe(EmailSignInComponent.name, () => {
         providers: [
           AuthenticationService,
           {
-            provide: AngularFireAuth,
-            useValue: {
-              signInWithEmailAndPassword: () => {
-                return new Promise((resolve) => resolve('success'));
-              },
-            },
+            provide: AUTH,
+            useValue: {},
           },
         ],
       },
@@ -82,6 +82,29 @@ describe(EmailSignInComponent.name, () => {
   });
 
   it('should submit form successfully with correct input', () => {
+    // Modular signInWithEmailAndPassword is a top-level function that can't be
+    // intercepted via the Auth instance, so mock at the service layer instead.
+    TestBed.overrideComponent(EmailSignInComponent, {
+      add: {
+        providers: [
+          {
+            provide: AuthenticationService,
+            useFactory: (snackbarService: SnackbarService, router: Router) => ({
+              emailAuth: () => {
+                router.navigate(['home']).then(() => {
+                  snackbarService.success(
+                    SUCCESS_SIGN_IN_MESSAGE,
+                    { variant: 'filled', autoClose: true },
+                    true,
+                  );
+                });
+              },
+            }),
+            deps: [SnackbarService, Router],
+          },
+        ],
+      },
+    });
     cy.mount(EmailSignInComponent);
     cy.getByCy('email-address-field').type('test-user-1@usersrole.com');
     cy.getByCy('password-field').type('testPassword');

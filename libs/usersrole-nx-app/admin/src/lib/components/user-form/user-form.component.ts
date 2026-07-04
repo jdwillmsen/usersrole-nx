@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -34,7 +34,6 @@ import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'usersrole-nx-user-form',
-  standalone: true,
   imports: [
     CommonModule,
     MatDialogModule,
@@ -50,6 +49,9 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrls: ['./user-form.component.scss'],
 })
 export class UserFormComponent implements OnInit {
+  private dialogRef = inject<MatDialogRef<UserFormComponent>>(MatDialogRef);
+  private userForm = inject(UserFormService);
+
   hide = true;
   form = new FormGroup({
     uid: new FormControl(''),
@@ -136,11 +138,6 @@ export class UserFormComponent implements OnInit {
   user$!: Observable<User>;
   type$!: Observable<ActionType>;
   displayRoles = '';
-
-  constructor(
-    private dialogRef: MatDialogRef<UserFormComponent>,
-    private userForm: UserFormService,
-  ) {}
 
   ngOnInit(): void {
     this.type$ = this.userForm.type$;

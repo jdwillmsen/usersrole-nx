@@ -39,6 +39,7 @@ testem.log
 Thumbs.db
 .angular
 .nx/cache
+.nx/workspace-data
 
 # Firebase
 .firebase
@@ -58,3 +59,10 @@ firebase-export*
 
 # Cypress
 /apps/usersrole-nx-e2e/src/fixtures/accounts.json
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
+
+.claude/worktrees
+.nx/polygraph
+.nx/self-healing
+.nx/migrate-runs

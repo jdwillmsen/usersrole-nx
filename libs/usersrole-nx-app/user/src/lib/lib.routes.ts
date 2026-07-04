@@ -1,15 +1,11 @@
 import { Route } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
-import { redirectUnauthorizedToLogin } from '@usersrole-nx/core';
-import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
+import { authGuard } from '@usersrole-nx/core';
 
 export const userRoutes: Route[] = [
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: {
-      authGuardPipe: redirectUnauthorizedToLogin,
-    },
+    canActivate: [authGuard],
   },
 ];

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { NavigationItem } from '../../models/navigation-item.model';
@@ -7,14 +7,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'usersrole-nx-navigation-item',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatListModule,
-    RouterLinkActive,
-    RouterLink,
-  ],
+  imports: [MatIconModule, MatListModule, RouterLinkActive, RouterLink],
   templateUrl: './navigation-item.component.html',
   styleUrls: ['./navigation-item.component.scss'],
 })

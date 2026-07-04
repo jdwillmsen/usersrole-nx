@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EmailSignInComponent } from './email-sign-in.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('EmailSignInComponent', () => {
@@ -13,7 +13,7 @@ describe('EmailSignInComponent', () => {
       imports: [EmailSignInComponent, NoopAnimationsModule, MatSnackBarModule],
       providers: [
         {
-          provide: AngularFireAuth,
+          provide: AUTH,
           useValue: {},
         },
       ],

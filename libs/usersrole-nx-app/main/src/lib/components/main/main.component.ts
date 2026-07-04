@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+
 import {
   HeaderComponent,
   NavigationLayoutComponent,
@@ -14,14 +14,12 @@ import { GithubButtonComponent } from '@usersrole-nx/shared';
 import { SignOutCardComponent } from '@usersrole-nx/authentication';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 import { AuthenticationService, SnackbarService } from '@usersrole-nx/core';
-import firebase from 'firebase/compat/app';
+import { User } from 'firebase/auth';
 import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
   selector: 'usersrole-nx-main',
-  standalone: true,
   imports: [
-    CommonModule,
     HeaderComponent,
     NavigationLayoutComponent,
     RouterOutlet,
@@ -35,6 +33,11 @@ import { NavigationService } from '../../services/navigation/navigation.service'
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
+  private breakpointObserver = inject(BreakpointObserver);
+  private authenticationService = inject(AuthenticationService);
+  private snackbarService = inject(SnackbarService);
+  private navigationService = inject(NavigationService);
+
   appTitle = 'Users Role NX';
   appRouterLink = '/home';
   appToolTip = 'Home';
@@ -43,14 +46,9 @@ export class MainComponent {
   isSideNavOpened = false;
   sideNavMode: MatDrawerMode = 'side';
   githubLink = 'https://github.com/jdwillmsen/usersrole-nx';
-  user: firebase.User | null = null;
+  user: User | null = null;
 
-  constructor(
-    private breakpointObserver: BreakpointObserver,
-    private authenticationService: AuthenticationService,
-    private snackbarService: SnackbarService,
-    private navigationService: NavigationService,
-  ) {
+  constructor() {
     this.breakpointObserver.observe(Breakpoints.XSmall).subscribe((result) => {
       this.isXSmallScreen = result.matches;
       this.updateNavigationBasedOnScreenSize();

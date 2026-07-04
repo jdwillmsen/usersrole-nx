@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { ThemeSelectorComponent } from './theme-selector.component';
 import { FirestoreService } from '@usersrole-nx/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -11,8 +11,15 @@ describe(ThemeSelectorComponent.name, () => {
       imports: [BrowserAnimationsModule],
       providers: [
         {
-          provide: AngularFireAuth,
-          useValue: {},
+          provide: AUTH,
+          // firebase 12 authState() subscribes immediately; a bare {} makes it
+          // throw, which surfaces as an error snackbar and breaks the menu.
+          useValue: {
+            onAuthStateChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+          },
         },
       ],
     }).overrideComponent(ThemeSelectorComponent, {

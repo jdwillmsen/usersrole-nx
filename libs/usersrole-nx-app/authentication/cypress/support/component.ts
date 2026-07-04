@@ -1,3 +1,4 @@
+import { provideZoneChangeDetection } from '@angular/core';
 import { mount } from 'cypress/angular';
 // ***********************************************************
 // This example support/component.ts is processed and
@@ -28,4 +29,17 @@ declare global {
   }
 }
 
-Cypress.Commands.add('mount', mount);
+// The app bootstraps zone-based change detection (apps/usersrole-nx/src/main.ts).
+// Angular 21 TestBed defaults to zoneless, so mount must mirror the app or
+// interaction-driven updates (menus, snackbars) never re-render in tests.
+Cypress.Commands.add(
+  'mount',
+  (
+    component: Parameters<typeof mount>[0],
+    config?: Parameters<typeof mount>[1],
+  ) =>
+    mount(component, {
+      ...config,
+      providers: [provideZoneChangeDetection(), ...(config?.providers ?? [])],
+    }),
+);

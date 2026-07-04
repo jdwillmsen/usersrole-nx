@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { debounceTime, Subject } from 'rxjs';
 import {
@@ -17,7 +17,6 @@ import { PaletteColors } from '@usersrole-nx/shared';
 
 @Component({
   selector: 'usersrole-nx-create-palette',
-  standalone: true,
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -30,6 +29,8 @@ import { PaletteColors } from '@usersrole-nx/shared';
   styleUrls: ['./create-palette.component.scss'],
 })
 export class CreatePaletteComponent implements OnInit {
+  private rootFormGroup = inject(FormGroupDirective);
+
   @Input() paletteType: PaletteColors = 'primary';
   @Input() formGroupName = '';
   darkTextColor: string;
@@ -57,7 +58,7 @@ export class CreatePaletteComponent implements OnInit {
   darkTextIcon = 'nightlight_round';
   colorSelection = '#000000';
 
-  constructor(private rootFormGroup: FormGroupDirective) {
+  constructor() {
     const paletteGroup = new PaletteFormGroup();
     this.lightTextColor = paletteGroup.lightTextColor;
     this.darkTextColor = paletteGroup.darkTextColor;

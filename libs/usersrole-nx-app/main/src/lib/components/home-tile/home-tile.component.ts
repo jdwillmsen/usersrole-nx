@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { NavigationTileComponent } from '@usersrole-nx/shared-ui';
 
 @Component({
   selector: 'usersrole-nx-home-tile',
-  standalone: true,
-  imports: [CommonModule, NavigationTileComponent],
+  imports: [NavigationTileComponent],
   templateUrl: './home-tile.component.html',
   styleUrls: ['./home-tile.component.scss'],
 })

@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { MainComponent } from '@usersrole-nx/main';
 
 @Component({
-  standalone: true,
   imports: [RouterModule, MainComponent],
   selector: 'usersrole-nx-root',
   templateUrl: './app.component.html',

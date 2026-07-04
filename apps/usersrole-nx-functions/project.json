@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/usersrole-nx-functions/src",
   "projectType": "application",
+  "tags": ["firebase:function"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
@@ -17,7 +18,7 @@
         "bundle": true,
         "thirdParty": false,
         "dependenciesFieldType": "dependencies",
-        "target": "node16",
+        "target": "node22",
         "format": ["esm"],
         "esbuildOptions": {
           "logLevel": "info"
@@ -41,10 +42,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/usersrole-nx-functions/**/*.ts"]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
@@ -64,6 +62,5 @@
       "command": "firebase deploy --only functions:usersrole-nx-functions",
       "dependsOn": ["build"]
     }
-  },
-  "tags": ["firebase:function"]
+  }
 }
