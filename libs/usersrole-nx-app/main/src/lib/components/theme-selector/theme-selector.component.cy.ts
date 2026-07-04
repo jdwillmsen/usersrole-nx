@@ -12,7 +12,14 @@ describe(ThemeSelectorComponent.name, () => {
       providers: [
         {
           provide: AUTH,
-          useValue: {},
+          // firebase 12 authState() subscribes immediately; a bare {} makes it
+          // throw, which surfaces as an error snackbar and breaks the menu.
+          useValue: {
+            onAuthStateChanged: (next: (user: null) => void) => {
+              next(null);
+              return () => undefined;
+            },
+          },
         },
       ],
     }).overrideComponent(ThemeSelectorComponent, {
