@@ -25,7 +25,7 @@ describe('NavigationService', () => {
 
   it('should return all roleless navigation items if no roles are provided', () => {
     const items = navigationService.getNavigationItems();
-    expect(items.length).toBe(6);
+    expect(items.length).toBe(7);
   });
 
   it('should return all navigation items if all roles are provided', () => {
@@ -36,7 +36,7 @@ describe('NavigationService', () => {
     permissionServiceMockHasRole.mockReturnValue(true);
 
     const itemsWithUserRole = navigationService.getNavigationItems();
-    expect(itemsWithUserRole.length).toBe(9);
+    expect(itemsWithUserRole.length).toBe(10);
   });
 
   it('should return all navigation items but profile if admin role is provided', () => {
@@ -51,7 +51,7 @@ describe('NavigationService', () => {
     );
 
     const itemsWithNoRolesMatch = navigationService.getNavigationItems();
-    expect(itemsWithNoRolesMatch.length).toBe(8);
+    expect(itemsWithNoRolesMatch.length).toBe(9);
   });
 
   it('should return all navigation items but profile if manager role is provided', () => {
@@ -66,7 +66,7 @@ describe('NavigationService', () => {
     );
 
     const itemsWithNoRolesMatch = navigationService.getNavigationItems();
-    expect(itemsWithNoRolesMatch.length).toBe(8);
+    expect(itemsWithNoRolesMatch.length).toBe(9);
   });
 
   it('should return all navigation items but profile if read role is provided', () => {
@@ -81,7 +81,7 @@ describe('NavigationService', () => {
     );
 
     const itemsWithNoRolesMatch = navigationService.getNavigationItems();
-    expect(itemsWithNoRolesMatch.length).toBe(8);
+    expect(itemsWithNoRolesMatch.length).toBe(9);
   });
 
   it('should return all non admin navigation items if user role is provided', () => {
@@ -96,6 +96,6 @@ describe('NavigationService', () => {
     );
 
     const itemsWithNoRolesMatch = navigationService.getNavigationItems();
-    expect(itemsWithNoRolesMatch.length).toBe(7);
+    expect(itemsWithNoRolesMatch.length).toBe(8);
   });
 });

@@ -58,6 +58,11 @@ export class NavigationService {
       title: 'Roles',
       roles: ['read', 'admin', 'manager'],
     },
+    {
+      path: '/about',
+      icon: 'info',
+      title: 'About',
+    },
   ];
 
   getNavigationItems() {

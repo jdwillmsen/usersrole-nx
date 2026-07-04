@@ -1,0 +1,21 @@
+.about-container {
+  padding: 16px;
+  max-width: 960px;
+
+  h1 {
+    margin: 0;
+  }
+
+  .stack {
+    margin: 0;
+    padding-left: 24px;
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .stack-name {
+      font-weight: 500;
+    }
+  }
+}
