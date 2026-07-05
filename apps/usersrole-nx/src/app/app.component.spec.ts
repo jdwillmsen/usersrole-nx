@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ENVIRONMENT, FirestoreService } from '@usersrole-nx/core';
 import { AUTH } from '@usersrole-nx/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SwUpdate } from '@angular/service-worker';
+import { EMPTY } from 'rxjs';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -20,6 +22,10 @@ describe('AppComponent', () => {
         {
           provide: FirestoreService,
           useValue: {},
+        },
+        {
+          provide: SwUpdate,
+          useValue: { isEnabled: false, versionUpdates: EMPTY },
         },
         {
           provide: AUTH,

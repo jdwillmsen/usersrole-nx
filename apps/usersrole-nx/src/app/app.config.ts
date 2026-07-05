@@ -11,7 +11,10 @@ import {
 import { appRoutes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { provideHttpClient } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFunctions } from 'firebase/functions';
@@ -35,7 +38,10 @@ export const appConfig: ApplicationConfig = {
   providers: [
     AuthTokenHttpInterceptorProvider,
     GlobalHttpErrorHandlerInterceptorProvider,
-    provideHttpClient(),
+    // The auth-token and error-handler interceptors are HTTP_INTERCEPTORS DI
+    // providers; without this opt-in the standalone HttpClient ignores them
+    // and every API request goes out unauthenticated.
+    provideHttpClient(withInterceptorsFromDi()),
     provideAnimations(),
     importProvidersFrom(MatSnackBarModule),
     { provide: FIREBASE_APP, useValue: firebaseApp },
