@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.2](https://github.com/jdwillmsen/usersrole-nx/compare/v2.1.1...v2.1.2) (2026-07-05)
+
+
+### Bug Fixes
+
+* **app:** register DI interceptors with HttpClient; auto-reload on SW update ([24a9bf2](https://github.com/jdwillmsen/usersrole-nx/commit/24a9bf2d793c5b5a441d877da3cebc1e55913755))
+
 ## [2.1.1](https://github.com/jdwillmsen/usersrole-nx/compare/v2.1.0...v2.1.1) (2026-07-05)
 
 
