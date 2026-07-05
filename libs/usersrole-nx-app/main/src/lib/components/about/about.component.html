@@ -1,34 +1,65 @@
-<div class="about-container" data-cy="about-container">
-  <h1 data-cy="title">About Users Role NX</h1>
-  <p data-cy="description">
-    Users Role NX is a template application for user authentication and
-    authorization. It provides sign in with Firebase and Google Identity
-    Platform, role based access control managed through Firebase Functions, and
-    a general site layout with header, collapsable sidebar/navigation, and main
-    content area. It is also a Progressive Web App (PWA) and can be installed on
-    mobile and desktop devices.
-  </p>
-  <h2 data-cy="stack-title">Technology Stack</h2>
-  <ul class="stack" data-cy="stack">
-    @for (item of stack; track item.name) {
-      <li
-        [attr.data-cy]="item.name.toLowerCase().split(' ')[0] + '-stack-item'"
-      >
-        <span class="stack-name">{{ item.name }} {{ item.version }}</span>
-        — {{ item.description }}
-      </li>
-    }
-  </ul>
-  <h2 data-cy="source-title">Source</h2>
-  <p data-cy="source">
-    This project is developed in the open. The source code, CI pipelines, and
-    issue tracker live on
-    <a
-      href="https://github.com/jdwillmsen/usersrole-nx"
-      target="_blank"
-      rel="noopener noreferrer"
-      data-cy="source-link"
-      >GitHub</a
-    >.
-  </p>
+<div class="about" data-cy="about-page">
+  <h1>About</h1>
+
+  <mat-card data-cy="build-card">
+    <mat-card-header><mat-card-title>Build</mat-card-title></mat-card-header>
+    <mat-card-content>
+      <p>Version: {{ info.app }}</p>
+      <p>
+        Commit:
+        @if (commitUrl) {
+          <a
+            [href]="commitUrl"
+            target="_blank"
+            rel="noopener"
+            data-cy="commit-link"
+            >{{ info.commit }}</a
+          >
+        } @else {
+          {{ info.commit }}
+        }
+      </p>
+      <p>Built: {{ info.builtAt }}</p>
+      <p>Environment: {{ info.env }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card data-cy="libraries-card">
+    <mat-card-header
+      ><mat-card-title
+        >Framework &amp; libraries</mat-card-title
+      ></mat-card-header
+    >
+    <mat-card-content>
+      <p>Angular (runtime): {{ angularVersion }}</p>
+      @for (dep of info.deps | keyvalue; track dep.key) {
+        <p>{{ dep.key }}: {{ dep.value }}</p>
+      }
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card data-cy="runtime-card">
+    <mat-card-header><mat-card-title>Runtime</mat-card-title></mat-card-header>
+    <mat-card-content>
+      <p>Zoneless change detection: {{ zoneless ? 'enabled' : 'disabled' }}</p>
+      <p>App Check: {{ appCheck }}</p>
+      <p>Browser: {{ browser }}</p>
+      <p>Platform: {{ platform }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card data-cy="project-card">
+    <mat-card-header><mat-card-title>Project</mat-card-title></mat-card-header>
+    <mat-card-content>
+      <p>{{ project.description }}</p>
+      <p>Author: {{ project.author }}</p>
+      <p>License: {{ project.license }}</p>
+      <p>
+        Repository:
+        <a [href]="repoUrl" target="_blank" rel="noopener"
+          >jdwillmsen/usersrole-nx</a
+        >
+      </p>
+    </mat-card-content>
+  </mat-card>
 </div>

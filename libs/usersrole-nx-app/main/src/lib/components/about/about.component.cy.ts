@@ -1,36 +1,40 @@
 import { AboutComponent } from './about.component';
+import { ActivatedRoute } from '@angular/router';
+import { VERSION_INFO } from '../../generated/version-info';
 
-describe(AboutComponent.name, () => {
-  it('renders', () => {
-    cy.mount(AboutComponent);
+describe('AboutComponent', () => {
+  beforeEach(() => {
+    cy.mount(AboutComponent, {
+      providers: [{ provide: ActivatedRoute, useValue: {} }],
+    });
   });
 
-  describe('Screen Sizes', () => {
-    testScreenSize('XSmall', 400, 400);
-    testScreenSize('Small', 800, 800);
-    testScreenSize('Medium', 1200, 900);
-    testScreenSize('Large', 1600, 1080);
-    testScreenSize('XLarge', 2560, 1440);
+  it('should mount', () => {
+    cy.getByCy('about-page').should('be.visible');
+  });
+
+  it('renders all four info cards', () => {
+    cy.getByCy('build-card').should('be.visible');
+    // Assert the live Angular runtime line, not a generated dep: the deps map
+    // is empty in the committed placeholder version-info.ts.
+    cy.getByCy('libraries-card')
+      .should('be.visible')
+      .and('contain.text', 'Angular (runtime)');
+    cy.getByCy('runtime-card').should('be.visible');
+    cy.getByCy('project-card')
+      .should('be.visible')
+      .and('contain.text', 'jdwillmsen/usersrole-nx');
+  });
+
+  it('renders the commit link only for non-dev builds', () => {
+    // version-info.ts is regenerated with a real commit whenever the app build
+    // target runs, so assert against whatever this test build compiled in.
+    if (VERSION_INFO.commit === 'dev') {
+      cy.getByCy('commit-link').should('not.exist');
+    } else {
+      cy.getByCy('commit-link')
+        .should('be.visible')
+        .and('contain.text', VERSION_INFO.commit);
+    }
   });
 });
-
-function testScreenSize(size: string, width: number, height: number) {
-  it(`should be setup properly on ${size} screen size`, () => {
-    cy.viewport(width, height);
-    cy.mount(AboutComponent);
-    cy.getByCy('about-container').should('be.visible');
-    cy.getByCy('title')
-      .should('be.visible')
-      .and('contain.text', 'About Users Role NX');
-    cy.getByCy('description').should('be.visible').and('not.be.empty');
-    cy.getByCy('stack-title').should('be.visible');
-    cy.getByCy('stack').should('be.visible');
-    cy.getByCy('angular-stack-item').should('be.visible');
-    cy.getByCy('nx-stack-item').should('be.visible');
-    cy.getByCy('firebase-stack-item').should('be.visible');
-    cy.getByCy('source-title').should('be.visible');
-    cy.getByCy('source-link')
-      .should('be.visible')
-      .and('have.attr', 'href', 'https://github.com/jdwillmsen/usersrole-nx');
-  });
-}
