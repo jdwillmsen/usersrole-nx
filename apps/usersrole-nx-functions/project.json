@@ -59,8 +59,15 @@
       }
     },
     "deploy": {
-      "command": "firebase deploy --only functions:usersrole-nx-functions",
-      "dependsOn": ["build"]
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "commands": [
+          "node tools/scripts/prepare-functions-deploy.mjs",
+          "firebase deploy --only functions:usersrole-nx-functions"
+        ],
+        "parallel": false
+      }
     }
   }
 }
