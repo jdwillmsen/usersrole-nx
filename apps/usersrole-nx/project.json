@@ -11,12 +11,21 @@
       "executor": "nx:run-commands",
       "cache": false,
       "options": {
-        "command": "node tools/scripts/generate-version-info.mjs"
+        "command": "node tools/scripts/generate-version-info.mjs",
+        "env": {
+          "NODE_ENV": "production"
+        }
       }
     },
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "dependsOn": ["^build", "generate-version-info"],
+      "inputs": [
+        "production",
+        "^production",
+        "{workspaceRoot}/package.json",
+        { "runtime": "git rev-parse --short HEAD" }
+      ],
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/usersrole-nx",
