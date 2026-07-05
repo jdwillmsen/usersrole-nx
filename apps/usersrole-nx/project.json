@@ -7,8 +7,16 @@
   "tags": [],
   "implicitDependencies": ["usersrole-nx-functions"],
   "targets": {
+    "generate-version-info": {
+      "executor": "nx:run-commands",
+      "cache": false,
+      "options": {
+        "command": "node tools/scripts/generate-version-info.mjs"
+      }
+    },
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
+      "dependsOn": ["^build", "generate-version-info"],
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/usersrole-nx",

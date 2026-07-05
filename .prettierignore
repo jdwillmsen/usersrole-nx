@@ -6,3 +6,6 @@
 /.nx/cache
 /.nx/workspace-data
 .nx/self-healing
+
+# Regenerated at build time with JSON-style quoting; keep prettier away.
+libs/usersrole-nx-app/main/src/lib/generated/version-info.ts
