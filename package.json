@@ -1,6 +1,6 @@
 {
   "name": "@usersrole-nx/source",
-  "version": "0.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "scripts": {
     "format": "npx nx format:write --all"
