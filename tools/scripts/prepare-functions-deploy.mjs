@@ -38,5 +38,7 @@ writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
 rmSync(`${distDir}/package-lock.json`, { force: true });
 
 console.log(
-  `Rewrote ${pkgPath} with runtime dependencies: ${Object.keys(dependencies).join(', ')}`,
+  `Rewrote ${pkgPath} with runtime dependencies: ${Object.keys(
+    dependencies,
+  ).join(', ')}`,
 );
