@@ -6,7 +6,7 @@ import {
   HttpInterceptor,
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
-import { Observable, switchMap, take } from 'rxjs';
+import { from, Observable, switchMap, take } from 'rxjs';
 import { Auth } from 'firebase/auth';
 import { idToken } from 'rxfire/auth';
 import { AUTH } from '../../firebase.tokens';
@@ -19,7 +19,11 @@ export class AuthTokenInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
-    return idToken(this.auth).pipe(
+    // Wait for Firebase to finish restoring the session first: on page
+    // reload idToken emits null before restoration completes, which sent
+    // the request unauthenticated and produced 401s for signed-in users.
+    return from(this.auth.authStateReady()).pipe(
+      switchMap(() => idToken(this.auth)),
       take(1),
       switchMap((idToken) => {
         let clone = request.clone();

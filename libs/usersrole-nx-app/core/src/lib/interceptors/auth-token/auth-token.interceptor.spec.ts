@@ -22,7 +22,7 @@ describe('AuthTokenInterceptor', () => {
         AuthTokenInterceptor,
         {
           provide: AUTH,
-          useValue: {},
+          useValue: { authStateReady: () => Promise.resolve() },
         },
         AuthTokenHttpInterceptorProvider,
       ],
@@ -55,5 +55,20 @@ describe('AuthTokenInterceptor', () => {
       .subscribe();
 
     idToken$.next('mocked-id-token');
+  });
+
+  it('should pass the request through without an Authorization header when there is no idToken', (done) => {
+    const request = new HttpRequest('GET', 'https://example.com/data');
+    idToken$.next(null);
+
+    interceptor
+      .intercept(request, {
+        handle: (req: HttpRequest<unknown>) => {
+          expect(req.headers.has('Authorization')).toBe(false);
+          done();
+          return new Observable();
+        },
+      })
+      .subscribe();
   });
 });
