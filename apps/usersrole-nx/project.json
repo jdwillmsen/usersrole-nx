@@ -20,6 +20,12 @@
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "dependsOn": ["^build", "generate-version-info"],
+      "inputs": [
+        "production",
+        "^production",
+        "{workspaceRoot}/package.json",
+        { "runtime": "git rev-parse --short HEAD" }
+      ],
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/usersrole-nx",
