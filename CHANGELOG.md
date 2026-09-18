@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.3](https://github.com/jdwillmsen/usersrole-nx/compare/v2.1.2...v2.1.3) (2026-09-18)
+
+
+### Bug Fixes
+
+* **deps:** patch axios and realign the Angular packages ([#34](https://github.com/jdwillmsen/usersrole-nx/issues/34)) ([e26e7fa](https://github.com/jdwillmsen/usersrole-nx/commit/e26e7faa3760d7e49154a77e7c222d335ce67c51))
+
 ## [2.1.2](https://github.com/jdwillmsen/usersrole-nx/compare/v2.1.1...v2.1.2) (2026-07-05)
 
 
