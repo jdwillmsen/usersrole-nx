@@ -50,7 +50,7 @@
     "@angular/pwa": "22.1.8",
     "@cypress/webpack-dev-server": "6.0.0",
     "@eslint/eslintrc": "^3.0.0",
-    "@eslint/js": "^9.8.0",
+    "@eslint/js": "^10.0.1",
     "@nx/cypress": "23.2.1",
     "@nx/devkit": "23.2.1",
     "@nx/esbuild": "23.2.1",
