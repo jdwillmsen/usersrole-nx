@@ -1,6 +1,13 @@
 import { Request, Response } from 'express';
 import { getAuth, UserRecord } from 'firebase-admin/auth';
 
+// Express 5 types a route parameter as string | string[], because a parameter
+// can legitimately repeat in a query-style route. These routes declare :id
+// once, so naming the shape here is what tells the compiler that -- rather
+// than casting at each use and asserting something the route already
+// guarantees.
+type IdParam = { id: string };
+
 export async function create(req: Request, res: Response) {
   try {
     const { displayName, password, email } = req.body;
@@ -51,7 +58,7 @@ function mapUser(user: UserRecord) {
   };
 }
 
-export async function get(req: Request, res: Response) {
+export async function get(req: Request<IdParam>, res: Response) {
   try {
     const { id } = req.params;
     const user = await getAuth().getUser(id);
@@ -61,7 +68,7 @@ export async function get(req: Request, res: Response) {
   }
 }
 
-export async function patch(req: Request, res: Response) {
+export async function patch(req: Request<IdParam>, res: Response) {
   try {
     const { id } = req.params;
     const { displayName, password, email, roles } = req.body;
@@ -80,7 +87,7 @@ export async function patch(req: Request, res: Response) {
   }
 }
 
-export async function remove(req: Request, res: Response) {
+export async function remove(req: Request<IdParam>, res: Response) {
   try {
     const { id } = req.params;
     await getAuth().deleteUser(id);
@@ -90,7 +97,7 @@ export async function remove(req: Request, res: Response) {
   }
 }
 
-export async function roles(req: Request, res: Response) {
+export async function roles(req: Request<IdParam>, res: Response) {
   try {
     const { id } = req.params;
     const { roles } = req.body;
