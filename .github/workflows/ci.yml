@@ -36,7 +36,10 @@ jobs:
       - name: Use the package manager cache if available
         uses: actions/setup-node@v7.0.0
         with:
-          node-version: 22
+          # Pinned via .nvmrc so CI and local resolve the same npm: a lockfile
+          # written by npm 11 is not reproducible under the npm 10 that Node 22
+          # ships, and npm ci rejects the mismatch.
+          node-version-file: .nvmrc
           cache: 'npm'
 
       - name: Install dependencies
