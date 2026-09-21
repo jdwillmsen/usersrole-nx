@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import {
   CONFIRM_PASSWORD_REQUIRED_VALIDATION_MESSAGE,
@@ -38,6 +38,7 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
   ],
   templateUrl: './sign-up.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent {

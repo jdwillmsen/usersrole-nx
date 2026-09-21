@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -9,6 +9,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'usersrole-nx-navigation-item',
   imports: [MatIconModule, MatListModule, RouterLinkActive, RouterLink],
   templateUrl: './navigation-item.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./navigation-item.component.scss'],
 })
 export class NavigationItemComponent {

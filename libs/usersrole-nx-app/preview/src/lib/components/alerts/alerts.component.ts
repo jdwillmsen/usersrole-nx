@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { AlertService } from '../../services/alert/alert.service';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +23,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ReactiveFormsModule,
   ],
   templateUrl: './alerts.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./alerts.component.scss'],
 })
 export class AlertsComponent {

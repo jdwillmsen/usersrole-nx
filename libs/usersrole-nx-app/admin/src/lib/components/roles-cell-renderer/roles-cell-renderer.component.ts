@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { Role } from '@usersrole-nx/shared';
@@ -10,6 +10,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   selector: 'usersrole-nx-roles-cell-renderer',
   imports: [MatChipsModule, MatTooltipModule],
   templateUrl: './roles-cell-renderer.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./roles-cell-renderer.component.scss'],
 })
 export class RolesCellRendererComponent implements ICellRendererAngularComp {

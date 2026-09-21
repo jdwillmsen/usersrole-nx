@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { Palette, SiteTheme, Theme } from '@usersrole-nx/shared';
 import {
@@ -17,6 +17,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   selector: 'usersrole-nx-theme-selector',
   imports: [MatMenuModule, MatIconModule, MatButtonModule, MatTooltipModule],
   templateUrl: './theme-selector.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./theme-selector.component.scss'],
 })
 export class ThemeSelectorComponent {

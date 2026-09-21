@@ -14,6 +14,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {
   provideHttpClient,
   withInterceptorsFromDi,
+  withXhr,
 } from '@angular/common/http';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
@@ -41,7 +42,7 @@ export const appConfig: ApplicationConfig = {
     // The auth-token and error-handler interceptors are HTTP_INTERCEPTORS DI
     // providers; without this opt-in the standalone HttpClient ignores them
     // and every API request goes out unauthenticated.
-    provideHttpClient(withInterceptorsFromDi()),
+    provideHttpClient(withXhr(), withInterceptorsFromDi()),
     provideAnimations(),
     importProvidersFrom(MatSnackBarModule),
     { provide: FIREBASE_APP, useValue: firebaseApp },

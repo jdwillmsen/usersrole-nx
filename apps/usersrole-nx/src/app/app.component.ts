@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MainComponent } from '@usersrole-nx/main';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
@@ -8,6 +8,7 @@ import { filter } from 'rxjs';
   imports: [RouterModule, MainComponent],
   selector: 'usersrole-nx-root',
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {

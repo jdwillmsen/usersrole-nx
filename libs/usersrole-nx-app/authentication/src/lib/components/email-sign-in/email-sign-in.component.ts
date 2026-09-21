@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import {
   EMAIL_PATTERN_VALIDATION_MESSAGE,
@@ -27,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
   ],
   templateUrl: './email-sign-in.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./email-sign-in.component.scss'],
 })
 export class EmailSignInComponent {

@@ -1,4 +1,9 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  inject,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import {
@@ -33,6 +38,7 @@ ModuleRegistry.registerModules([AllCommunityModule]);
     MatTooltipModule,
   ],
   templateUrl: './users.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {

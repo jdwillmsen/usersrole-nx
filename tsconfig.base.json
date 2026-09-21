@@ -26,7 +26,12 @@
       "@usersrole-nx/shared-ui": ["libs/shared/ui/src/index.ts"],
       "@usersrole-nx/theme": ["libs/usersrole-nx-app/theme/src/index.ts"],
       "@usersrole-nx/user": ["libs/usersrole-nx-app/user/src/index.ts"]
-    }
+    },
+    "strict": false,
+    "noUncheckedSideEffectImports": false,
+    "types": ["*"],
+    "esModuleInterop": false,
+    "ignoreDeprecations": "6.0"
   },
   "exclude": ["node_modules", "tmp"]
 }

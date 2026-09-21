@@ -1,11 +1,10 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { DecodedIdToken, getAuth } from 'firebase-admin/auth';
 
 export async function isAuthenticated(
   req: Request,
   res: Response,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  next: Function,
+  next: NextFunction,
 ) {
   const { authorization } = req.headers;
 

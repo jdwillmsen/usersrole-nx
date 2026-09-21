@@ -5,16 +5,16 @@
   matTooltip="Sign Out"
   mat-mini-fab
 >
-  @if (checkForPhoto(user?.photoURL)) {
+  @if (checkForPhoto($safeNavigationMigration(user?.photoURL))) {
     <mat-icon data-cy="user-button-icon"> person </mat-icon>
   }
-  @if (!checkForPhoto(user?.photoURL)) {
+  @if (!checkForPhoto($safeNavigationMigration(user?.photoURL))) {
     <mat-icon class="extra" />
   }
-  @if (!checkForPhoto(user?.photoURL)) {
+  @if (!checkForPhoto($safeNavigationMigration(user?.photoURL))) {
     <img
-      [alt]="user?.displayName"
-      [src]="user?.photoURL"
+      [alt]="$safeNavigationMigration(user?.displayName)"
+      [src]="$safeNavigationMigration(user?.photoURL)"
       class="avatar"
       data-cy="user-button-icon"
       referrerPolicy="no-referrer"
@@ -23,13 +23,13 @@
 </button>
 <mat-menu #beforeMenu="matMenu" data-cy="sign-out-card" xPosition="before">
   <div class="profile-card">
-    @if (checkForPhoto(user?.photoURL)) {
+    @if (checkForPhoto($safeNavigationMigration(user?.photoURL))) {
       <mat-icon class="empty-avatar" data-cy="user-icon"> person </mat-icon>
     }
-    @if (!checkForPhoto(user?.photoURL)) {
+    @if (!checkForPhoto($safeNavigationMigration(user?.photoURL))) {
       <img
-        [alt]="user?.displayName"
-        [src]="user?.photoURL"
+        [alt]="$safeNavigationMigration(user?.displayName)"
+        [src]="$safeNavigationMigration(user?.photoURL)"
         class="big-avatar"
         data-cy="user-icon"
         referrerPolicy="no-referrer"

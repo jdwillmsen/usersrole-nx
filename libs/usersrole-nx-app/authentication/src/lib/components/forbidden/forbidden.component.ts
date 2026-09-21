@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
   selector: 'usersrole-nx-forbidden',
   imports: [MatIconModule, RouterLink, MatButtonModule],
   templateUrl: './forbidden.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./forbidden.component.scss'],
 })
 export class ForbiddenComponent {
