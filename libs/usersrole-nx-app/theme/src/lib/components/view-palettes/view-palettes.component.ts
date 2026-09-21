@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { PaletteComponent } from '../palette/palette.component';
 
@@ -6,6 +6,7 @@ import { PaletteComponent } from '../palette/palette.component';
   selector: 'usersrole-nx-view-palettes',
   imports: [PaletteComponent],
   templateUrl: './view-palettes.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./view-palettes.component.scss'],
 })
 export class ViewPalettesComponent {

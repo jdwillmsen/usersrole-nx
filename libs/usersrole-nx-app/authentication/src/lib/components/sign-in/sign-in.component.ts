@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import {
   AuthenticationService,
@@ -23,6 +23,7 @@ import { EmailSignInComponent } from '../email-sign-in/email-sign-in.component';
     EmailSignInComponent,
   ],
   templateUrl: './sign-in.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent {

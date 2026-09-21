@@ -24,9 +24,12 @@
         "production",
         "^production",
         "{workspaceRoot}/package.json",
-        { "runtime": "git rev-parse --short HEAD" }
+        {
+          "runtime": "git rev-parse --short HEAD"
+        }
       ],
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/usersrole-nx",
         "index": "apps/usersrole-nx/src/index.html",
@@ -116,11 +119,12 @@
             }
           ]
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "defaultConfiguration": "development",
+      "continuous": true,
       "configurations": {
         "production": {
           "buildTarget": "usersrole-nx:build:production"
@@ -128,9 +132,7 @@
         "development": {
           "buildTarget": "usersrole-nx:build:development"
         }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",

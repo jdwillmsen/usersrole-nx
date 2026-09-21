@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { User } from 'firebase/auth';
 import { MatMenuModule } from '@angular/material/menu';
@@ -19,6 +19,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTooltipModule,
   ],
   templateUrl: './sign-out-card.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./sign-out-card.component.scss'],
 })
 export class SignOutCardComponent {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { debounceTime, Subject } from 'rxjs';
 import {
@@ -26,6 +26,7 @@ import { PaletteColors } from '@usersrole-nx/shared';
     FormsModule,
   ],
   templateUrl: './create-palette.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./create-palette.component.scss'],
 })
 export class CreatePaletteComponent implements OnInit {

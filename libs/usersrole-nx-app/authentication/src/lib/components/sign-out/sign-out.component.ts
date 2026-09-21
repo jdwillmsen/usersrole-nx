@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { AuthenticationService, ThemeStorageService } from '@usersrole-nx/core';
@@ -7,6 +7,7 @@ import { AuthenticationService, ThemeStorageService } from '@usersrole-nx/core';
   selector: 'usersrole-nx-sign-out',
   imports: [MatButtonModule],
   templateUrl: './sign-out.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./sign-out.component.scss'],
 })
 export class SignOutComponent {

@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { Role } from '@usersrole-nx/shared';
 
 export function isAuthorized(opts: {
   hasRole: Array<Role>;
   allowSameUser?: boolean;
 }) {
-  return (req: Request, res: Response, next: Function) => {
+  return (req: Request, res: Response, next: NextFunction) => {
     const { roles, uid } = res.locals;
     const { id } = req.params;
 

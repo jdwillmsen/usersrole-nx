@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { HomeTileComponent } from '../home-tile/home-tile.component';
 import { HomeTile } from '../../models/home-tile.model';
@@ -7,6 +7,7 @@ import { HomeTile } from '../../models/home-tile.model';
   selector: 'usersrole-nx-home',
   imports: [HomeTileComponent],
   templateUrl: './home.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {

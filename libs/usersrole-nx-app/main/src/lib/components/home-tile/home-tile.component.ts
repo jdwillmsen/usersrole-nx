@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { NavigationTileComponent } from '@usersrole-nx/shared-ui';
 
@@ -6,6 +6,7 @@ import { NavigationTileComponent } from '@usersrole-nx/shared-ui';
   selector: 'usersrole-nx-home-tile',
   imports: [NavigationTileComponent],
   templateUrl: './home-tile.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./home-tile.component.scss'],
 })
 export class HomeTileComponent {

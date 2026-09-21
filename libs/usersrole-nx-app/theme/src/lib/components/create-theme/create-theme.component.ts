@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CreatePaletteComponent } from '../create-palette/create-palette.component';
@@ -26,6 +26,7 @@ import {
     MatButtonModule,
   ],
   templateUrl: './create-theme.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./create-theme.component.scss'],
 })
 export class CreateThemeComponent {

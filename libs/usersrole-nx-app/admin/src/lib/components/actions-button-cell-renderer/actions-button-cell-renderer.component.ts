@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { ICellRendererParams } from 'ag-grid-community';
 import { SnackbarService, UsersService } from '@usersrole-nx/core';
@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'usersrole-nx-actions-button-cell-renderer',
   imports: [MatButtonModule, MatTooltipModule, MatIconModule],
   templateUrl: './actions-button-cell-renderer.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./actions-button-cell-renderer.component.scss'],
 })
 export class ActionsButtonCellRendererComponent

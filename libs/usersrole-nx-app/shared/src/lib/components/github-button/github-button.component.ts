@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
@@ -9,6 +9,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   selector: 'usersrole-nx-github-button',
   imports: [MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './github-button.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./github-button.component.scss'],
 })
 export class GithubButtonComponent {

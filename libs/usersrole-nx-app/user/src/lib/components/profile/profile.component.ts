@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
   selector: 'usersrole-nx-profile',
   imports: [CommonModule, ReactiveFormsModule, MatInputModule, FormsModule],
   templateUrl: './profile.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {

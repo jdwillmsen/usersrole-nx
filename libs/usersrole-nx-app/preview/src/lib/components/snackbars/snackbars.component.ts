@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Icon, SnackbarOptions, Variant } from '@usersrole-nx/shared';
@@ -25,6 +25,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCheckboxModule,
   ],
   templateUrl: './snackbars.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./snackbars.component.scss'],
 })
 export class SnackbarsComponent {

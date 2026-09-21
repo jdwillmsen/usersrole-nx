@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, VERSION, ChangeDetectionStrategy } from '@angular/core';
 import { KeyValuePipe } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { VERSION_INFO } from '../../generated/version-info';
@@ -9,6 +9,7 @@ const REPO_URL = 'https://github.com/jdwillmsen/usersrole-nx';
   selector: 'usersrole-nx-about',
   imports: [MatCardModule, KeyValuePipe],
   templateUrl: './about.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {

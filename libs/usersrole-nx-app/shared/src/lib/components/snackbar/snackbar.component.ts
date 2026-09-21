@@ -1,4 +1,4 @@
-import { Component, InjectionToken, inject } from '@angular/core';
+import { Component, InjectionToken, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,6 +12,7 @@ import { SnackbarData } from '../../models/snackbar.model';
   selector: 'usersrole-nx-snackbar',
   imports: [MatIconModule, MatButtonModule],
   templateUrl: './snackbar.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./snackbar.component.scss'],
 })
 export class SnackbarComponent {

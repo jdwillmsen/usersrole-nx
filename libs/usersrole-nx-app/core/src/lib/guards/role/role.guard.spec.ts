@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter, Route, Router } from '@angular/router';
 
 import { roleGuard } from './role.guard';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {
@@ -18,6 +18,7 @@ import { SnackbarService } from '../../services/snackbar/snackbar.service';
 @Component({
   selector: 'usersrole-nx-test-admin',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: '',
 })
 class TestAdminComponent {}
@@ -25,6 +26,7 @@ class TestAdminComponent {}
 @Component({
   selector: 'usersrole-nx-test-user',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: '',
 })
 class TestUserComponent {}
@@ -32,6 +34,7 @@ class TestUserComponent {}
 @Component({
   selector: 'usersrole-nx-test-sign-in',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: '',
 })
 class TestSignInComponent {}

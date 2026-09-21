@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   AbstractControl,
@@ -33,6 +33,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatAutocompleteModule,
   ],
   templateUrl: './roles.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./roles.component.scss'],
 })
 export class RolesComponent implements OnInit {

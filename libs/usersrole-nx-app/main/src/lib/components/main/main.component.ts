@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import {
   HeaderComponent,
@@ -30,6 +30,7 @@ import { NavigationService } from '../../services/navigation/navigation.service'
     ThemeSelectorComponent,
   ],
   templateUrl: './main.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
