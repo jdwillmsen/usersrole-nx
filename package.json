@@ -18,7 +18,7 @@
     "@angular/platform-browser-dynamic": "21.2.23",
     "@angular/router": "21.2.23",
     "@angular/service-worker": "21.2.23",
-    "@nx/angular": "23.0.1",
+    "@nx/angular": "23.2.1",
     "@types/cors": "^2.8.16",
     "@types/tinycolor2": "^1.4.5",
     "ag-grid-angular": "^36.0.0",
@@ -35,7 +35,7 @@
     "rxjs": "~7.8.0",
     "tinycolor2": "^1.6.0",
     "tslib": "^2.3.0",
-    "zone.js": "0.16.2"
+    "zone.js": "0.16.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "21.2.24",
