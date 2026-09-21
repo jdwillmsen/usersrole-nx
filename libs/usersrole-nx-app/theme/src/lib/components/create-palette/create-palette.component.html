@@ -24,28 +24,46 @@
       <div
         [attr.data-cy]="color + '-palette-row'"
         [ngStyle]="{
-          'background-color': $safeNavigationMigration(paletteForm.get('color' + color)?.value)
+          'background-color': $safeNavigationMigration(
+            paletteForm.get('color' + color)?.value
+          ),
         }"
         class="palette-row"
       >
         <span
           [attr.data-cy]="color + '-color'"
-          [ngStyle]="{ color: $safeNavigationMigration(paletteForm.get('colorContrast' + color)?.value) }"
+          [ngStyle]="{
+            color: $safeNavigationMigration(
+              paletteForm.get('colorContrast' + color)?.value
+            ),
+          }"
         >
           {{ color }}
         </span>
         <span
           [attr.data-cy]="color + '-color-value'"
-          [ngStyle]="{ color: $safeNavigationMigration(paletteForm.get('colorContrast' + color)?.value) }"
+          [ngStyle]="{
+            color: $safeNavigationMigration(
+              paletteForm.get('colorContrast' + color)?.value
+            ),
+          }"
           class="palette-color-text"
         >
           {{ paletteForm.get('color' + color)?.value }}
         </span>
         <a
           [attr.data-cy]="color + '-color-link'"
-          [href]="getColorsUrl($safeNavigationMigration(paletteForm.get('color' + color)?.value))"
+          [href]="
+            getColorsUrl(
+              $safeNavigationMigration(paletteForm.get('color' + color)?.value)
+            )
+          "
           [matTooltip]="'Open Color Details'"
-          [ngStyle]="{ color: $safeNavigationMigration(paletteForm.get('colorContrast' + color)?.value) }"
+          [ngStyle]="{
+            color: $safeNavigationMigration(
+              paletteForm.get('colorContrast' + color)?.value
+            ),
+          }"
           class="palette-color-link"
           target="_blank"
         >
@@ -56,11 +74,21 @@
           (click)="toggleTextColor(paletteForm.get('colorContrast' + color))"
           [attr.data-cy]="color + '-color-contrast-button'"
           [matTooltip]="'Toggle Contrast'"
-          [ngStyle]="{ color: $safeNavigationMigration(paletteForm.get('colorContrast' + color)?.value) }"
+          [ngStyle]="{
+            color: $safeNavigationMigration(
+              paletteForm.get('colorContrast' + color)?.value
+            ),
+          }"
           mat-icon-button
         >
           <mat-icon>
-            {{ getTextIcon($safeNavigationMigration(paletteForm.get('colorContrast' + color)?.value)) }}
+            {{
+              getTextIcon(
+                $safeNavigationMigration(
+                  paletteForm.get('colorContrast' + color)?.value
+                )
+              )
+            }}
           </mat-icon>
         </button>
         <input

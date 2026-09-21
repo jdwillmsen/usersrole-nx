@@ -22,9 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./actions-button-cell-renderer.component.scss'],
 })
-export class ActionsButtonCellRendererComponent
-  implements ICellRendererAngularComp
-{
+export class ActionsButtonCellRendererComponent implements ICellRendererAngularComp {
   private userService = inject(UsersService);
   private dialog = inject(MatDialog);
   private userFormService = inject(UserFormService);

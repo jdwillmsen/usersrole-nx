@@ -1,4 +1,11 @@
-import { Component, Input, OnDestroy, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+  inject,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Alert, AlertVariants } from '@usersrole-nx/shared';
