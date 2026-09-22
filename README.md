@@ -45,10 +45,31 @@ Run `nx e2e <project>` or `nx run-many -t e2e` to execute e2e tests in headless 
 The e2e tests are making use of a testing framework called [Cypress](https://docs.cypress.io/guides/end-to-end-testing/writing-your-first-end-to-end-test). \
 \*\* Note e2e testing is not performed currently in CI
 
-## Deployment
+## Release & deploy
 
-Run `nx deploy <project>` to execute deploy target. \
-\*\* This is done manually and is not automated with CD.
+Releases are automatic. After CI passes on a push to `main`, the Release
+workflow runs [semantic-release](https://semantic-release.gitbook.io/), which
+derives the next version from the [Conventional Commits](https://www.conventionalcommits.org/)
+since the last tag:
+
+- `feat` releases a minor, `fix` and `perf` a patch, and a `!` or
+  `BREAKING CHANGE` footer a major.
+- `chore(deps)` (a runtime dependency bump) releases a patch;
+  `chore(deps-dev)`, `ci`, `build`, `docs`, `test` and other chores release
+  nothing.
+
+When a version is cut, the workflow tags the commit `vX.Y.Z`, publishes a
+GitHub release with generated notes, builds that tag with the version shown on
+the About page, and deploys it to Firebase Hosting. That deploy is the only
+thing that changes production.
+
+Only hosting is deployed automatically. The Firebase Functions codebase needs
+credentials and a billing account CI does not have, so it is still deployed by
+hand with `nx deploy usersrole-nx-functions`.
+
+No changelog file is committed, since `main` accepts no direct pushes. The
+GitHub releases are the changelog; `CHANGELOG.md` holds the history up to
+3.0.1.
 
 ## Project Info
 

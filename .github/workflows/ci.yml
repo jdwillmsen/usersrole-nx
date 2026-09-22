@@ -49,6 +49,11 @@ jobs:
         if: github.ref != 'refs/heads/main'
         run: git branch --track main origin/main
 
+      # Release notes are only rendered on main after a merge; render them here
+      # too so a dependency bump that breaks them fails its own pull request.
+      - name: Check the release notes render
+        run: node tools/scripts/check-release-notes.mjs
+
       - name: Run commands
         run: |
           npx nx format:check
