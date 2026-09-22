@@ -1,5 +1,10 @@
 # Changelog
 
+Releases after 3.0.1 are recorded on
+[GitHub Releases](https://github.com/jdwillmsen/usersrole-nx/releases), which
+semantic-release writes when it tags a version. This file is kept as the
+history up to 3.0.1 and is no longer updated.
+
 ## [3.0.1](https://github.com/jdwillmsen/usersrole-nx/compare/v3.0.0...v3.0.1) (2026-09-22)
 
 

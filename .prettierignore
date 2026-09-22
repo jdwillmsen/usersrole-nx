@@ -10,6 +10,6 @@
 # Regenerated at build time with JSON-style quoting; keep prettier away.
 libs/usersrole-nx-app/main/src/lib/generated/version-info.ts
 
-# Written by release-please on every release PR; its markdown doesn't match
-# prettier's, and format:check would fail the required CI check on that PR.
+# Frozen history from the release-please era, kept as it was written; its
+# markdown doesn't match prettier's. Newer releases live on GitHub Releases.
 CHANGELOG.md
