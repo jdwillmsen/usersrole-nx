@@ -24,7 +24,7 @@ export function buildVersionInfo(
     if (allDeps[name]) deps[name] = allDeps[name];
   }
   return {
-    app: pkg.version || 'unknown',
+    app: options.version || pkg.version || 'unknown',
     commit: options.commit || 'dev',
     builtAt: options.builtAt || 'unknown',
     env: options.env || 'unknown',

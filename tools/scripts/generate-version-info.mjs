@@ -17,6 +17,10 @@ try {
 }
 
 const info = buildVersionInfo(pkg, {
+  // Releases are cut by tagging, never by committing a version back to main,
+  // so package.json does not know the released version. The release workflow
+  // passes it in; local builds fall back to package.json's placeholder.
+  version: process.env.APP_VERSION,
   commit,
   builtAt: new Date().toISOString(),
   env: process.env.NODE_ENV || 'unknown',

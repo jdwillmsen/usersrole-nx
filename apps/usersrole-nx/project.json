@@ -26,6 +26,9 @@
         "{workspaceRoot}/package.json",
         {
           "runtime": "git rev-parse --short HEAD"
+        },
+        {
+          "env": "APP_VERSION"
         }
       ],
       "outputs": ["{options.outputPath}"],
