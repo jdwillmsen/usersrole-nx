@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.1](https://github.com/jdwillmsen/usersrole-nx/compare/v3.0.0...v3.0.1) (2026-09-22)
+
+
+### Bug Fixes
+
+* **ci:** push the release PR with a token CI will run for ([9d26349](https://github.com/jdwillmsen/usersrole-nx/commit/9d2634980e7d92590505929ed30c35497febc8bb))
+
+
+### Reverts
+
+* stop dispatching CI on the release PR ([4a6e98f](https://github.com/jdwillmsen/usersrole-nx/commit/4a6e98fc55ea4688365714c3d8435af0e98a111f))
+
 ## [3.0.0](https://github.com/jdwillmsen/usersrole-nx/compare/v2.1.2...v3.0.0) (2026-09-22)
 
 
