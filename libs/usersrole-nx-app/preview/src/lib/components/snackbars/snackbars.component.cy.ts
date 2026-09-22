@@ -30,8 +30,11 @@ describe(SnackbarsComponent.name, () => {
 
 function testSnackbarButton(buttonSelector: string) {
   cy.getByCy(buttonSelector).click();
+  // Opening a snackbar dismisses the previous one, which stays in the DOM
+  // until its exit animation ends, and Cypress 16 counts it as visible.
   cy.getByCy('snackbar-container')
-    .should('be.visible')
+    .should('have.length', 1)
+    .and('be.visible')
     .within(() => {
       cy.getByCy('message')
         .should('be.visible')
@@ -42,7 +45,8 @@ function testSnackbarButton(buttonSelector: string) {
 
 function verifySnackbarContainer() {
   cy.getByCy('snackbar-container')
-    .should('be.visible')
+    .should('have.length', 1)
+    .and('be.visible')
     .and('contain.text', 'Component Test')
     .within(() => {
       cy.getByCy('icon').should('be.visible');

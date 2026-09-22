@@ -91,8 +91,8 @@ function testScreenSize(size: string, width: number, height: number) {
 
     it('should populate roles field when user is selected', () => {
       cy.mount(RolesComponent);
+      selectUser('Basic Test User #1');
       cy.getByCy('select-user-field')
-        .type('Basic Test User #1{enter}')
         .get('input')
         .should('contain.value', 'Basic Test User #1 (test-uid-1)');
       cy.getByCy('select-roles-field').should('contain.text', 'User');
@@ -111,7 +111,7 @@ function testScreenSize(size: string, width: number, height: number) {
         '',
       ).as('assignRoles');
       cy.mount(RolesComponent);
-      cy.getByCy('select-user-field').type('Basic Test User #1{enter}');
+      selectUser('Basic Test User #1');
       cy.getByCy('select-roles-field').click();
       cy.get('[data-cy="read-role-option"] > .mat-pseudo-checkbox').click();
       cy.get('.cdk-overlay-backdrop').click({ force: true });
@@ -124,7 +124,7 @@ function testScreenSize(size: string, width: number, height: number) {
       cy.getByCy('assign-roles-button').should('be.disabled');
       cy.getByCy('select-user-field').get('input').should('have.value', '');
       cy.getByCy('select-roles-field').get('input').should('have.value', '');
-      cy.getByCy('select-user-field').type('All Test User #1{enter}');
+      selectUser('All Test User #1');
       cy.getByCy('select-roles-field')
         .should('contain.text', 'Admin, Manager, User, Read')
         .click();
@@ -138,4 +138,16 @@ function testScreenSize(size: string, width: number, height: number) {
         .and('contain.text', 'Roles assigned successfully');
     });
   });
+}
+
+// Enter picks the active option, which the autocomplete only moves to the
+// filtered match after a render. Cypress 16 types with no keystroke delay, so
+// without the wait Enter can land first and select nothing.
+function selectUser(displayName: string) {
+  cy.getByCy('select-user-field').type(displayName);
+  cy.get('mat-option.mat-mdc-option-active').should(
+    'contain.text',
+    displayName,
+  );
+  cy.getByCy('select-user-field').type('{enter}');
 }
