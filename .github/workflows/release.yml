@@ -7,10 +7,10 @@ name: Release
 # live. Nothing else deploys production, so users-role-nx.web.app is always a
 # tagged, CI-green commit.
 #
-# Both halves of production move on that tag: the deploy job pushes the Cloud
-# Functions first and Firebase Hosting second, so a release that stops half-way
-# leaves the old frontend calling the new API rather than a new frontend
-# calling an API that never shipped.
+# Both halves of production move on that tag: the Cloud Functions go out first,
+# through the Deploy Functions workflow, and Firebase Hosting only once they
+# have. A release that stops half-way therefore leaves the old frontend calling
+# the new API rather than a new frontend calling an API that never shipped.
 #
 # Chained off CI with workflow_run rather than running on push so a release can
 # never race ahead of, or skip, the checks that gate it.
@@ -91,55 +91,35 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  deploy:
+  # A release is cut from every releasable commit, most of which touch nothing
+  # the functions bundle is built from, and redeploying unchanged functions
+  # costs a Cloud Build run and a cold start for nothing. The paths are
+  # everything that ends up in the bundle: the app itself, the one library it
+  # imports, the script that rewrites the generated package.json, the
+  # firebase.json entry naming the source directory and runtime, and the root
+  # manifests the runtime dependency versions are copied out of -- so a
+  # dependency release does redeploy the functions, which is how a security fix
+  # reaches them at all.
+  #
+  # This sees one release's worth of history and nothing else, so it cannot
+  # notice functions that were released before this deploy existed. Deploy
+  # Functions' workflow_dispatch is what clears a backlog like that.
+  plan-functions:
     needs: release
     if: needs.release.outputs.new-release-published == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    environment:
-      name: production
-      url: https://users-role-nx.web.app
+    outputs:
+      changed: ${{ steps.functions.outputs.changed }}
     steps:
-      # The tag, not the branch: what goes live is exactly what was released.
       - uses: actions/checkout@v7
         with:
           ref: refs/tags/v${{ needs.release.outputs.new-release-version }}
-          # The whole history and every tag: the functions deploy below asks
-          # what changed between this release and the one before it, which a
-          # shallow clone cannot answer.
+          # Every tag: this compares the release against the one before it,
+          # which a shallow clone cannot see.
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-node@v7.0.0
-        with:
-          node-version-file: .nvmrc
-          cache: 'npm'
-      - run: npm ci
-        env:
-          CYPRESS_INSTALL_BINARY: '0'
-      # Built here rather than reusing a CI artifact: ci.yml runs `nx affected`,
-      # so on a merge that touched nothing this app depends on it produces no
-      # build to reuse, and the deploy would have nothing to publish.
-      # package.json carries a placeholder version, because releases are tags
-      # rather than commits back to main; APP_VERSION is what the About page
-      # shows.
-      - run: npx nx build usersrole-nx --configuration=production
-        env:
-          APP_VERSION: ${{ needs.release.outputs.new-release-version }}
-
-      # Everything above this line can fail without touching production. The
-      # two deploys run back to back from here, functions first, so the only
-      # window in which production is half a release wide is between them.
-      #
-      # A release is cut from every releasable commit, most of which are
-      # nowhere near the functions, and redeploying unchanged functions costs a
-      # Cloud Build run and a cold start for nothing. The paths are everything
-      # that ends up in the deployed bundle: the app itself, the one library it
-      # imports, the script that rewrites the generated package.json, the
-      # firebase.json entry naming the source directory and runtime, and the
-      # root manifests the runtime dependency versions are copied out of -- so
-      # a dependency release does redeploy the functions, which is how a
-      # security fix reaches them at all.
       - name: Work out whether the functions changed
         id: functions
         env:
@@ -166,42 +146,64 @@ jobs:
             echo "Skipped the Cloud Functions deploy: $reason." >> "$GITHUB_STEP_SUMMARY"
           fi
 
-      # What `nx deploy usersrole-nx-functions` does, minus its unpinned
-      # firebase invocation. The esbuild build leaves an unusable dependency
-      # list and a stale lockfile behind and the script repairs both; deploying
-      # without it fails in the Cloud Functions buildpack, not here. Nothing
-      # installs into dist/: the CLI discovers the triggers through the root
-      # node_modules, which is where this workspace keeps firebase-functions.
-      - name: Build the functions
-        if: steps.functions.outputs.changed == 'true'
-        run: |
-          npx nx build usersrole-nx-functions
-          node tools/scripts/prepare-functions-deploy.mjs
+  # Functions before hosting, so a release that stops half-way leaves the old
+  # frontend calling the new API rather than a new frontend calling an API that
+  # never shipped. A called workflow is a whole job, which is why what could
+  # have been three steps is three jobs: the same deploy has to be runnable by
+  # hand, and only a workflow of its own can carry workflow_dispatch.
+  deploy-functions:
+    needs: [release, plan-functions]
+    if: needs.plan-functions.outputs.changed == 'true'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/deploy-functions.yml
+    with:
+      tag: v${{ needs.release.outputs.new-release-version }}
+    # Named rather than inherited, so the called workflow receives this one
+    # secret and no other repository secret.
+    secrets:
+      FIREBASE_SERVICE_ACCOUNT_USERS_ROLE_NX: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_USERS_ROLE_NX }}
 
-      # The same service account the hosting action below uses, handed to the
-      # Firebase CLI the only way it takes one unattended: a key file that
-      # GOOGLE_APPLICATION_CREDENTIALS points at. umask keeps the file to this
-      # user, and the step after removes it whether or not the deploy worked.
-      #
-      # firebase-tools is pinned to an exact version so a redeploy of the same
-      # tag produces the same thing. The `-p <package>@<version>` spelling is
-      # what the shared Renovate preset's regex manager reads, so the pin is
-      # still kept current automatically.
-      - name: Deploy the functions
-        if: steps.functions.outputs.changed == 'true'
+  deploy-hosting:
+    needs: [release, plan-functions, deploy-functions]
+    # Skipped is the ordinary case for deploy-functions, since most releases
+    # change nothing the bundle is built from, and a skipped dependency would
+    # otherwise skip hosting with it -- a frontend-only release would never
+    # ship. Failed or cancelled must still stop hosting, which is the whole
+    # point of the ordering.
+    if: >-
+      !cancelled() &&
+      needs.plan-functions.result == 'success' &&
+      (needs.deploy-functions.result == 'success' ||
+      needs.deploy-functions.result == 'skipped')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    environment:
+      name: production
+      url: https://users-role-nx.web.app
+    steps:
+      # The tag, not the branch: what goes live is exactly what was released.
+      - uses: actions/checkout@v7
+        with:
+          ref: refs/tags/v${{ needs.release.outputs.new-release-version }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: 'npm'
+      - run: npm ci
         env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_USERS_ROLE_NX }}
-        run: |
-          umask 077
-          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-key.json"
-          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-key.json"
-          npx --yes -p firebase-tools@15.30.2 firebase deploy \
-            --only functions --project users-role-nx --non-interactive
-
-      - name: Remove the service account key
-        if: always()
-        run: rm -f "$RUNNER_TEMP/firebase-key.json"
-
+          CYPRESS_INSTALL_BINARY: '0'
+      # Built here rather than reusing a CI artifact: ci.yml runs `nx affected`,
+      # so on a merge that touched nothing this app depends on it produces no
+      # build to reuse, and the deploy would have nothing to publish.
+      # package.json carries a placeholder version, because releases are tags
+      # rather than commits back to main; APP_VERSION is what the About page
+      # shows.
+      - run: npx nx build usersrole-nx --configuration=production
+        env:
+          APP_VERSION: ${{ needs.release.outputs.new-release-version }}
       # No repoToken: it only feeds preview-channel pull request comments, and
       # this is the live channel.
       - uses: FirebaseExtended/action-hosting-deploy@v0
