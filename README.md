@@ -63,9 +63,11 @@ GitHub release with generated notes, builds that tag with the version shown on
 the About page, and deploys it to Firebase Hosting. That deploy is the only
 thing that changes production.
 
-Only hosting is deployed automatically. The Firebase Functions codebase needs
-credentials and a billing account CI does not have, so it is still deployed by
-hand with `nx deploy usersrole-nx-functions`.
+The Firebase Functions codebase goes out in the same deploy, ahead of hosting,
+and only when the release actually changed something the functions bundle is
+built from -- the job summary says which it was. `nx deploy
+usersrole-nx-functions` still deploys them by hand from a machine that is
+logged in to Firebase.
 
 No changelog file is committed, since `main` accepts no direct pushes. The
 GitHub releases are the changelog; `CHANGELOG.md` holds the history up to
