@@ -63,11 +63,17 @@ GitHub release with generated notes, builds that tag with the version shown on
 the About page, and deploys it to Firebase Hosting. That deploy is the only
 thing that changes production.
 
-The Firebase Functions codebase goes out in the same deploy, ahead of hosting,
-and only when the release actually changed something the functions bundle is
-built from -- the job summary says which it was. `nx deploy
-usersrole-nx-functions` still deploys them by hand from a machine that is
-logged in to Firebase.
+The Firebase Functions codebase goes out ahead of hosting, through the Deploy
+Functions workflow, and only when the release actually changed something the
+functions bundle is built from -- the job summary says which it was.
+
+That workflow also takes a `workflow_dispatch` from the Actions tab, with a tag
+to deploy or nothing at all to deploy the newest release. Use it to retry a
+failed deploy, or to ship functions that were released before the automatic
+deploy existed: a release only ever compares itself against the release before
+it, so it cannot see a backlog older than that. `nx deploy
+usersrole-nx-functions` still deploys by hand from a machine logged in to
+Firebase.
 
 No changelog file is committed, since `main` accepts no direct pushes. The
 GitHub releases are the changelog; `CHANGELOG.md` holds the history up to
