@@ -1,0 +1,16 @@
+rules_version = '2';
+
+// Replaces the console default of `allow read, write: if request.auth != null`,
+// which lets any signed-in account read, overwrite or fill every object in the
+// bucket. Each user owns users/{uid}/ and nothing else; uploads are capped so
+// a single account cannot run up the storage bill.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /users/{uid}/{allPaths=**} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size < 5 * 1024 * 1024;
+    }
+  }
+}
