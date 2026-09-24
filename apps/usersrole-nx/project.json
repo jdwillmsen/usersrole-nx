@@ -121,6 +121,20 @@
               "with": "apps/usersrole-nx/src/environments/environment.development.ts"
             }
           ]
+        },
+        "emulators": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/usersrole-nx/src/environments/environment.ts",
+              "with": "apps/usersrole-nx/src/environments/environment.emulators.ts"
+            }
+          ]
         }
       }
     },
@@ -134,6 +148,9 @@
         },
         "development": {
           "buildTarget": "usersrole-nx:build:development"
+        },
+        "emulators": {
+          "buildTarget": "usersrole-nx:build:emulators"
         }
       }
     },

@@ -17,9 +17,9 @@ import {
   withXhr,
 } from '@angular/common/http';
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFunctions } from 'firebase/functions';
-import { getFirestore } from 'firebase/firestore';
+import { connectAuthEmulator, getAuth } from 'firebase/auth';
+import { connectFunctionsEmulator, getFunctions } from 'firebase/functions';
+import { connectFirestoreEmulator, getFirestore } from 'firebase/firestore';
 import {
   AUTH,
   AuthTokenHttpInterceptorProvider,
@@ -34,6 +34,18 @@ import { environment } from '../environments/environment';
 import { provideServiceWorker } from '@angular/service-worker';
 
 const firebaseApp = initializeApp(environment.firebase);
+const auth = getAuth(firebaseApp);
+const firestore = getFirestore(firebaseApp);
+const functions = getFunctions(firebaseApp);
+
+// The SDK only accepts an emulator connection before its first request, so
+// this runs once at load rather than inside the DI factories. The ports match
+// the emulators block in firebase.json.
+if (environment.useEmulators) {
+  connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
+  connectFirestoreEmulator(firestore, '127.0.0.1', 8080);
+  connectFunctionsEmulator(functions, '127.0.0.1', 5001);
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -46,9 +58,9 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     importProvidersFrom(MatSnackBarModule),
     { provide: FIREBASE_APP, useValue: firebaseApp },
-    { provide: AUTH, useFactory: () => getAuth(firebaseApp) },
-    { provide: FIRESTORE, useFactory: () => getFirestore(firebaseApp) },
-    { provide: FUNCTIONS, useFactory: () => getFunctions(firebaseApp) },
+    { provide: AUTH, useValue: auth },
+    { provide: FIRESTORE, useValue: firestore },
+    { provide: FUNCTIONS, useValue: functions },
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
     {
       provide: ENVIRONMENT,

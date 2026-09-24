@@ -3,7 +3,10 @@
   "version": "0.0.0-development",
   "license": "MIT",
   "scripts": {
-    "format": "npx nx format:write --all"
+    "format": "npx nx format:write --all",
+    "emulators": "nx build usersrole-nx-functions && firebase emulators:start --project demo-usersrole-nx",
+    "emulators:seed": "node tools/scripts/seed-emulators.mjs",
+    "serve:emulators": "nx serve usersrole-nx --configuration=emulators"
   },
   "private": true,
   "dependencies": {
