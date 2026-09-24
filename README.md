@@ -1,5 +1,9 @@
 # Users Role Nx
 
+> [!IMPORTANT]
+> Retired 2026-09. Superseded by [jdwlabs/apps](https://github.com/jdwlabs/apps).
+> See [REPLICATE.md](REPLICATE.md) to run your own.
+
 [![CI](https://github.com/jdwillmsen/usersrole-nx/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jdwillmsen/usersrole-nx/actions/workflows/ci.yml)
 
 This is a frontend application that provides a template for users
@@ -20,7 +24,11 @@ Cloud with NX Caching.
 
 ## Start the app
 
-To start the development server run `nx serve usersrole-nx`. Open your browser and navigate to http://localhost:4200/. Happy coding!
+To run everything locally on the Firebase Emulator Suite, with no Google
+account or billing, follow the quick start in [REPLICATE.md](REPLICATE.md).
+
+`nx serve usersrole-nx` starts the development server against the hosted
+project's configuration instead.
 
 ## Testing
 
