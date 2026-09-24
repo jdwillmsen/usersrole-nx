@@ -4,7 +4,8 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import { routesConfig } from './users/routes-config';
 import { beforeUserCreated } from 'firebase-functions/v2/identity';
-import { onRequest } from 'firebase-functions/v2/https';
+import { HttpsError, onRequest } from 'firebase-functions/v2/https';
+import { isSignupAllowed, signupAllowedEmails } from './auth/signup-allowlist';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3002;
@@ -27,7 +28,12 @@ app.set('trust proxy', 1);
 routesConfig(app);
 
 export const api = onRequest(app);
-export const beforecreated = beforeUserCreated(() => {
+// Runs for every account the client SDK creates, including a first Google or
+// GitHub sign-in, which is the path POST /users cannot see.
+export const beforecreated = beforeUserCreated((event) => {
+  if (!isSignupAllowed(event.data?.email, signupAllowedEmails.value())) {
+    throw new HttpsError('permission-denied', 'Sign-up is closed');
+  }
   return {
     customClaims: {
       roles: ['user'],

@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { getAuth, UserRecord } from 'firebase-admin/auth';
+import { isSignupAllowed, signupAllowedEmails } from '../auth/signup-allowlist';
 
 // Express 5 types a route parameter as string | string[], because a parameter
 // can legitimately repeat in a query-style route. These routes declare :id
@@ -14,6 +15,12 @@ export async function create(req: Request, res: Response) {
 
     if (!displayName || !password || !email) {
       return res.status(400).send({ message: 'Missing fields' });
+    }
+
+    // The Admin SDK bypasses blocking functions, so the allow-list that
+    // beforecreated enforces has to be checked here too.
+    if (!isSignupAllowed(email, signupAllowedEmails.value())) {
+      return res.status(403).send({ message: 'Sign-up is closed' });
     }
 
     const { uid } = await getAuth().createUser({
