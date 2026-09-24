@@ -35,6 +35,11 @@ export const beforecreated = beforeUserCreated(() => {
   };
 });
 
-app.listen(port, host, () => {
-  console.log(`[ ready ] http://${host}:${port}`);
-});
+// The standalone server is for `nx serve`. A Functions emulator worker hands
+// the runtime a socket path in PORT rather than a number, and listening on
+// NaN throws while the module loads, taking both functions down with it.
+if (Number.isInteger(port)) {
+  app.listen(port, host, () => {
+    console.log(`[ ready ] http://${host}:${port}`);
+  });
+}
