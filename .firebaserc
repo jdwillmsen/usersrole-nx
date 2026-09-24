@@ -2,13 +2,17 @@
   "targets": {
     "users-role-nx": {
       "hosting": {
-        "usersrole-nx": [
-          "users-role-nx"
-        ]
+        "usersrole-nx": ["users-role-nx"]
+      }
+    },
+    "demo-usersrole-nx": {
+      "hosting": {
+        "usersrole-nx": ["demo-usersrole-nx"]
       }
     }
   },
   "projects": {
-    "default": "users-role-nx"
+    "default": "users-role-nx",
+    "emulators": "demo-usersrole-nx"
   }
 }

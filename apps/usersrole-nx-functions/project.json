@@ -12,7 +12,14 @@
         "outputPath": "dist/apps/usersrole-nx-functions",
         "main": "apps/usersrole-nx-functions/src/main.ts",
         "tsConfig": "apps/usersrole-nx-functions/tsconfig.app.json",
-        "assets": ["apps/usersrole-nx-functions/src/assets"],
+        "assets": [
+          "apps/usersrole-nx-functions/src/assets",
+          {
+            "input": "apps/usersrole-nx-functions",
+            "glob": ".env.*",
+            "output": "."
+          }
+        ],
         "generatePackageJson": true,
         "platform": "node",
         "bundle": true,
