@@ -1,0 +1,6187 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "retirement-capture",
+      "version": "1"
+    },
+    "entries": [
+      {
+        "startedDateTime": "2026-09-25T00:37:49.027Z",
+        "comment": "01-sign-up",
+        "request": {
+          "method": "POST",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "POST"
+            },
+            {
+              "name": ":path",
+              "value": "/users"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "content-length",
+              "value": "141"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 141,
+          "postData": {
+            "mimeType": "application/json",
+            "text": "{\"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"password\": \"<redacted>\", \"roles\": [\"user\"]}"
+          }
+        },
+        "response": {
+          "status": 201,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "38"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:37:48 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"26-pGVu/otDK30PUjo6T+6s8Os2Uqo\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "18009e288c8c2284f2b3881721ef786c"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "15"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "14"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790300269"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 38,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\"}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 38
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:37:53.519Z",
+        "comment": "01-sign-up",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:37:53 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "4bf5ba5eafd5aecb332fac1120db21c9"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296684"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:37:57.566Z",
+        "comment": "02-sign-in-password",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:37:57 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "15d37603f7a04acf0727ad3575a7bb81"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296684"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:38:00.415Z",
+        "comment": "03-profile",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:38:00 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "47b48158f03656d6774898db817c2fbb"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "97"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296684"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:38:00.524Z",
+        "comment": "03-profile",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:38:00 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "463c821fa6213890e11e6ac74635bc80"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "96"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296684"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:38:15.425Z",
+        "comment": "04-admin-blocked-as-user",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:38:15 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "1d73e418bfee4e961316474d74d74794"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296706"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:38:15.445Z",
+        "comment": "04-admin-blocked-as-user",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:38:15 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "db52993ac68d1b1dcb0a90c8f429e2e2"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296706"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:38:24.245Z",
+        "comment": "04-admin-blocked-as-user",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:38:24 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "86829344bffa6b1bcb0a90c8f429e072"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "97"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296706"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:38:24.385Z",
+        "comment": "04-admin-blocked-as-user",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:38:24 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "5b5b6da3f6ef1dcfcb0a90c8f429e1c2"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "96"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296706"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:38:35.455Z",
+        "comment": "05-theme-switch",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:38:35 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "d35ddff1d488ac0305d23f1dc9e59423"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296726"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:39:06.693Z",
+        "comment": "06-sign-out",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:39:06 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "896e041175f45022e54d21e5bae412a9"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296757"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:39:19.970Z",
+        "comment": "08-pwa",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:39:19 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "6254ed5026be5ee55553002ecad166eb"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296770"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:39:45.136Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:39:45 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "0c06481642c8090ac5a71c0768d5aeb0"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296796"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:39:54.588Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:39:54 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "ed64c0b312d89c941e5f40d5bef725f4"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296796"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:39:54.715Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:39:54 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "4c9ae10359c156e11e5f40d5bef726b0"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "97"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296796"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:40:04.207Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:40:04 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "972de3567e4e85d96734c170e2f07c66"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296815"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:40:14.051Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:40:14 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "529488d9798639d163cbd8e7d50e5dc8"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296815"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:40:23.453Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:40:23 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "71383c11eb39591673570e284c39736a"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296834"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:40:33.070Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:40:33 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "21a12993fee88bebe4334d66d5db65ec"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296834"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:40:47.977Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:40:47 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "fcf6b2fafc3f19e913b2c5413bb7e5bc"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296858"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:40:57.730Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:40:57 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "129780e60a365875ccad04f2b38dba8d"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296858"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:40:57.826Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:40:57 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "b48e43ce43e11ddcccad04f2b38db56f"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "97"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296858"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:41:07.354Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:41:07 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "9d7db53563db8b514e1d2d0fc13d8c9e"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296878"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:41:16.888Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:41:16 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "bc69e50e9f8f578ef0a983442849e644"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296878"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:41:26.378Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:41:26 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "582ea7f4d4abe7522ccae4b726fd315a"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296897"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:41:35.932Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:41:35 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "6f626ea1a3bcb0f2cd4ef7916ee067c1"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296897"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:41:50.055Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:41:50 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "c05a47aae2f0aa568e8022bf0b1a623b"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296920"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:41:59.536Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:41:59 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "6869126ccbc2a67f32e04c0d6e80746c"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296920"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:41:59.643Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:41:59 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "6e119980524be18732e04c0d6e807014"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "97"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296920"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:42:09.100Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:42:09 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "55c3cac6cb5a980e1e5bfa7504549b6b"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296940"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:42:18.699Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:42:18 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "8bde36ac5cb1d48a8000b268e3c71c5d"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296940"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:42:28.215Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:42:28 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "522b81393ca2f126c16232e8cfc90398"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296959"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:42:37.853Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:42:37 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "e20765fd0fa039395123c1aa1062d61a"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296959"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:42:52.894Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "content-length",
+              "value": "242"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:42:52 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "0fc0cd5452718fe488b100a569b988c3"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296983"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:43:02.317Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:43:02 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "03e1d055b96681d53c99f023141c1fab"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296983"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:43:02.423Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:43:02 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "a82466d9c796be733c99f023141c12c2"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "97"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790296983"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:43:11.836Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:43:11 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "cf83be12495229da8f66eb111dfd7792"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790297002"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:43:21.459Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:43:21 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "4a2270f4fbc57d8bda8310d4f9214abe"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "98"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790297002"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:43:31.031Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:43:31 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "58737c8e42fa1ff19ef28399853bfe7b"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "99"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790297021"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      },
+      {
+        "startedDateTime": "2026-09-25T00:43:40.751Z",
+        "comment": "07-oauth-github",
+        "request": {
+          "method": "GET",
+          "url": "https://api-zm7bvbr4yq-uc.a.run.app/users/Oil1JOsAllOpYlvY400kePWz4K93",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": ":authority",
+              "value": "api-zm7bvbr4yq-uc.a.run.app"
+            },
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":path",
+              "value": "/users/Oil1JOsAllOpYlvY400kePWz4K93"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": "accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "authorization",
+              "value": "<redacted>"
+            },
+            {
+              "name": "if-none-match",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://users-role-nx.web.app/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "cross-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://users-role-nx.web.app"
+            },
+            {
+              "name": "alt-svc",
+              "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+            },
+            {
+              "name": "date",
+              "value": "Fri, 25 Sep 2026 00:43:40 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"f2-Y3zFHq+iHSaGYmK1zfG5OLJjJwI\""
+            },
+            {
+              "name": "server",
+              "value": "Google Frontend"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "a55afd2130db414f57a3e6411e4f9546"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "97"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "1790297021"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 242,
+            "mimeType": "application/json; charset=utf-8",
+            "text": "{\"user\": {\"uid\": \"Oil1JOsAllOpYlvY400kePWz4K93\", \"email\": \"urnx-retire-098b22da@example.com\", \"displayName\": \"Retirement Walkthrough\", \"roles\": [\"user\"], \"lastSignInTime\": \"Fri, 25 Sep 2026 00:37:53 GMT\", \"creationTime\": \"Fri, 25 Sep 2026 00:37:48 GMT\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 242
+        },
+        "cache": {},
+        "timings": {
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        }
+      }
+    ]
+  }
+}
