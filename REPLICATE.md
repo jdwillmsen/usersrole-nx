@@ -311,6 +311,18 @@ initializeApp({ projectId: process.env.PROJECT_ID });
 await getAuth().setCustomUserClaims(process.argv[2], { roles: ['admin'] });
 ```
 
+### Roles can only be changed by an admin
+
+`PATCH /users/:id` lets a user edit their own record (the `allowSameUser`
+rule), and the request body carries a `roles` field. Writing that field into
+the account's claims for every caller would let any signed-in user promote
+themselves to `admin`. The endpoint now applies a `roles` change only when the
+**caller's** own token carries the `admin` claim; a non-admin self-edit still
+updates profile fields but its `roles` field is ignored. Nothing to configure
+-- it holds in the emulator and in your own deployment -- but keep it in mind
+if you extend the user API: gate any privilege change on who is asking, never
+on which record is being touched.
+
 ### Point the code at your project
 
 Every reference to the retired project has to become yours:

@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { getAuth, UserRecord } from 'firebase-admin/auth';
 import { isSignupAllowed, signupAllowedEmails } from '../auth/signup-allowlist';
+import { isAdmin } from '../auth/roles';
 
 // Express 5 types a route parameter as string | string[], because a parameter
 // can legitimately repeat in a query-style route. These routes declare :id
@@ -85,7 +86,13 @@ export async function patch(req: Request<IdParam>, res: Response) {
     }
 
     await getAuth().updateUser(id, { displayName, password, email });
-    await getAuth().setCustomUserClaims(id, { roles });
+    // allowSameUser lets a user PATCH their own record here, so writing the
+    // request's roles into their claims unconditionally would let anyone make
+    // themselves admin. Only an admin caller may change roles; a self-edit
+    // still updates profile fields, it just cannot touch privilege.
+    if (isAdmin(res.locals.roles)) {
+      await getAuth().setCustomUserClaims(id, { roles });
+    }
     const user = await getAuth().getUser(id);
 
     return res.status(204).send({ user: mapUser(user) });
