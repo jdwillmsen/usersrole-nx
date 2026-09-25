@@ -1,0 +1,148 @@
+{
+  "app": "usersrole-nx",
+  "baseUrl": "https://users-role-nx.web.app",
+  "capturedAt": "2026-09-25T00:43:54.454Z",
+  "signUpUid": "Oil1JOsAllOpYlvY400kePWz4K93",
+  "signedInHeadless": true,
+  "flows": [
+    {
+      "flow": "01-sign-up",
+      "status": "captured",
+      "notes": ["created uid Oil1JOsAllOpYlvY400kePWz4K93"],
+      "screenshots": [
+        "screenshots/flow-01-sign-up-empty.jpg",
+        "screenshots/flow-01-sign-up-done.jpg"
+      ],
+      "videos": ["media/usersrole-nx-01-sign-up.webm"]
+    },
+    {
+      "flow": "02-sign-in-password",
+      "status": "captured",
+      "notes": [],
+      "screenshots": ["screenshots/flow-02-home-after-sign-in.jpg"],
+      "videos": ["media/usersrole-nx-02-sign-in-password.webm"]
+    },
+    {
+      "flow": "03-profile",
+      "status": "captured",
+      "notes": ["plain user: profile shows roles ['user']"],
+      "screenshots": ["screenshots/flow-03-profile.jpg"],
+      "videos": ["media/usersrole-nx-03-profile.webm"]
+    },
+    {
+      "flow": "04-admin-blocked-as-user",
+      "status": "captured",
+      "notes": [
+        "/admin/users as plain user -> /forbidden",
+        "/admin/roles as plain user -> /forbidden"
+      ],
+      "screenshots": [
+        "screenshots/flow-04-admin-users-as-user.jpg",
+        "screenshots/flow-04-admin-roles-as-user.jpg"
+      ],
+      "videos": ["media/usersrole-nx-04-admin-blocked-as-user.webm"]
+    },
+    {
+      "flow": "05-theme-switch",
+      "status": "captured",
+      "notes": [
+        "theme choice persists in localStorage and, when signed in, in Firestore users/<uid>"
+      ],
+      "screenshots": [
+        "screenshots/flow-05-theme-default.jpg",
+        "screenshots/flow-05-theme-dark.jpg",
+        "screenshots/flow-05-theme-light.jpg"
+      ],
+      "videos": ["media/usersrole-nx-05-theme-switch.webm"]
+    },
+    {
+      "flow": "06-sign-out",
+      "status": "captured",
+      "notes": [],
+      "screenshots": ["screenshots/flow-06-after-sign-out.jpg"],
+      "videos": ["media/usersrole-nx-06-sign-out.webm"]
+    },
+    {
+      "flow": "08-pwa",
+      "status": "needs-headed-session",
+      "notes": [
+        "manifest name=Users Role Nx display=standalone; service worker(s): none registered yet",
+        "beforeinstallprompt does not fire in headless Chromium; install banner not observable"
+      ],
+      "screenshots": ["screenshots/flow-08-pwa-home.jpg"],
+      "videos": ["media/usersrole-nx-08-pwa.webm"]
+    },
+    {
+      "flow": "07-oauth-google",
+      "status": "needs-headed-session",
+      "notes": [
+        "reached provider host accounts.google.com",
+        "completing this sign-in needs a real third-party login (headed)"
+      ],
+      "screenshots": [
+        "screenshots/flow-07-google-button.jpg",
+        "screenshots/flow-07-google-provider-page.jpg"
+      ],
+      "videos": [
+        "media/usersrole-nx-07-oauth-google.webm",
+        "media/usersrole-nx-07-oauth-google-popup1.webm"
+      ]
+    },
+    {
+      "flow": "07-oauth-github",
+      "status": "needs-headed-session",
+      "notes": [
+        "reached provider host github.com",
+        "completing this sign-in needs a real third-party login (headed)"
+      ],
+      "screenshots": [
+        "screenshots/flow-07-github-button.jpg",
+        "screenshots/flow-07-github-provider-page.jpg"
+      ],
+      "videos": [
+        "media/usersrole-nx-07-oauth-github.webm",
+        "media/usersrole-nx-07-oauth-github-popup1.webm"
+      ]
+    },
+    {
+      "flow": "screenshot-matrix",
+      "status": "captured",
+      "notes": ["32 screenshots", "signed-in + signed-out screens"],
+      "screenshots": [
+        "screenshots/matrix-home-desktop-light.jpg",
+        "screenshots/matrix-profile-desktop-light.jpg",
+        "screenshots/matrix-about-desktop-light.jpg",
+        "screenshots/matrix-preview-alerts-desktop-light.jpg",
+        "screenshots/matrix-preview-snackbars-desktop-light.jpg",
+        "screenshots/matrix-preview-buttons-desktop-light.jpg",
+        "screenshots/matrix-sign-in-desktop-light.jpg",
+        "screenshots/matrix-sign-up-desktop-light.jpg",
+        "screenshots/matrix-home-desktop-dark.jpg",
+        "screenshots/matrix-profile-desktop-dark.jpg",
+        "screenshots/matrix-about-desktop-dark.jpg",
+        "screenshots/matrix-preview-alerts-desktop-dark.jpg",
+        "screenshots/matrix-preview-snackbars-desktop-dark.jpg",
+        "screenshots/matrix-preview-buttons-desktop-dark.jpg",
+        "screenshots/matrix-sign-in-desktop-dark.jpg",
+        "screenshots/matrix-sign-up-desktop-dark.jpg",
+        "screenshots/matrix-home-mobile-light.jpg",
+        "screenshots/matrix-profile-mobile-light.jpg",
+        "screenshots/matrix-about-mobile-light.jpg",
+        "screenshots/matrix-preview-alerts-mobile-light.jpg",
+        "screenshots/matrix-preview-snackbars-mobile-light.jpg",
+        "screenshots/matrix-preview-buttons-mobile-light.jpg",
+        "screenshots/matrix-sign-in-mobile-light.jpg",
+        "screenshots/matrix-sign-up-mobile-light.jpg",
+        "screenshots/matrix-home-mobile-dark.jpg",
+        "screenshots/matrix-profile-mobile-dark.jpg",
+        "screenshots/matrix-about-mobile-dark.jpg",
+        "screenshots/matrix-preview-alerts-mobile-dark.jpg",
+        "screenshots/matrix-preview-snackbars-mobile-dark.jpg",
+        "screenshots/matrix-preview-buttons-mobile-dark.jpg",
+        "screenshots/matrix-sign-in-mobile-dark.jpg",
+        "screenshots/matrix-sign-up-mobile-dark.jpg"
+      ],
+      "videos": []
+    }
+  ]
+}
