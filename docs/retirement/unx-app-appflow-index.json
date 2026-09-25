@@ -1,0 +1,67 @@
+{
+  "prefix": "unx-app",
+  "base": "https://users-role-nx.web.app",
+  "webm": "page@25b113e52401d299664acd99dfa10eb1.webm",
+  "steps": [
+    {
+      "name": "01-signup-empty",
+      "note": "Sign-up form (password provider).",
+      "url": "https://users-role-nx.web.app/sign-up",
+      "screenshot": "screenshots/unx-app-01-signup-empty.png"
+    },
+    {
+      "name": "02-signup-filled",
+      "note": "Sign-up form filled with the throwaway 629 account.",
+      "url": "https://users-role-nx.web.app/sign-up",
+      "screenshot": "screenshots/unx-app-02-signup-filled.png"
+    },
+    {
+      "name": "03-signup-result",
+      "note": "Sign-up submitted (App Check enforced path).",
+      "url": "https://users-role-nx.web.app/sign-in",
+      "screenshot": "screenshots/unx-app-03-signup-result.png"
+    },
+    {
+      "name": "04-signin-filled",
+      "note": "Sign-in with the throwaway account.",
+      "url": "https://users-role-nx.web.app/sign-in",
+      "screenshot": "screenshots/unx-app-04-signin-filled.png"
+    },
+    {
+      "name": "05-after-signin",
+      "note": "Landing after sign-in (home).",
+      "url": "https://users-role-nx.web.app/home",
+      "screenshot": "screenshots/unx-app-05-after-signin.png"
+    },
+    {
+      "name": "06-home",
+      "note": "Home page (signed in).",
+      "url": "https://users-role-nx.web.app/home",
+      "screenshot": "screenshots/unx-app-06-home.png"
+    },
+    {
+      "name": "07-profile-before",
+      "note": "Profile page BEFORE: roles should read USER.",
+      "url": "https://users-role-nx.web.app/home",
+      "screenshot": "screenshots/unx-app-07-profile-before.png"
+    },
+    {
+      "name": "08-theme-menu",
+      "note": "Theme selector menu open.",
+      "url": "https://users-role-nx.web.app/home",
+      "screenshot": "screenshots/unx-app-08-theme-menu.png"
+    },
+    {
+      "name": "09-theme-changed",
+      "note": "Theme switched to a different palette.",
+      "url": "https://users-role-nx.web.app/home",
+      "screenshot": "screenshots/unx-app-09-theme-changed.png"
+    },
+    {
+      "name": "10-admin-guard",
+      "note": "Navigated to /admin/users as a plain user; observe the guard (expect redirect to /forbidden).",
+      "url": "https://users-role-nx.web.app/forbidden",
+      "screenshot": "screenshots/unx-app-10-admin-guard.png"
+    }
+  ]
+}
