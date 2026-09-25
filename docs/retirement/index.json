@@ -1,0 +1,62 @@
+[
+  {
+    "name": "unx-gcp-apis",
+    "url": "https://console.cloud.google.com/apis/dashboard?project=users-role-nx",
+    "finalUrl": "https://console.cloud.google.com/apis/dashboard?project=users-role-nx",
+    "title": "APIs & Services – APIs & Services – Users Role NX – Google Cloud console",
+    "pii": false,
+    "webm": "page@21741c589e6d07efdc893523c0643644.webm",
+    "screenshot": "screenshots/unx-gcp-apis.png",
+    "status": "ok"
+  },
+  {
+    "name": "unx-gcp-billing-linked",
+    "url": "https://console.cloud.google.com/billing/linkedaccount?project=users-role-nx",
+    "finalUrl": "https://console.cloud.google.com/billing/01DF84-B8C2B6-98291D?project=users-role-nx",
+    "title": "Firebase Payment – Overview – Billing – Users Role NX – Google Cloud console",
+    "pii": true,
+    "webm": "page@0aaa74598ec4c09020e726b3ba59e1ef.webm",
+    "screenshot": "screenshots/unx-gcp-billing-linked.png",
+    "status": "ok"
+  },
+  {
+    "name": "unx-gcp-iam",
+    "url": "https://console.cloud.google.com/iam-admin/iam?project=users-role-nx",
+    "finalUrl": "https://console.cloud.google.com/iam-admin/iam?project=users-role-nx",
+    "title": "IAM – IAM & Admin – Users Role NX – Google Cloud console",
+    "pii": true,
+    "webm": "page@3c7e584767620bec32c1ce27cec42f4a.webm",
+    "screenshot": "screenshots/unx-gcp-iam.png",
+    "status": "ok"
+  },
+  {
+    "name": "unx-gcp-artifacts",
+    "url": "https://console.cloud.google.com/artifacts?project=users-role-nx",
+    "finalUrl": "https://console.cloud.google.com/artifacts?project=users-role-nx",
+    "title": "Repositories – Artifact Registry – Users Role NX – Google Cloud console",
+    "pii": false,
+    "webm": "page@c911802f609dfbf94b7f7e13712d0242.webm",
+    "screenshot": "screenshots/unx-gcp-artifacts.png",
+    "status": "ok"
+  },
+  {
+    "name": "unx-gcp-run",
+    "url": "https://console.cloud.google.com/run/services?project=users-role-nx",
+    "finalUrl": "https://console.cloud.google.com/run/services?project=users-role-nx",
+    "title": "Services – Cloud Run – Users Role NX – Google Cloud console",
+    "pii": false,
+    "webm": "page@29c9af4d89069188d926d27c59b8d39d.webm",
+    "screenshot": "screenshots/unx-gcp-run.png",
+    "status": "ok"
+  },
+  {
+    "name": "unx-gcp-storage-bucket",
+    "url": "https://console.cloud.google.com/storage/browser?project=users-role-nx",
+    "finalUrl": "https://console.cloud.google.com/storage/browser?project=users-role-nx&prefix=&forceOnBucketsSortingFiltering=true&bucketType=live",
+    "title": "Buckets – Cloud Storage – Users Role NX – Google Cloud console",
+    "pii": false,
+    "webm": "page@21df1ccb918d3fbbcf0f7811e10e5bbe.webm",
+    "screenshot": "screenshots/unx-gcp-storage-bucket.png",
+    "status": "ok"
+  }
+]

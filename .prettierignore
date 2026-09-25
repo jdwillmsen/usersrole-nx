@@ -13,3 +13,7 @@ libs/usersrole-nx-app/main/src/lib/generated/version-info.ts
 # Frozen history from the release-please era, kept as it was written; its
 # markdown doesn't match prettier's. Newer releases live on GitHub Releases.
 CHANGELOG.md
+
+# Retirement capture evidence (generated screenshots captions, capture
+# scripts, JSON logs) is not app source and is not held to app formatting.
+docs/retirement/

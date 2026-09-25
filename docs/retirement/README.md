@@ -1,99 +1,128 @@
-# Users Role Nx — retirement walkthrough
+# usersrole-nx — retirement capture
 
-Behavioural record of the live app captured while it still runs, before billing
-is unlinked and the Firebase project is retired. It exists so the app's
-user-facing behaviour and its live cloud configuration survive the shutdown.
+"How it was set up and how it behaved" evidence for the Firebase app
+**jdwillmsen/usersrole-nx** (GCP project `users-role-nx`), captured read-only from
+the live app and consoles before the project is retired and billing is unlinked.
 
 - **Hosted app:** https://users-role-nx.web.app (also users-role-nx.firebaseapp.com)
 - **API function:** https://api-zm7bvbr4yq-uc.a.run.app (Cloud Run gen-2 `api`)
-- **Captured:** 2026-09-25, headless Chromium via `scripts/retirement-capture/app/capture.cjs`
+- **Captured:** 2026-09-25 — app flows headless via
+  `scripts/retirement-capture/app/capture.cjs`; console tour + signed-in app
+  walkthrough via the headed capture browser.
 - **Live config snapshot:** [`cli-snapshot.md`](./cli-snapshot.md)
-- **Redacted request log:** [`api-calls.har.json`](./api-calls.har.json) (Authorization headers and user records redacted)
+- **Redacted request log:** [`api-calls.har.json`](./api-calls.har.json)
+  (Authorization headers and user records redacted)
 
-## Test account
+## Contents
 
-Throwaway account created through the app's own password sign-up. It is a plain
-user (`roles: ['user']`); no roles were changed. Deleted in a later retirement
+- `screenshots/` — masked PNG/JPEG stills, one per surface / app step.
+- `captions/` — one `.md` per console surface (and `unx-app.md` for the app run),
+  each naming its video.
+- `media/` — the `.webm` recordings (**gitignored**; uploaded as Release assets).
+- `index.json` / `index.jsonl` — machine-readable capture log.
+- `scripts/` — the console-tour capture harness.
+
+## Test accounts
+
+Throwaway accounts created through the app's own password sign-up. Both are plain
+users (`roles: ['user']`); no roles were changed. Deleted in a later retirement
 step.
 
-| Email                            | UID                          | Notes      |
-| -------------------------------- | ---------------------------- | ---------- |
-| urnx-retire-098b22da@example.com | Oil1JOsAllOpYlvY400kePWz4K93 | plain user |
+| Email | UID | Notes |
+| --- | --- | --- |
+| urnx-retire-098b22da@example.com | Oil1JOsAllOpYlvY400kePWz4K93 | headless walkthrough |
+| urnx-629-b877adc8@example.com | S15tSwi2uhcJc6cUf3HJJWbVsqT2 | headed app walkthrough |
+
+## PII handling
+
+Every Authentication/Users surface and Firestore user document was blurred before
+navigation and again at screenshot time. On the live **Authentication → Users**
+tab the column selectors covered the Identifier (email) and User UID columns in
+both the masked stills and the blur-only video render — verified by eye. Blur does
+**not** catch `<input>` values (only the throwaway account appears there), OAuth
+client secrets, or human display names in GCP IAM. Secret-bearing surfaces
+(per-provider OAuth config panes, function env/logs) were deliberately not
+captured. See the review list below.
 
 App Check is **not enabled** on this project, so headless password sign-in works
-and the signed-in flows were captured directly.
+and most signed-in flows were captured directly (unlike usersrole, which enforces
+App Check and required the headed browser).
 
 ## Flow checklist
 
-| Flow                                                                                             | Status                               | Evidence                                                                                    |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------- |
-| Sign-up (password)                                                                               | captured                             | `media/usersrole-nx-01-sign-up.webm`, `screenshots/flow-01-sign-up-*.jpg`                   |
-| Sign-in (password)                                                                               | captured                             | `media/usersrole-nx-02-sign-in-password.webm`, `screenshots/flow-02-home-after-sign-in.jpg` |
-| Profile                                                                                          | captured                             | `media/usersrole-nx-03-profile.webm`, `screenshots/flow-03-profile.jpg`                     |
-| Admin: list users (viewed as plain user)                                                         | captured — redirects to `/forbidden` | `screenshots/flow-04-admin-users-as-user.jpg`                                               |
-| Admin: change roles (viewed as plain user)                                                       | captured — redirects to `/forbidden` | `screenshots/flow-04-admin-roles-as-user.jpg`                                               |
-| Admin: list users / change roles (privileged view)                                               | needs headed session                 | requires an admin account; headed only                                                      |
-| Self-promote to admin (privilege-escalation demo)                                                | needs headed session                 | see security finding 1; **not automated here**                                              |
-| Theme switch (light/dark)                                                                        | captured                             | `media/usersrole-nx-05-theme-switch.webm`, `screenshots/flow-05-theme-*.jpg`                |
-| Sign-out                                                                                         | captured                             | `media/usersrole-nx-06-sign-out.webm`, `screenshots/flow-06-after-sign-out.jpg`             |
-| PWA install prompt                                                                               | needs headed session                 | `beforeinstallprompt` does not fire in headless Chromium                                    |
-| OAuth: Google                                                                                    | needs headed session                 | reached `accounts.google.com`; `media/usersrole-nx-07-oauth-google*.webm`                   |
-| OAuth: GitHub                                                                                    | needs headed session                 | reached `github.com`; `media/usersrole-nx-07-oauth-github*.webm`                            |
-| Screenshot matrix (home, profile, about, previews, sign-in, sign-up; desktop+mobile; light+dark) | captured                             | `screenshots/matrix-*.jpg` (32)                                                             |
+| Flow | Status | Evidence |
+| --- | --- | --- |
+| Sign-up (password) | captured | `screenshots/flow-01-sign-up-*.jpg`, `unx-app-01..03` |
+| Sign-in (password) | captured | `screenshots/flow-02-home-after-sign-in.jpg`, `unx-app-04..05` |
+| Home | captured | `unx-app-06` |
+| Profile | captured (headless) | `screenshots/flow-03-profile.jpg` |
+| Theme switch (light/dark) | captured | `screenshots/flow-05-theme-*.jpg`, `unx-app-08..09`, `matrix-*` |
+| Admin guard (`/admin` as plain user → 403) | captured | `screenshots/flow-04-admin-*-as-user.jpg`, `unx-app-10-admin-guard` |
+| Sign-out | captured (headless) | `screenshots/flow-06-after-sign-out.jpg` |
+| Admin: list users / change roles (privileged) | not captured | requires a real admin account; plain user is blocked at the client guard (403) |
+| Self-promote to admin (privilege-escalation demo) | not reproducible UI-only | see security finding 1 — API-layer hole, not UI |
+| OAuth: Google / GitHub | buttons + provider page only | completions not recorded (would require the owner's real IdP login) |
+| PWA install prompt | not captured | `beforeinstallprompt` does not fire headless; skipped by decision |
 
-This app exposes Google and GitHub sign-in only (no Twitter). Its admin screens
-were exercised as a plain user, which the route guard sends to `/forbidden`; the
-privileged content behind them needs an admin account and belongs to the headed
-session. Users-table rows would be masked (all but the test account blurred), but
-a plain user never reaches the list, so no other users' data was fetched or shown.
+This app exposes Google and GitHub sign-in only (no Twitter). A plain user never
+reaches the users list (the route guard sends it to `/forbidden`), so no other
+users' data was fetched or shown.
 
-## Media (videos, not committed)
+## Console tour — Firebase
 
-Videos live under `media/` and are **gitignored** — a later step uploads them as
-GitHub Release assets. Screenshots are committed (all JPEG, largest ~164 KB).
+| Surface | Screenshot | Notes |
+| --- | --- | --- |
+| Auth sign-in providers | `unx-fb-auth-providers` | Email/Password, Google, GitHub **Enabled** (no Twitter/Anonymous); SMS MFA disabled. |
+| Auth settings | `unx-fb-auth-settings` | Settings pane. |
+| Auth → Authorized domains | `unx-fb-auth-authorized-domains` | **Only the 3 defaults** — no stale preview or custom domains (contrast: usersrole). |
+| Auth → Blocking functions | `unx-fb-auth-blocking-functions` | beforeCreate → **beforecreated(us-central1)**; beforeSignin → None. |
+| Auth → User actions | `unx-fb-auth-user-actions` | User-actions pane. |
+| Auth email templates | `unx-fb-auth-templates` | Template settings. |
+| Auth → Users (BLURRED) | `unx-fb-auth-users` | 28 real users; email + UID columns masked. |
+| App Check | `unx-fb-appcheck` | **DISABLED** — onboarding splash; "Configure App Check" banner on Auth. |
+| Functions | `unx-fb-functions` | Functions list. |
+| Hosting | `unx-fb-hosting` | Site `users-role-nx`. |
+| Storage | `unx-fb-storage` | Storage view. |
+| Firestore | `unx-fb-firestore` | `users` collection (doc id = Auth UID); UID doc-ids masked. |
+| Realtime Database | `unx-fb-rtdb` | Presence check. |
+| Project settings — general / service accounts / integrations | `unx-fb-settings-*` | Web app config, Admin SDK SA, integrations. |
 
-| File                                                  | Size      |
-| ----------------------------------------------------- | --------- |
-| usersrole-nx-05-theme-switch.webm                     | 2.7 MB    |
-| usersrole-nx-06-sign-out.webm                         | 1.2 MB    |
-| usersrole-nx-08-pwa.webm                              | 1.1 MB    |
-| usersrole-nx-02-sign-in-password.webm                 | 717 KB    |
-| usersrole-nx-03-profile.webm                          | 420 KB    |
-| usersrole-nx-04-admin-blocked-as-user.webm            | 362 KB    |
-| usersrole-nx-01-sign-up.webm                          | 283 KB    |
-| usersrole-nx-07-oauth-{google,github}.webm (+ popup1) | 41–260 KB |
+## Console tour — Google Cloud
+
+| Surface | Screenshot | Notes |
+| --- | --- | --- |
+| APIs & Services | `unx-gcp-apis` | Enabled APIs dashboard. |
+| Billing — linked account | `unx-gcp-billing-linked` | Same billing account **"Firebase Payment"** (`01DF84-B8C2B6-98291D`) as usersrole. |
+| IAM | `unx-gcp-iam` | Principals masked. Owner "Jacob Willmsen"; `firebase-adminsdk` (**no** App Check Admin role, consistent with App Check disabled); GitHub Actions `jdwillmsen/usersrole-nx`; compute + App Engine default SAs (Editor). Insight: 2 SAs with excess Owner/Editor. |
+| Artifact Registry | `unx-gcp-artifacts` | `gcf-artifacts` repository. |
+| Cloud Run (functions) | `unx-gcp-run` | gen2 Functions services. |
+| Cloud Storage buckets | `unx-gcp-storage-bucket` | `gcf-v2-*` + **`staging.users-role-nx.appspot.com`** + **`users-role-nx.appspot.com`** (default app bucket present, unlike usersrole). |
 
 ## Security findings at retirement
 
-Read-only observations of the live app and its code. Recorded here because they
-are worth carrying forward; none were exploited.
+1. **Privilege escalation: any user can make itself admin (API layer).** Identical
+   codebase to usersrole: the `api` `PATCH /users/:id` is guarded by
+   `isAuthorized({ hasRole: ['admin','manager'], allowSameUser: true })`, and the
+   `patch` handler copies `req.body.roles` into custom claims — so a plain user can
+   `PATCH /users/{ownUid}` with `roles:['admin']` and self-promote. The app's
+   admin UI is hidden from plain users by the client `RoleGuard` (they get
+   `/forbidden`, evidence `unx-app-10-admin-guard`), so it is **not reproducible
+   through the UI**; exploiting it needs a direct authenticated API call (out of
+   scope; no token scraping/replay done). Fixed for replicators in `REPLICATE.md`.
+2. **App Check is not enabled** on this project (Identity Toolkit or Firestore) —
+   no client attestation, the weaker posture. Contrast: usersrole enforces it.
 
-1. **Privilege escalation: any user can make itself admin.** `PATCH /users/:id`
-   runs `isAuthorized({ hasRole: ['admin','manager'], allowSameUser: true })`,
-   so a signed-in user passes the guard for its **own** record. The `patch`
-   handler then copies `req.body.roles` straight into the account's custom
-   claims. A plain user can therefore send its own ID and
-   `roles: ['user','admin']` and become admin, after which admin screens expose
-   every user's email and display name. The self-promotion demonstration and the
-   privileged admin views are left for the headed session; the hole is inherent
-   to the `allowSameUser` branch plus the unfiltered role copy.
-2. **Unauthenticated account creation.** `POST /users` has no authentication
-   (intentional, to allow sign-up); it is throttled to 15/hour per IP. Anyone can
-   create `role: ['user']` accounts.
-3. **No App Check.** The Firebase App Check API is disabled on this project, so
-   Identity Toolkit and Firestore accept requests from any client with the
-   public web API key — no client attestation. `usersrole` enforces App Check on
-   both services; this project does not.
+Exact values (user counts, billing linkage, the authorized-domain list) are in
+[`cli-snapshot.md`](./cli-snapshot.md).
 
-Exact values (user counts, billing linkage, the App Check API state, authorized
-domains) are in [`cli-snapshot.md`](./cli-snapshot.md).
+## Media (not committed)
 
-## Reproducing
+Videos live under `media/` and are **gitignored** — uploaded as GitHub Release
+assets in a later step. Screenshots are committed (all well under 5 MB).
 
-```bash
-export PATH=$HOME/.nvm/versions/node/v24.19.0/bin:$PATH
-RETIREMENT_KEEP='<test-email>,<test-uid>' \
-  scripts/retirement-capture/app/cli-snapshot.sh users-role-nx docs/retirement/cli-snapshot.md
-NODE_PATH=<dir with playwright-core 1.63.x> TEST_EMAIL=<fresh> TEST_PASSWORD=<pw> \
-  node scripts/retirement-capture/app/capture.cjs usersrole-nx docs/retirement
-```
+## Human PII/secret review required before publishing the videos
+
+- `unx-fb-auth-users` (+ video) — confirm no unblurred email/UID across scroll.
+- `unx-fb-firestore` (+ video) — confirm no user field exposed.
+- `unx-gcp-iam` — shows the owner's own display name (no end-user PII).
+- App-flow stills — show only the throwaway accounts.
